@@ -1,71 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Responsive Navigation Bar</title>
-<style>
-    body {
-        margin: 0;
-        font-family: 'Arima Madurai', sans-serif;
-        background-color: white;
-        color: black;
-    }
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: white;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    .logo {
-        font-size: 1.5rem;
-    }
-    .menu {
-        display: flex;
-    }
-    .menu a {
-        margin: 0 10px;
-        text-decoration: none;
-        color: black;
-    }
-    .burger {
-        display: none; /* Hide the button by default */
-    }
-    @media only screen and (max-width: 1024px) {
-        .menu {
-            display: none; /* Hide the menu in tablet view */
-        }
-        .burger {
-            display: block; /* Display the button in tablet view */
-        }
-    }
-    @media only screen and (max-width: 768px) {
-        .menu {
-            display: none; /* Hide the menu in mobile view */
-        }
-    }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msvalidate.01" content="A4D40B1AA5475B07D06649F7D8970D5F" />
+  <meta name="verify-v1" content="unique-string">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/png" href="https://github.com/themastankhan/Mastan/raw/main/Job-Nexus-India-Logo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Arima Madurai' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="navbar">
-    <div class="logo">Job Nexus India</div>
-    <div class="menu">
-        <a href="#">Current Openings</a>
-        <a href="#">Services</a>
-        <a href="#">Blogs</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
+
+<nav>
+    <a class="logo" href="https://www.jobnexusindia.com/"><div class="logo">Job Nexus India</div></a>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+      <li><a class="active" href="https://www.jobnexusindia.com/">Current Openings</a></li>
+      <li><a href="about-us.html">About Us</a></li>
+    </ul>
+</nav>
+
+<h1>We're hiring the following positions for our clients</h1>
+
+<div class="flcc">
+<div class="filter-container">
+  <label for="locationFilter">Filter Jobs by Location</label>
+  <div class="custom-select">
+    <select id="locationFilter">
+      <option value="all">All Locations</option>
+<!--       <option value="Maharashtra">Maharsahtra</option>
+      <option value="Odisha">Odisha</option> -->
+            <option value="Karnataka">Karnataka</option>
+                  <option value="Gujarat">Gujarat</option>
+                        <option value="Telangana">Telangana</option>
+    </select>
+  </div>
+</div>
+<div class="department-container">
+  <label for="departmentFilter">Filter Jobs by Department</label>
+  <div class="custom-select">
+    <select id="departmentFilter">
+      <option value="all">All Departments</option>
+<!--         <option value="Engineering/Manufacturing/Production">Engineering/Manufacturing/Production</option>
+        <option value="Security">Security</option> -->
+              <option value="Sales">Sales</option>
+                    <option value="Graphic Design">Graphic Design</option>
+                          <option value="Marketing">Marketing</option>
+    </select>
+  </div>
+</div>
+</div>
+
+  <div class="lmnn">
+                    <div class="lmn" data-location="Telangana" data-department="Marketing">
+    <a href="jd/0036.html">
+      <div class="asd">
+        <h2>Admission & Marketing Head - CBSE School</h2>
+          <div class="dfg">
+            <div>
+              <P class="jdct">Work Location</P>
+              <p class="jdtt">Hyderbad, Telangana</p>
+            </div>
+            <div>
+              <P class="jdct">Experience Required</P>
+              <p class="jdtt">3-5 Years</p>
+            </div>
+            <div>
+              <P class="jdct">Notice Period</P>
+              <p class="jdtt">Joining by 29 March</p>
+            </div>
+            <div>
+              <P class="jdct">Date Posted</P>
+              <p class="jdtt" id="lastjdtt">22-03-2024</p>
+            </div>
+          </div>
+      </div>
+    </a>
+  </div>
+                <div class="lmn" data-location="Gujarat" data-department="Graphic Design">
+    <a href="jd/0035.html">
+      <div class="asd">
+        <h2>Graphic Designer</h2>
+          <div class="dfg">
+            <div>
+              <P class="jdct">Work Location</P>
+              <p class="jdtt">Vadodara, Gujarat</p>
+            </div>
+            <div>
+              <P class="jdct">Experience Required</P>
+              <p class="jdtt">1-7 Years</p>
+            </div>
+            <div>
+              <P class="jdct">Notice Period</P>
+              <p class="jdtt">Joining by 29 March</p>
+            </div>
+            <div>
+              <P class="jdct">Date Posted</P>
+              <p class="jdtt" id="lastjdtt">21-03-2024</p>
+            </div>
+          </div>
+      </div>
+    </a>
+  </div>
+            <div class="lmn" data-location="Karnataka" data-department="Sales">
+    <a href="jd/0034.html">
+      <div class="asd">
+        <h2>Senior Business Development Executive (Property/Construction Technology)</h2>
+          <div class="dfg">
+            <div>
+              <P class="jdct">Work Location</P>
+              <p class="jdtt">Kuvempu Nagar, Bengaluru</p>
+            </div>
+            <div>
+              <P class="jdct">Experience Required</P>
+              <p class="jdtt">3-5 Years</p>
+            </div>
+            <div>
+              <P class="jdct">Notice Period</P>
+              <p class="jdtt">Immediate Joiners Preferred</p>
+            </div>
+            <div>
+              <P class="jdct">Date Posted</P>
+              <p class="jdtt" id="lastjdtt">21-03-2024</p>
+            </div>
+          </div>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+<div class="footer" >
+    <div class="box1">
+        <p class="footerheading">Important Notice</p>
+        <p class="footercontent">Job Nexus India emphasize ethical recruitment practices and we Job Nexus India will never charge candidates for any part of the recruitment process. Please be cautious of any fraudulent activities.</p>
     </div>
-    <button class="burger" onclick="toggleMenu()">☰</button> <!-- Only show button in tablet and mobile view -->
+    <div class="box2">
+        <p class="footerheading">For any inquiries or assistance with technical issues while filling out the job application form, please contact us:</p>
+        <p class="footercontent">hello@jobnexusindia.com <br>7899586564 (Whatsapp)</p>
+    </div>
+    <div class="box3">
+        <p class="footerheading">Join us on your preferred social media platforms to never miss job updates</p>
+        <p class="footercontent" style="margin-top: 5px;">Click on the icons given below to join.</p>
+            <div class="icon-container">
+                <span><a href="https://in.linkedin.com/company/jobnexusindia" alt:"Job Nexus India Job Updates Linkedin Company Page Link" class="icon-link">
+                    <i class="fab fa-linkedin-in"></i>
+                    </a></span>                
+                <span><a href="https://chat.whatsapp.com/CLUuvoRuViAF77TGPbSAom" alt:"Job Nexus India Job Updates Whatsapp Group Link" class="icon-link2">
+                    <i class="fab fa-whatsapp"></i>
+                    </a></span>
+                <span><a href="https://t.me/jobnexusindia" alt:"Job Nexus India Telegram Channel Link" class="icon-link">
+                     <i class="fab fa-telegram"></i>
+                    </a></span>
+            </div>
+    </div>
 </div>
 
 <script>
-    function toggleMenu() {
-        var menu = document.querySelector('.menu');
-        menu.classList.toggle('show-menu');
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  const jobDetails = document.querySelectorAll('.lmn');
+
+  // Listen for a change in location filter
+  document.getElementById('locationFilter').addEventListener('change', function() {
+    filterJobs();
+  });
+
+  // Listen for a change in department filter
+  document.getElementById('departmentFilter').addEventListener('change', function() {
+    filterJobs();
+  });
+
+  function filterJobs() {
+    const selectedLocation = document.getElementById('locationFilter').value;
+    const selectedDepartment = document.getElementById('departmentFilter').value;
+
+    jobDetails.forEach(function(job) {
+      const location = job.dataset.location;
+      const department = job.dataset.department;
+
+      if ((selectedLocation === 'all' || location === selectedLocation) && (selectedDepartment === 'all' || department === selectedDepartment)) {
+        job.style.display = 'flex'; // Show the job details
+      } else {
+        job.style.display = 'none'; // Hide the job details
+      }
+    });
+  }
+});
 </script>
+
 </body>
 </html>
