@@ -343,12 +343,12 @@ html {
     font-family: "montserrat", serif;
     font-weight: 500;
     font-style: normal;
-    font-size: 63px;
+    font-size: 67px;
     text-align: center;
     padding-top: 10px;
     /* padding-bottom: 10px; */
-    margin-left: 7.5%;
-    margin-right: 9%;
+    margin-left: 7%;
+    margin-right: 8%;
     margin-top: 30px;
     margin-top: 50px
     padding-left: 0;
@@ -399,7 +399,7 @@ a {
   flex-wrap: wrap;
   justify-content: left;
   column-gap: 30px;
-  width: 900px;
+  width: 934px;
   font-family: lato;
   border: 2px solid #666666;
   margin: 10px;
@@ -431,7 +431,10 @@ h2{
   font-weight: 500;
 }
 
-
+.asd:hover h2 {
+    text-decoration: underline;
+    transition: 0s;
+  }
 
 
 .lmnn{
@@ -560,7 +563,7 @@ h2{
   column-gap: 30px;
   margin-bottom: 20%;
   margin-top: 40px;
-  margin-left: 8.8%;
+  margin-left: 10%;
 }
 
 
