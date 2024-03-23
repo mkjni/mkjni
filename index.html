@@ -23,29 +23,27 @@
         font-size: 1.5rem;
     }
     .menu {
-        display: none;
+        display: flex;
     }
     .menu a {
         margin: 0 10px;
         text-decoration: none;
         color: black;
     }
+    .burger {
+        display: none; /* Hide the button by default */
+    }
+    @media only screen and (max-width: 1024px) {
+        .menu {
+            display: none; /* Hide the menu in tablet view */
+        }
+        .burger {
+            display: block; /* Display the button in tablet view */
+        }
+    }
     @media only screen and (max-width: 768px) {
         .menu {
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            top: 60px;
-            right: 0;
-            background-color: white;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            padding: 10px;
-        }
-        .menu a {
-            margin: 5px 0;
-        }
-        .show-menu {
-            display: flex;
+            display: none; /* Hide the menu in mobile view */
         }
     }
 </style>
@@ -60,7 +58,7 @@
         <a href="#">About Us</a>
         <a href="#">Contact Us</a>
     </div>
-    <button onclick="toggleMenu()">☰</button>
+    <button class="burger" onclick="toggleMenu()">☰</button> <!-- Only show button in tablet and mobile view -->
 </div>
 
 <script>
