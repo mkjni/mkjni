@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Navigation Bar</title>
+<style>
+    body {
+        margin: 0;
+        font-family: 'Arima Madurai', sans-serif;
+        background-color: white;
+        color: black;
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+        font-size: 1.5rem;
+    }
+    .menu {
+        display: none;
+    }
+    .menu a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: black;
+    }
+    @media only screen and (max-width: 768px) {
+        .menu {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+        }
+        .menu a {
+            margin: 5px 0;
+        }
+        .show-menu {
+            display: flex;
+        }
+    }
+</style>
+</head>
+<body>
+<div class="navbar">
+    <div class="logo">Job Nexus India</div>
+    <div class="menu">
+        <a href="#">Current Openings</a>
+        <a href="#">Services</a>
+        <a href="#">Blogs</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+    </div>
+    <button onclick="toggleMenu()">☰</button>
+</div>
+
+<script>
+    function toggleMenu() {
+        var menu = document.querySelector('.menu');
+        menu.classList.toggle('show-menu');
+    }
+</script>
+</body>
+</html>
