@@ -22,6 +22,7 @@
         }
         th {
             background-color: #f2f2f2;
+            width: auto; /* Adjust width here */
         }
         tr:nth-child(even) {
             background-color: #f2f2f2;
@@ -114,10 +115,10 @@
                 text-align: left;
             }
             td:nth-of-type(1):before { content: "Job ID"; }
-            td:nth-of-type(2):before { content: "Role"; }
+            td:nth-of-type(2):before { content: "Role/Job Title"; }
             td:nth-of-type(3):before { content: "Work Location"; }
-            td:nth-of-type(4):before { content: "Experience"; }
-            td:nth-of-type(5):before { content: "Salary"; }
+            td:nth-of-type(4):before { content: "Experience Required"; }
+            td:nth-of-type(5):before { content: "Salary Offered"; }
             td:nth-of-type(6):before { content: "Notice Period"; }
             td:nth-of-type(7):before { content: "Date posted"; }
             td:nth-of-type(8):before { content: "Industry"; }
@@ -132,10 +133,10 @@
     <thead>
         <tr>
             <th class="job-id">Job ID</th>
-            <th class="job-title">Role</th>
+            <th class="job-title">Role/Job Title</th>
             <th class="location">Work Location</th>
-            <th class="experience">Experience</th>
-            <th class="salary">Salary</th>
+            <th class="experience">Experience Required</th>
+            <th class="salary">Salary Offered</th>
             <th class="notice">Notice Period</th>
             <th class="date-posted">Date posted</th>
             <th class="Industry">Industry</th>
