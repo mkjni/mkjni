@@ -49,10 +49,7 @@
             border-radius: 5px;
         }
         th.job-title, td.job-title {
-            width: auto;
-            white-space: nowrap;
-            overflow: hidden;
-            max-width: 200px; /* Adjust maximum width for job title */
+            width: 320px;
         }
         th.job-id, td.job-id {
             width: 60px; /* Reduced width for job ID */
@@ -89,18 +86,36 @@
         @media only screen and (max-width: 600px) {
             table, thead, tbody, th, td, tr { 
                 display: block; 
+                max-width: 320px;
+                align-items: center;
             }
             thead tr { 
                 position: absolute;
                 top: -9999px;
                 left: -9999px;
             }
-
+            table{
+              justify-content: center;
+            }
             td, th{
               font-size: 14px;
               max-width: 320px;
               padding: 2px;
             }
+
+            th.job-title, td.job-title {
+            width: 320px;
+            white-space: wrap;
+            text-overflow: clip;
+            max-width: 200px; /* Adjust maximum width for job title */
+        }
+
+        th.function, td.function,
+            th.Industry, td.Industry {
+            white-space: wrap;
+          text-overflow: clip;
+            max-width: 200px; Adjust maximum width for job title
+        }  
 
             th.job-title{
               display: block;
@@ -108,7 +123,11 @@
               width: 100%;
             }
 
-            tr { border: 1px solid #ccc; }
+            tr { 
+              border: 1px solid #ccc;
+            justify-content: center;
+          align-items: center;
+        align-content: center; }
             td { 
                 border: none;
                 border-bottom: 1px solid #eee; 
@@ -119,7 +138,6 @@
             }
             td:before { 
                 position: absolute;
-                top: 6px;
                 left: 6px;
                 width: 35%; 
                 padding-right: 10px; 
@@ -164,7 +182,7 @@
             <td class="salary">5 - 10 LPA</td>
             <td class="notice">30 Days</td>
             <td class="date-posted">02-04-2024</td>
-            <td class="Industry">Information Technology</td>
+            <td class="Industry">Information Technology, information Technology</td>
             <td class="function">Human Resources, Sales</td>
         </tr>
         <tr>
