@@ -54,9 +54,9 @@
             border-radius: 5px;
         }
         th.job-title, td.job-title {
-            width: 320px;
+            width: 300px;
             font-size: 17px;
-        }
+        /* }
         th.job-id, td.job-id {
             width: 60px; /* Reduced width for job ID */
         }
@@ -86,7 +86,7 @@
         }  
         th.location, td.location {
             width: 150px;
-        }  
+        } 
 
         /* Hover effect and clickable job titles */
         td.job-title {
@@ -217,29 +217,26 @@
                 color: initial; /* Retain default color */
             }
             td:nth-of-type(3):before {
-                content: "State";
+                content: "Industry";
             }
             td:nth-of-type(4):before {
-                content: "City";
+                content: "State";
             }
             td:nth-of-type(5):before {
+                content: "City";
+            }
+            td:nth-of-type(6):before {
                 content: "Experience";
             }
 
-            td:nth-of-type(6):before {
+            td:nth-of-type(7):before {
                 content: "Salary Offered";
             }
-            td:nth-of-type(7):before {
+            td:nth-of-type(8):before {
                 content: "Notice Period";
             }
-            td:nth-of-type(8):before {
-                content: "Date posted";
-            }
             td:nth-of-type(9):before {
-                content: "Industry";
-            }
-            td:nth-of-type(10):before {
-                content: "Job Function";
+                content: "Date posted";
             }
         }
 
@@ -247,8 +244,8 @@
         @media only screen and (min-width: 601px) {
             th.Industry,
             td.Industry {
-              min-width: 180px;
-                max-width: 180px;
+              min-width: 100px;
+                max-width: 100px;
                 padding: 0;
                 margin: 0;
             }
@@ -273,7 +270,9 @@
             }
             th.date-posted,
             td.date-posted{
-                max-width: 85px;
+                max-width: 80px;
+                padding: 0;
+                margin: 0;
             }
             th.salary,
             td.salary{
@@ -327,64 +326,59 @@
         <tr>
             <th class="job-id">Job ID</th>
             <th class="job-title">Role/Job Title</th>
+            <th class="Industry">Industry</th>
             <th class="location">State</th>
             <th class="City">City</th>
             <th class="experience">Experience</th>
             <th class="salary">Salary</th>
-            <th class="notice">NP</th>
+            <th class="notice">Notice Period</th>
             <th class="date-posted">Date posted</th>
-            <th class="Industry">Industry</th>
-            <th class="function">Job Function</th>
         </tr>
     </thead>
     <tbody>
         <tr class="job-row">
             <td class="job-id">001</td>
             <td class="job-title"><a href="#">Talent Acquisition Specialist</a></td>
+            <td class="Industry">Engineering</td>
             <td class="location">KA</td>
             <td class="City">Bengaluru</td>
             <td class="experience">3-5 Years</td>
             <td class="salary">5.5 - 10.5 LPA</td>
             <td class="notice">30 Days</td>
             <td class="date-posted">02-04-2024</td>
-            <td class="Industry">Information Technology</td>
-            <td class="function">Human Resources, Sales</td>
         </tr>
         <tr class="job-row">
             <td class="job-id">002</td>
             <td class="job-title"><a href="#">Civil Design Engineer</a></td>
+            <td class="Industry">Engineering</td>
             <td class="location">GJ</td>
             <td class="City">Thiruvantapuram</td>
             <td class="experience">2-6 Years</td>
             <td class="salary">2 - 6 LPA</td>
             <td class="notice">30 Days</td>
             <td class="date-posted">02-04-2024</td>
-            <td class="Industry">Production</td>
-            <td class="function">Civil Design</td>
         </tr>
         <tr class="job-row">
             <td class="job-id">003</td>
             <td class="job-title"><a href="#">Business Development Executive - Property Tech</a></td>
+            <td class="Industry">Engineering</td>
             <td class="location">MH</td>
             <td class="City">Mumbai</td>
             <td class="experience">1.5 - 3.5 Years</td>
             <td class="salary">2 - 4 LPA</td>
             <td class="notice">30 Days</td>
             <td class="date-posted">02-04-2024</td>
-            <td class="Industry">Engineering</td>
-            <td class="function">Sales</td>
         </tr>
         <tr class="job-row">
             <td class="job-id">004</td>
             <td class="job-title"><a href="https://www.jobnexusindia.com">Business Development Executive - Property Tech</a></td>
+            <td class="Industry">Engineering</td>
             <td class="location">MH</td>
             <td class="City">Mumbai</td>
             <td class="experience">1-3 Years</td>
             <td class="salary">2 - 4 LPA</td>
             <td class="notice">30 Days</td>
             <td class="date-posted">02-04-2024</td>
-            <td class="Industry">Engineering</td>
-            <td class="function">Sales</td>
         </tr>
     </tbody>
 </table>
