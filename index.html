@@ -15,9 +15,9 @@
             margin-bottom: 20px;
         }
         th, td {
-            border: 1px solid #ddd;
+            border: none;
             padding: 8px;
-            text-align: center;
+            text-align: left;
             font-family: 'Roboto', sans-serif;
         }
         th {
@@ -91,23 +91,30 @@
         /* Mobile-specific styles */
         @media (max-width: 767px) {
             table {
-                display: block;
+                width: 100%;
+                border: none;
+                border-spacing: 0;
             }
-            tbody tr {
-                display: block;
-                margin-bottom: 20px;
-                border: 1px solid #ddd;
-                border-radius: 8px;
+            thead {
+                display: none;
             }
             tbody tr th,
             tbody tr td {
                 display: block;
-                text-align: left;
                 width: 100%;
-                padding: 10px;
             }
-            thead {
-                display: none;
+            tbody tr th {
+                text-align: left;
+                font-weight: bold;
+            }
+            tbody tr td {
+                padding: 4px;
+            }
+            tbody tr td.job-title {
+                font-weight: bold;
+            }
+            tbody tr:nth-child(even) {
+                background-color: #fff;
             }
         }
     </style>
@@ -179,28 +186,6 @@
         <tr>
             <th class="job-id">Job ID</th>
             <td class="job-id">003</td>
-            <th class="job-title">Role/Job Title</th>
-            <td class="job-title">Business Development Executive - Property Tech</td>
-            <th class="state">State</th>
-            <td class="state">MH</td>
-            <th class="City">City</th>
-            <td class="City">Mumbai</td>
-            <th class="experience">Experience Required</th>
-            <td class="experience">1-3 Years</td>
-            <th class="salary">Salary Offered</th>
-            <td class="salary">2 - 4 LPA</td>
-            <th class="notice">Notice Period</th>
-            <td class="notice">30 Days</td>
-            <th class="date-posted">Date posted</th>
-            <td class="date-posted">02-04-2024</td>
-            <th class="Industry">Industry</th>
-            <td class="Industry">Engineering</td>
-            <th class="function">Job Function</th>
-            <td class="function">Sales</td>
-        </tr>
-        <tr>
-            <th class="job-id">Job ID</th>
-            <td class="job-id">004</td>
             <th class="job-title">Role/Job Title</th>
             <td class="job-title">Business Development Executive - Property Tech</td>
             <th class="state">State</th>
