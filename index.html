@@ -86,17 +86,22 @@
         /* Hover effect and clickable job titles */
         td.job-title {
             cursor: pointer;
-            text-decoration: none;
             color: #3498db; /* Change job title color */
+            text-decoration: none;
         }
 
-        td.job-title:hover {
+        tr.job-row:hover td.job-title {
             text-decoration: underline;
         }
 
         td.job-title a {
             text-decoration: none;
             color: inherit;
+        }
+
+        /* Make the entire row clickable */
+        tr.job-row {
+            cursor: pointer;
         }
 
         /* Mobile Styles */
@@ -153,7 +158,7 @@
 
             tr {
                 width: 100%; /* Set fixed width for rows */
-                border: 1px solid #ccc;
+                border-bottom: 0.1px solid #ccc;
                 justify-content: center;
                 align-items: center;
                 align-content: center;
@@ -164,7 +169,7 @@
             }
 
             td {
-                border-bottom: 0.5px solid #eee; /* Change to create borders on all sides */
+                border-bottom: 1px solid #eee; /* Change to create borders on all sides */
                 position: relative;
                 padding-left: 35%;
                 white-space: nowrap;
@@ -212,12 +217,15 @@
             td:nth-of-type(10):before {
                 content: "Job Function";
             }
-            
-            tr.hidden-row {
-                display: none !important;
-            }
         }
 
+        /* Increase width of Industry column in desktop view */
+        @media only screen and (min-width: 601px) {
+            th.Industry,
+            td.Industry {
+                width: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -251,7 +259,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
+        <tr class="job-row">
             <td class="job-id">001</td>
             <td class="job-title"><a href="#">Talent Acquisition Specialist</a></td>
             <td class="location">Karnataka</td>
@@ -263,7 +271,7 @@
             <td class="Industry">Information Technology, information Technology</td>
             <td class="function">Human Resources, Sales</td>
         </tr>
-        <tr>
+        <tr class="job-row">
             <td class="job-id">002</td>
             <td class="job-title"><a href="#">Civil Design Engineer</a></td>
             <td class="location">Gujarat</td>
@@ -275,7 +283,7 @@
             <td class="Industry">Production</td>
             <td class="function">Civil Design</td>
         </tr>
-        <tr>
+        <tr class="job-row">
             <td class="job-id">003</td>
             <td class="job-title"><a href="#">Business Development Executive - Property Tech</a></td>
             <td class="location">MH</td>
@@ -287,9 +295,9 @@
             <td class="Industry">Engineering</td>
             <td class="function">Sales</td>
         </tr>
-        <tr>
+        <tr class="job-row">
             <td class="job-id">004</td>
-            <td class="job-title"><a href="#">Business Development Executive - Property Tech</a></td>
+            <td class="job-title"><a href="https://www.jobnexusindia.com">Business Development Executive - Property Tech</a></td>
             <td class="location">MH</td>
             <td class="City">Mumbai</td>
             <td class="experience">1-3 Years</td>
@@ -303,17 +311,9 @@
 </table>
 
 <script>
-    document.getElementById("locationFilter").addEventListener("change", function() {
-        var selectedLocation = this.value;
-        var tableRows = document.querySelectorAll("#jobTable tbody tr");
-        
-        tableRows.forEach(function(row) {
-            var locationCell = row.querySelector(".location");
-            if (selectedLocation === "all" || locationCell.textContent.trim() === selectedLocation) {
-                row.classList.remove("hidden-row");
-            } else {
-                row.classList.add("hidden-row");
-            }
+    document.querySelectorAll(".job-row").forEach(row => {
+        row.addEventListener("click", function() {
+            window.location = row.querySelector(".job-title a").href;
         });
     });
 </script>
