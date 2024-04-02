@@ -21,13 +21,14 @@
             font-family: 'Roboto', sans-serif;
         }
         th {
-            background-color: #f2f2f2;
+            background-color: #3498db; /* Change table heading color */
+            color: #fff; /* Change text color */
         }
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
         tr:hover {
-            background-color: #ddd;
+            background-color: #d5d5d5; /* Change row hover color */
         }
         th.job-title {
             text-align: left;
@@ -81,86 +82,130 @@
         th.location, td.location {
             width: 150px;
         }  
-        
+
+        /* Hover effect and clickable job titles */
+        td.job-title {
+            cursor: pointer;
+            text-decoration: none;
+            color: #3498db; /* Change job title color */
+        }
+
+        td.job-title:hover {
+            text-decoration: underline;
+        }
+
+        td.job-title a {
+            text-decoration: none;
+            color: inherit;
+        }
+
         /* Mobile Styles */
         @media only screen and (max-width: 600px) {
-            table, thead, tbody, th, td, tr { 
-                display: block; 
+            table,
+            thead,
+            tbody,
+            th,
+            td,
+            tr {
+                display: block;
                 max-width: auto;
                 align-items: center;
                 justify-content: center;
             }
-            thead tr { 
+            thead tr {
                 position: absolute;
                 top: -9999px;
                 left: -9999px;
                 justify-content: center;
             }
-            table{
-              justify-content: center;
+            table {
+                justify-content: center;
             }
-            td, th{
-              font-size: 14px;
-              max-width: 320px;
-              padding: 2px;
-            }
-
-            th.job-title, td.job-title {
-            width: auto;
-            white-space: wrap;
-            max-width: auto; /* Adjust maximum width for job title */
-        }
-
-        th.function, td.function,
-            th.Industry, td.Industry {
-              white-space: wrap;
-            max-width: auto; /* Adjust maximum width for job title */
-        }  
-
-            th.job-title{
-              display: block;
-              padding-left: 10px;
-              width: 100%;
+            td,
+            th {
+                font-size: 14px;
+                max-width: 320px;
+                padding: 2px;
             }
 
-            tr { 
-              min-width: auto;
-              border: 1px solid #ccc;
-            justify-content: center;
-          align-items: center;
-        align-content: center; 
-        align-items: center;
-        margin-bottom: 20px;}
+            th.job-title,
+            td.job-title {
+                width: auto;
+                white-space: wrap;
+                max-width: auto;
+                /* Adjust maximum width for job title */
+            }
 
-            td { 
-                border: none;
-                border-bottom: 1px solid #eee; 
+            th.function,
+            td.function,
+            th.Industry,
+            td.Industry {
+                white-space: wrap;
+                max-width: auto;
+                /* Adjust maximum width for job title */
+            }
+
+            th.job-title {
+                display: block;
+                padding-left: 10px;
+                width: 100%;
+            }
+
+            tr {
+                min-width: auto;
+                border: 1px solid #ccc;
+                justify-content: center;
+                align-items: center;
+                align-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+            }
+
+            td {
+                border: 1px solid #eee; /* Change to create borders on all sides */
                 position: relative;
-                padding-left: 35%; 
+                padding-left: 35%;
                 white-space: nowrap;
                 text-align: left;
             }
-            td:before { 
+
+            td:before {
                 position: absolute;
                 left: 6px;
-                width: 35%; 
-                padding-right: 10px; 
+                width: 100%; /* Change to 100% to underline the whole line */
+                padding-right: 10px;
                 white-space: nowrap;
                 text-align: left;
             }
-            td:nth-of-type(1):before { content: "Job ID"; }
-            td:nth-of-type(2):before { content: "Role/Job Title"; }
-            td:nth-of-type(3):before { content: "Work Location"; }
-            td:nth-of-type(4):before { content: "Experience"; }
-            td:nth-of-type(5):before { content: "Salary Offered"; }
-            td:nth-of-type(6):before { content: "Notice Period"; }
-            td:nth-of-type(7):before { content: "Date posted"; }
-            td:nth-of-type(8):before { content: "Industry"; }
-            td:nth-of-type(9):before { content: "Job Function"; }
-        }
 
-        #jobtable{
-          justify-content: center;
+            td:nth-of-type(1):before {
+                content: "Job ID";
+            }
+            td:nth-of-type(2):before {
+                content: "Role/Job Title";
+                color: initial; /* Retain default color */
+            }
+            td:nth-of-type(3):before {
+                content: "Work Location";
+            }
+            td:nth-of-type(4):before {
+                content: "Experience";
+            }
+            td:nth-of-type(5):before {
+                content: "Salary Offered";
+            }
+            td:nth-of-type(6):before {
+                content: "Notice Period";
+            }
+            td:nth-of-type(7):before {
+                content: "Date posted";
+            }
+            td:nth-of-type(8):before {
+                content: "Industry";
+            }
+            td:nth-of-type(9):before {
+                content: "Job Function";
+            }
         }
     </style>
 </head>
@@ -184,7 +229,7 @@
     <tbody>
         <tr>
             <td class="job-id">001</td>
-            <td class="job-title">Talent Acquisition Specialist</td>
+            <td class="job-title"><a href="#">Talent Acquisition Specialist</a></td>
             <td class="state">Bengaluru, KA</td>
             <td class="experience">3-5 Years</td>
             <td class="salary">5 - 10 LPA</td>
@@ -195,7 +240,7 @@
         </tr>
         <tr>
             <td class="job-id">002</td>
-            <td class="job-title">Civil Design Engineer</td>
+            <td class="job-title"><a href="#">Civil Design Engineer</a></td>
             <td class="location">Ahemadabad, GJ</td>
             <td class="experience">2-6 Years</td>
             <td class="salary">2 - 6 LPA</td>
@@ -206,7 +251,7 @@
         </tr>
         <tr>
             <td class="job-id">003</td>
-            <td class="job-title">Business Development Executive - Property Tech</td>
+            <td class="job-title"><a href="#">Business Development Executive - Property Tech</a></td>
             <td class="state">Mumbai, MH</td>
             <td class="experience">1-3 Years</td>
             <td class="salary">2 - 4 LPA</td>
@@ -216,18 +261,19 @@
             <td class="function">Sales</td>
         </tr>
         <tr>
-          <td class="job-id">003</td>
-          <td class="job-title">Business Development Executive - Property Tech</td>
-          <td class="state">Mumbai, MH</td>
-          <td class="experience">1-3 Years</td>
-          <td class="salary">2 - 4 LPA</td>
-          <td class="notice">30 Days</td>
-          <td class="date-posted">02-04-2024</td>
-          <td class="Industry">Engineering</td>
-          <td class="function">Sales</td>
-      </tr>
+            <td class="job-id">003</td>
+            <td class="job-title"><a href="#">Business Development Executive - Property Tech</a></td>
+            <td class="state">Mumbai, MH</td>
+            <td class="experience">1-3 Years</td>
+            <td class="salary">2 - 4 LPA</td>
+            <td class="notice">30 Days</td>
+            <td class="date-posted">02-04-2024</td>
+            <td class="Industry">Engineering</td>
+            <td class="function">Sales</td>
+        </tr>
     </tbody>
 </table>
+
 
 </body>
 </html>
