@@ -9,6 +9,10 @@
         body {
             font-family: 'Roboto', sans-serif;
         }
+
+        .hidden {
+    display: none;
+}
         table {
             width: 100%;
             border-collapse: collapse;
@@ -314,13 +318,23 @@
     </tbody>
 </table>
 
+
 <script>
-    document.querySelectorAll(".job-row").forEach(row => {
-        row.addEventListener("click", function() {
-            window.location = row.querySelector(".job-title a").href;
-        });
-    });
+  document.getElementById("locationFilter").addEventListener("change", function() {
+      var selectedLocation = this.value;
+      var tableRows = document.querySelectorAll("#jobTable tbody tr");
+      
+      tableRows.forEach(function(row) {
+          var locationCell = row.querySelector(".location");
+          if (selectedLocation === "all" || locationCell.textContent.trim() === selectedLocation) {
+              row.classList.remove('hidden');
+          } else {
+              row.classList.add('hidden');
+          }
+      });
+  });
 </script>
+
 
 </body>
 </html>
