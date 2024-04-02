@@ -25,7 +25,7 @@
             font-family: 'Roboto', sans-serif;
         }
         th {
-            background-color: #3498db; /* Change table heading color */
+            background-color: #2E8BC0; /* Change table heading color */
             color: #fff; /* Change text color */
         }
         tr:nth-child(even) {
@@ -55,6 +55,7 @@
         }
         th.job-title, td.job-title {
             width: 320px;
+            font-size: 17px;
         }
         th.job-id, td.job-id {
             width: 60px; /* Reduced width for job ID */
@@ -90,7 +91,8 @@
         /* Hover effect and clickable job titles */
         td.job-title {
             cursor: pointer;
-            color: #3498db; /* Change job title color */
+            color: blue; /* Change job title color */
+            font-weight: 500;
             text-decoration: none;
         }
 
@@ -135,12 +137,16 @@
                 font-size: 14px;
                 max-width: 320px;
                 padding: 2px;
+                font-weight: normal;
             }
 
             th.job-title,
             td.job-title {
                 width: auto;
                 white-space: wrap;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: normal ;
                 max-width: auto;
                 /* Adjust maximum width for job title */
             }
@@ -149,6 +155,7 @@
             td.function,
             th.Industry,
             td.Industry {
+              width: auto;
                 white-space: wrap;
                 max-width: auto;
                 /* Adjust maximum width for job title */
@@ -157,6 +164,7 @@
             th.job-title {
                 display: block;
                 padding-left: 10px;
+                font-size: 14px;
                 width: 100%;
             }
 
@@ -182,6 +190,13 @@
             th, td {
               border: none;
               border-bottom: 1px solid #ddd;
+
+            }
+
+            td.salary, th.salary, td.experience, th.experience, td.location, th.location td.Experience, th.Experience, td.job-id, th.job-id, td.notice, th.notice, td.date-posted, th.date-posted, td.City, th.City {
+              white-space: wrap;
+                max-width: auto;
+                width: auto;
             }
 
             td:before {
@@ -191,6 +206,7 @@
                 padding-right: 10px;
                 white-space: nowrap;
                 text-align: left;
+                
             }
 
             td:nth-of-type(1):before {
@@ -231,7 +247,62 @@
         @media only screen and (min-width: 601px) {
             th.Industry,
             td.Industry {
-                width: 200px;
+              min-width: 180px;
+                max-width: 180px;
+                padding: 0;
+                margin: 0;
+            }
+            th.function,
+            td.function {
+              min-width: 180px;
+                max-width: 180px;
+                padding: 0;
+                margin: 0;
+            }
+            th.location,
+            td.location {
+                max-width: 40px;
+                padding: 0;
+                margin: 0;
+            }
+            th.job-id,
+            td.job-id{
+                max-width: 50px;
+                padding: 0;
+                margin: 0;
+            }
+            th.date-posted,
+            td.date-posted{
+                max-width: 85px;
+            }
+            th.salary,
+            td.salary{
+              min-width: 100px;
+                max-width: 125px;
+                padding: 0;
+                margin: 0;
+            }
+            th.experience,
+            td.experience{
+                max-width: 120px;
+                padding: 0;
+                margin: 0;
+            }
+            th.City,
+            td.City {
+              width: 150px;
+              min-width: 150px;
+                max-width: 150px;
+                padding: 0;
+                margin: 0;
+            }
+            th.notice,
+            td.notice {
+              width: 100px;
+              min-width: 100px;
+                max-width: 80px;
+                padding: 0;
+                margin: 0;
             }
         }
     </style>
@@ -243,8 +314,8 @@
     <label class="filter-label">Filter by Location:</label>
     <select id="locationFilter" class="filter-select">
         <option value="all">All Locations</option>
-        <option value="Karnataka">Bengaluru, KA</option>
-        <option value="Gujarat">Ahemadabad, GJ</option>
+        <option value="KA">Bengaluru, KA</option>
+        <option value="GJ">Ahemadabad, GJ</option>
         <option value="MH">MH</option>
         <!-- Add more locations as needed -->
     </select>
@@ -259,8 +330,8 @@
             <th class="location">State</th>
             <th class="City">City</th>
             <th class="experience">Experience</th>
-            <th class="salary">Salary Offered</th>
-            <th class="notice">Notice Period</th>
+            <th class="salary">Salary</th>
+            <th class="notice">NP</th>
             <th class="date-posted">Date posted</th>
             <th class="Industry">Industry</th>
             <th class="function">Job Function</th>
@@ -270,20 +341,20 @@
         <tr class="job-row">
             <td class="job-id">001</td>
             <td class="job-title"><a href="#">Talent Acquisition Specialist</a></td>
-            <td class="location">Karnataka</td>
+            <td class="location">KA</td>
             <td class="City">Bengaluru</td>
             <td class="experience">3-5 Years</td>
-            <td class="salary">5 - 10 LPA</td>
+            <td class="salary">5.5 - 10.5 LPA</td>
             <td class="notice">30 Days</td>
             <td class="date-posted">02-04-2024</td>
-            <td class="Industry">Information Technology, information Technology</td>
+            <td class="Industry">Information Technology</td>
             <td class="function">Human Resources, Sales</td>
         </tr>
         <tr class="job-row">
             <td class="job-id">002</td>
             <td class="job-title"><a href="#">Civil Design Engineer</a></td>
-            <td class="location">Gujarat</td>
-            <td class="City">Ahemadabad</td>
+            <td class="location">GJ</td>
+            <td class="City">Thiruvantapuram</td>
             <td class="experience">2-6 Years</td>
             <td class="salary">2 - 6 LPA</td>
             <td class="notice">30 Days</td>
@@ -296,7 +367,7 @@
             <td class="job-title"><a href="#">Business Development Executive - Property Tech</a></td>
             <td class="location">MH</td>
             <td class="City">Mumbai</td>
-            <td class="experience">1-3 Years</td>
+            <td class="experience">1.5 - 3.5 Years</td>
             <td class="salary">2 - 4 LPA</td>
             <td class="notice">30 Days</td>
             <td class="date-posted">02-04-2024</td>
