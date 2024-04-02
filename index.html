@@ -88,11 +88,13 @@
                 display: block; 
                 max-width: 320px;
                 align-items: center;
+                justify-content: center;
             }
             thead tr { 
                 position: absolute;
                 top: -9999px;
                 left: -9999px;
+                justify-content: center;
             }
             table{
               justify-content: center;
@@ -104,16 +106,14 @@
             }
 
             th.job-title, td.job-title {
-            width: 320px;
+            /* width: 320px; */
             white-space: wrap;
-            text-overflow: clip;
             max-width: 200px; /* Adjust maximum width for job title */
         }
 
         th.function, td.function,
             th.Industry, td.Industry {
             white-space: wrap;
-          text-overflow: clip;
             max-width: 200px; Adjust maximum width for job title
         }  
 
@@ -127,7 +127,8 @@
               border: 1px solid #ccc;
             justify-content: center;
           align-items: center;
-        align-content: center; }
+        align-content: center; 
+        margin-bottom: 20px;}
             td { 
                 border: none;
                 border-bottom: 1px solid #eee; 
@@ -153,6 +154,10 @@
             td:nth-of-type(7):before { content: "Date posted"; }
             td:nth-of-type(8):before { content: "Industry"; }
             td:nth-of-type(9):before { content: "Job Function"; }
+        }
+
+        #jobtable{
+          justify-content: center;
         }
     </style>
 </head>
