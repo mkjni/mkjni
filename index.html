@@ -31,6 +31,8 @@
         }
         th.job-title {
             text-align: left;
+            white-space: nowrap;
+            overflow: hidden;
         }
         th, td {
             font-size: 16px;
@@ -49,9 +51,9 @@
             border-radius: 5px;
         }
         th.job-title, td.job-title {
-            width: auto; /* Adjusted to auto width */
-            white-space: nowrap; /* Prevent job title from wrapping */
-            overflow: hidden; /* Hide overflow */
+            width: auto;
+            white-space: nowrap;
+            overflow: hidden;
         }
         th.job-id, td.job-id {
             width: 48px;
@@ -70,9 +72,6 @@
         }  
         th.notice, td.notice {
             width: 80px;
-        }  
-        th.date-posted, td.date-posted {
-            width: 100px;
         }  
         th.date-posted, td.date-posted {
             width: 100px;
@@ -103,7 +102,7 @@
                 border-bottom: 1px solid #eee; 
                 position: relative;
                 padding-left: 50%; 
-                white-space: normal;
+                white-space: nowrap;
                 text-align: left;
             }
             td:before { 
