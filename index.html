@@ -31,8 +31,6 @@
         }
         th.job-title {
             text-align: left;
-            white-space: nowrap;
-            overflow: hidden;
         }
         th, td {
             font-size: 16px;
@@ -54,15 +52,16 @@
             width: auto;
             white-space: nowrap;
             overflow: hidden;
+            max-width: 200px; /* Adjust maximum width for job title */
         }
         th.job-id, td.job-id {
-            width: 48px;
+            width: 60px; /* Reduced width for job ID */
         }
         td.job-title {
           text-align: left;
         }
         th.job-id, td.job-id {
-            width: 48px;
+            width: 60px; /* Reduced width for job ID */
         }
         th.experience, td.experience {
             width: 100px;
