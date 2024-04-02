@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Listings</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #ddd;
+        }
+        th.job-title {
+            text-align: left;
+        }
+        th, td {
+            font-size: 16px;
+        }
+        /* Filter Section */
+        .filter-container {
+            margin-bottom: 20px;
+        }
+        .filter-label {
+            font-weight: bold;
+        }
+        .filter-select {
+            padding: 5px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        th.job-title, td.job-title {
+            width: 250px;
+        }
+        th.job-id, td.job-id {
+            width: 48px;
+        }
+        td.job-title {
+          text-align: left;
+        }
+        th.job-id, td.job-id {
+            width: 48px;
+        }
+        th.state, td.state {
+            width: 10px;
+        }   
+        th.experience, td.experience {
+            width: 100px;
+        }  
+        th.salary, td.salary {
+            width: 80px;
+        }  
+        th.notice, td.notice {
+            width: 80px;
+        }  
+        th.date-posted, td.date-posted {
+            width: 100px;
+        }  
+        th.date-posted, td.date-posted {
+            width: 100px;
+        }  
+        th.Industry, td.Industry {
+            width: 150px;
+        }  
+        th.function, td.function {
+            width: 150px;
+        }  
+        th.City, td.City {
+            width: 150px;
+        }  
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- Filter Section -->
+<div class="filter-container">
+    <div class="filter-label">State:</div>
+    <label><input type="checkbox" class="state-filter" value="KA"> KA</label>
+    <label><input type="checkbox" class="state-filter" value="GJ"> GJ</label>
+    <label><input type="checkbox" class="state-filter" value="MH"> MH</label>
+</div>
+
+<div class="filter-container" id="experience-filter-container">
+    <div class="filter-label">Experience:</div>
+</div>
+
+<!-- Table Section -->
+<table id="jobTable">
+    <thead>
+        <tr>
+            <th class="job-id">Job ID</th>
+            <th class="job-title">Role/Job Title</th>
+            <th class="state">State</th>
+            <th class="City">City</th>
+            <th class="experience">Experience Required</th>
+            <th class="salary">Salary Offered</th>
+            <th class="notice">Notice Period</th>
+            <th class="date-posted">Date posted</th>
+            <th class="Industry">Industry</th>
+            <th class="function">Job Function</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td class="job-id">001</td>
+            <td class="job-title">Talent Acquisition Specialist</td>
+            <td class="state">KA</td>
+            <td>Bengaluru</td>
+            <td class="experience">3-5 Years</td>
+            <td class="salary">5 - 10 LPA</td>
+            <td class="notice">30 Days</td>
+            <td class="date-posted">02-04-2024</td>
+            <td class="Industry">Information Technology</td>
+            <td class="function">Human Resources, Sales</td>
+        </tr>
+        <tr>
+            <td class="job-id">002</td>
+            <td class="job-title">Civil Design Engineer</td>
+            <td class="state">GJ</td>
+            <td>Ahmedabad</td>
+            <td class="experience">2-6 Years</td>
+            <td class="salary">2 - 6 LPA</td>
+            <td class="notice">30 Days</td>
+            <td class="date-posted">02-04-2024</td>
+            <td class="Industry">Production</td>
+            <td class="function">Civil Design</td>
+        </tr>
+        <tr>
+            <td class="job-id">003</td>
+            <td class="job-title">Business Development Executive - Property Tech</td>
+            <td class="state">MH</td>
+            <td>Mumbai</td>
+            <td class="experience">1-3 Years</td>
+            <td class="salary">2 - 4 LPA</td>
+            <td class="notice">30 Days</td>
+            <td class="date-posted">02-04-2024</td>
+            <td class="Industry">Engineering</td>
+            <td class="function">Sales</td>
+        </tr>
+        <tr>
+          <td class="job-id">003</td>
+          <td class="job-title">Business Development Executive - Property Tech</td>
+          <td class="state">MH</td>
+          <td>Mumbai</td>
+          <td class="experience">1-3 Years</td>
+          <td class="salary">2 - 4 LPA</td>
+          <td class="notice">30 Days</td>
+          <td class="date-posted">02-04-2024</td>
+          <td class="Industry">Engineering</td>
+          <td class="function">Sales</td>
+      </tr>
+    </tbody>
+</table>
+
+<script>
+    // JavaScript for filtering
+    document.addEventListener("DOMContentLoaded", function() {
+        const stateCheckboxes = document.querySelectorAll('.state-filter');
+        const experienceFilterContainer = document.getElementById('experience-filter-container');
+        const experienceValues = new Set(); // Using Set to avoid duplicates
+        
+        // Extract experience values from table rows
+        const experienceCells = document.querySelectorAll('.experience');
+        experienceCells.forEach(cell => {
+            experienceValues.add(cell.textContent.trim());
+        });
+        
+        // Create experience filter checkboxes dynamically
+        experienceValues.forEach(exp => {
+            const label = document.createElement('label');
+            label.innerHTML = `<input type="checkbox" class="experience-filter" value="${exp}"> ${exp}`;
+            experienceFilterContainer.appendChild(label);
+        });
+        
+        // Define filtering function
+        function filterJobs() {
+            const selectedStates = Array.from(stateCheckboxes)
+                                    .filter(checkbox => checkbox.checked)
+                                    .map(checkbox => checkbox.value);
+            const selectedExperience = Array.from(document.querySelectorAll('.experience-filter'))
+                                        .filter(checkbox => checkbox.checked)
+                                        .map(checkbox => checkbox.value);
+            
+            const jobRows = document.querySelectorAll('#jobTable tbody tr');
+            
+            jobRows.forEach(row => {
+                const state = row.querySelector('td:nth-child(3)').textContent;
+                const experience = row.querySelector('.experience').textContent;
+                
+                const stateMatch = selectedStates.length === 0 || selectedStates.includes(state);
+                const experienceMatch = selectedExperience.length === 0 || selectedExperience.includes(experience);
+                
+                if (stateMatch && experienceMatch) {
+                    row.style.display = ''; // show the row
+                } else {
+                    row.style.display = 'none'; // hide the row
+                }
+            });
+        }
+        
+        // Add event listeners to filters
+        stateCheckboxes.forEach(checkbox => checkbox.addEventListener('change', filterJobs));
+        document.querySelectorAll('.experience-filter').forEach(checkbox => checkbox.addEventListener('change', filterJobs));
+    });
+</script>
+
+</body>
+</html>
 
