@@ -22,7 +22,6 @@
         }
         th {
             background-color: #f2f2f2;
-            width: auto; /* Adjust width here */
         }
         tr:nth-child(even) {
             background-color: #f2f2f2;
@@ -51,6 +50,9 @@
         }
         th.job-title, td.job-title {
             width: 250px;
+            white-space: nowrap; /* Prevent job title from wrapping */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Add ellipsis for overflow text */
         }
         th.job-id, td.job-id {
             width: 48px;
