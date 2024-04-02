@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job Listings</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -25,14 +25,14 @@
             font-family: 'Roboto', sans-serif;
         }
         th {
-            background-color: #2E8BC0; /* Change table heading color */
+            background-color: black; /* Change table heading color */
             color: #fff; /* Change text color */
         }
-        tr:nth-child(even) {
+        /* tr:nth-child(even) {
             background-color: #f2f2f2;
-        }
+        } */
         tr:hover {
-            background-color: #d5d5d5; /* Change row hover color */
+            background-color: #f2f2f2; /* Change row hover color */
         }
         th.job-title {
             text-align: left;
@@ -53,9 +53,20 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
-        th.job-title, td.job-title {
+        th.job-title,{
+            width: 300px;
+            font-size: 16px;
+        /* }
+        th.job-id, td.job-id {
+            width: 60px; /* Reduced width for job ID */
+        }
+        td.job-title {
             width: 300px;
             font-size: 17px;
+            font-weight: 400;
+            cursor: pointer;
+            color: blue; /* Change job title color */
+            text-decoration: none;
         /* }
         th.job-id, td.job-id {
             width: 60px; /* Reduced width for job ID */
@@ -89,12 +100,6 @@
         } 
 
         /* Hover effect and clickable job titles */
-        td.job-title {
-            cursor: pointer;
-            color: blue; /* Change job title color */
-            font-weight: 500;
-            text-decoration: none;
-        }
 
         tr.job-row:hover td.job-title {
             text-decoration: underline;
