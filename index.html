@@ -158,7 +158,7 @@
 
             tr {
                 width: 100%; /* Set fixed width for rows */
-                border-bottom: 0.1px solid #ccc;
+                border: 1px solid #ccc;
                 justify-content: center;
                 align-items: center;
                 align-content: center;
@@ -169,11 +169,15 @@
             }
 
             td {
-                border-bottom: 1px solid #eee; /* Change to create borders on all sides */
                 position: relative;
                 padding-left: 35%;
                 white-space: nowrap;
                 text-align: left;
+            }
+
+            th, td {
+              border: none;
+              border-bottom: 1px solid #ddd;
             }
 
             td:before {
