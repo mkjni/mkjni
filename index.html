@@ -1,587 +1,759 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Listings</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-        }
-
-
-        .hidden {
-            display: none;
-        }
-
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        /* Filter Section */
-        .filter-container {
-            width: auto;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            border: 1px solid #ddd; /* Add border */
-            padding: 10px; /* Add padding */
-            column-gap: 30px;
-            justify-content: center;
-        }
-
-        .filter-container select {
-            padding: 5px;
-            font-size: 16px;
-            border: 1px solid black;
-            border-radius: 10px;
-            border-radius: 5px;
-            min-width: 250px;
-            max-width: 250px;
-            margin-top: 3px;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .filter-container {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: column;
-                align-items: flex-start;
-                justify-content: left;
-                font-size: 14px;
-                align-items: center;
-                align-content: center;
-                width: auto;
-            }
-            .filter-label{
-                font-size: 14px;
-                justify-content: center;
-                width: auto;
-                text-align: center;
-                display: flex;
-                
-            }
-            .filter-container select {
-                width: 250px;
-                max-width: none;
-                justify-content: center;
-                margin-top: 5px;
-                font-size: 14px;
-                width: 250px;
-            }
-            .filter-location, .filter-experience, .filter-industry{
-                margin-bottom: 20px;
-                font-size: 14px;
-                justify-content: center;
-                width: auto;
-            }
-
-        }
-
-        th, td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: center;
-            font-family: 'Roboto', sans-serif;
-        }
-
-
-        th {
-            background-color: black; /* Change table heading color */
-            color: #fff; /* Change text color */
-        }
-
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-
-        tr:hover {
-            background-color: #d5d5d5; /* Change row hover color */
-        }
-
-
-        th.job-title {
-            text-align: left;
-            text-align: left;
-        }
-
-        
-        td.job-title {
-            text-align: left;
-            text-align: left;
-            color: blue;
-        }
-
-
-        th, td {
-            font-size: 16px;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-
-
-        tr:hover {
-            background-color: #d5d5d5; /* Change row hover color */
-        }
-
-
-
-        /* Filter Section */
-        .filter-container {
-            margin-bottom: 20px;
-        }
-
-
-        .filter-label {
-            font-weight: bold;
-            margin-left: 3px;
-            text-align: center;
-            margin-bottom: -16px;
-        }
-
-
-        .filter-select {
-            padding: 5px;
-            font-size: 16px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-
-        th.job-title,{
-            width: 300px;
-            font-size: 16px;
-            text-align: left;
-        }
-
-
-        /* Hover effect and clickable job titles */
-        tr.job-row:hover td.job-title {
-            text-decoration: underline;
-        }
-
-
-        td.job-title a {
-            text-decoration: none;
-            color: inherit;
-            text-align: left;
-        }
-
-
-        /* Make the entire row clickable */
-        tr.job-row {
-            cursor: pointer;
-        }
-
-
-        /* Mobile Styles */
-        @media only screen and (max-width: 600px) {
-            table,
-            thead,
-            tbody,
-            th,
-            td,
-            tr {
-                display: block;
-                max-width: auto;
-                align-items: center;
-                justify-content: center;
-            }
-
-
-            thead tr {
-                position: absolute;
-                top: -9999px;
-                left: -9999px;
-                justify-content: center;
-            }
-
-
-            table {
-                justify-content: center;
-            }
-
-
-            td,
-            th {
-                font-size: 14px;
-                max-width: 320px;
-                padding: 2px;
-                font-weight: normal;
-            }
-
-
-            th.job-title,
-            td.job-title {
-                width: auto;
-                white-space: wrap;
-                font-size: 14px;
-                font-style: normal;
-                font-weight: normal ;
-                max-width: auto;
-                /* Adjust maximum width for job title */
-            }
-
-
-            th.function,
-            td.function,
-            th.Industry,
-            td.Industry {
-                width: auto;
-                white-space: wrap;
-                max-width: auto;
-                /* Adjust maximum width for job title */
-            }
-
-
-            th.job-title {
-                display: block;
-                padding-left: 10px;
-                font-size: 14px;
-                width: 100%;
-            }
-
-
-            tr {
-                width: 100%; /* Set fixed width for rows */
-                border: 1px solid black;
-                justify-content: center;
-                align-items: center;
-                align-content: center;
-                align-items: center;
-                margin-bottom: 20px;
-                min-width: auto; /* Set minimum width for rows */
-                max-width: auto;
-                padding-top: 5px;
-                padding-bottom: 2px;
-                border-radius: 10px;
-            }
-
-
-            td {
-                position: relative;
-                padding-left: 35%;
-                white-space: nowrap;
-                text-align: left;
-            }
-
-
-            th, td {
-                border: none;
-                border-bottom: 1px solid #ddd;
-
-
-            }
-
-
-            td.salary, th.salary, td.experience, th.experience, td.location, th.location td.Experience, th.Experience, td.job-id, th.job-id, td.notice, th.notice, td.date-posted, th.date-posted, td.City, th.City {
-                white-space: wrap;
-                max-width: auto;
-                width: auto;
-            }
-
-
-            td:before {
-                position: absolute;
-                left: 6px;
-                width: auto; /* Change to 100% to underline the whole line */
-                padding-right: 10px;
-                white-space: nowrap;
-                text-align: left;
-
-
-            }
-
-
-            td:nth-of-type(1):before {
-                content: "Job ID";
-            }
-            td:nth-of-type(2):before {
-                content: "Role/Job Title";
-                color: initial; /* Retain default color */
-            }
-            td:nth-of-type(3):before {
-                content: "Industry";
-            }
-            td:nth-of-type(4):before {
-                content: "Job Function";
-            }
-            td:nth-of-type(5):before {
-                content: "State";
-            }
-            td:nth-of-type(6):before {
-                content: "City";
-            }
-            td:nth-of-type(7):before {
-                content: "Experience";
-            }
-            td:nth-of-type(8):before {
-                content: "Salary Offered";
-            }
-            td:nth-of-type(9):before {
-                content: "Notice Period";
-            }
-            td:nth-of-type(10):before {
-                content: "Date posted";
-            }
-        }
-
-
-        /* Increase width of Industry column in desktop view */
-        @media only screen and (min-width: 601px) {
-            th.Industry,
-            td.Industry {
-                min-width: 100px;
-                max-width: 100px;
-                padding: 0;
-                margin: 0;
-            }
-            th.function,
-            td.function {
-                min-width: 12px;
-                max-width: 120px;
-                padding: 0;
-                margin: 0;
-            }
-            th.location,
-            td.location {
-                max-width: 40px;
-                padding: 0;
-                margin: 0;
-            }
-            th.job-id,
-            td.job-id{
-                max-width: 50px;
-                padding: 0;
-                margin: 0;
-            }
-            th.date-posted,
-            td.date-posted{
-                max-width: 80px;
-                padding: 0;
-                margin: 0;
-            }
-            th.salary,
-            td.salary{
-                min-width: 100px;
-                max-width: 125px;
-                padding: 0;
-                margin: 0;
-            }
-            th.experience,
-            td.experience{
-                max-width: 120px;
-                padding: 0;
-                margin: 0;
-            }
-            th.City,
-            td.City {
-                width: 150px;
-                min-width: 150px;
-                max-width: 150px;
-                padding: 0;
-                margin: 0;
-            }
-            th.notice,
-            td.notice {
-                width: 100px;
-                min-width: 100px;
-                max-width: 80px;
-                padding: 10;
-                margin: 10;
-            }
-            th.job-title,
-            td.job-title {
-                width: 380px;
-                min-width: 380px;
-                max-width: 380px;
-                padding: 10;
-                margin: 10;
-            }
-
-            td.job-title{
-                font-size: 17px;
-                font-weight: 500;
-            }
-        }
-    </style>
-</head>
-<body>
-
-<!-- Filter Section -->
-<div class="filter-container">
-    <!-- Existing filter elements for location, experience, and industry -->
-    <div class="filter-location">
-        <label class="filter-label">Filter Jobs by State</label><br>
-        <select id="locationFilter" class="filter-select">
-            <option value="all">All States</option>
-            <option value="KA">Karnataka</option>
-            <option value="GJ">Gujarat</option>
-            <option value="MH">Maharashtra</option>
-            <!-- Add more locations as needed -->
-        </select>
-    </div>
-    <div class="filter-experience">
-        <label class="filter-label">Filter Jobs by Experience Levels</label><br>
-        <select id="experienceFilter" class="filter-select">
-            <option value="all">All Experience Levels</option>
-            <option value="0-2">0-2 Years - Junior Level</option>
-            <option value="2-5">2-5 years - Associate Level</option>
-            <option value="5-8">5-8 years - Mid Level</option>
-            <option value="8+">8+ years - Senior Level</option>
-        </select>
-    </div>
-    <div class="filter-industry">
-        <label class="filter-label">Filter Jobs by Industry</label><br>
-        <select id="industryFilter" class="filter-select">
-            <option value="all">All Industries</option>
-            <option value="Engineering">Engineering</option>
-            <!-- Add more industries as needed -->
-        </select>
-    </div>
-
-    <!-- New filter for job function -->
-    <div class="filter-job-function">
-        <label class="filter-label">Filter Jobs by Job Function</label><br>
-        <select id="functionFilter" class="filter-select">
-            <option value="all">All Job Functions</option>
-            <option value="Sales">Sales</option>
-            <!-- Add more job functions as needed -->
-        </select>
-    </div>
-</div>
-
-
-<!-- Table Section -->
-<table id="jobTable">
-    <thead>
-        <tr>
-            <th class="job-id">Job ID</th>
-            <th class="job-title">Role/Job Title</th>
-            <th class="Industry">Industry</th>
-            <th class="function">Job Function</th>
-            <th class="location">State</th>
-            <th class="City">City</th>
-            <th class="experience">Experience</th>
-            <th class="salary">Salary</th>
-            <th class="notice">Notice Period</th>
-            <th class="date-posted">Date posted</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="job-row">
-            <td class="job-id">001</td>
-            <td class="job-title"><a href="#">Talent Acquisition Specialist</a></td>
-            <td class="Industry">Engineering</td>
-            <td class="function">Sales</td>
-            <td class="location">KA</td>
-            <td class="City">Bengaluru</td>
-            <td class="experience" data-experience="2-5" >3-5 Years</td>
-            <td class="salary">5.5 - 10.5 LPA</td>
-            <td class="notice">30 Days</td>
-            <td class="date-posted">02-04-2024</td>
-        </tr>
-        <tr class="job-row">
-            <td class="job-id">002</td>
-            <td class="job-title"><a href="#">Civil Design Engineer</a></td>
-            <td class="Industry">Engineerizxg</td>
-            <td class="function">Sales</td>
-            <td class="location">GJ</td>
-            <td class="City">Thiruvantapuram</td>
-            <td class="experience" data-experience="0-2, 2-5">2-6 Years</td>
-            <td class="salary">2 - 6 LPA</td>
-            <td class="notice">30 Days</td>
-            <td class="date-posted">02-04-2024</td>
-        </tr>
-        <tr class="job-row">
-            <td class="job-id">003</td>
-            <td class="job-title"><a href="#">Business Development Executive - Property Tech</a></td>
-            <td class="Industry">Engineerizxzng</td>
-            <td class="function">Salases</td>
-            <td class="location">MH</td>
-            <td class="City">Mumbai</td>
-            <td class="experience" data-experience="0-2, 2-5">1.5 - 3.5 Years</td>
-            <td class="salary">2 - 4 LPA</td>
-            <td class="notice">30 Days</td>
-            <td class="date-posted">02-04-2024</td>
-        </tr>
-        <tr class="job-row">
-            <td class="job-id">004</td>
-            <td class="job-title"><a href="https://www.jobnexusindia.com">Business Development Executive - Property Tech</a></td>
-            <td class="Industry">Engineering</td>
-            <td class="function">Salases</td>
-            <td class="location">MH</td>
-            <td class="City">Mumbai</td>
-            <td class="experience" data-experience="0-2, 2-5">1-3 Years</td>
-            <td class="salary">2 - 4 LPA</td>
-            <td class="notice">30 Days</td>
-            <td class="date-posted">02-04-2024</td>
-        </tr>
-    </tbody>
-</table>
-
-<script>
-    document.getElementById("locationFilter").addEventListener("change", function() {
-        filterJobs();
-    });
-
-    document.getElementById("experienceFilter").addEventListener("change", function() {
-        filterJobs();
-    });
-
-    document.getElementById("industryFilter").addEventListener("change", function() {
-        filterJobs();
-    });
-
-    document.getElementById("functionFilter").addEventListener("change", function() {
-        filterJobs();
-    });
-
-    function filterJobs() {
-        var selectedLocation = document.getElementById("locationFilter").value;
-        var selectedExperience = document.getElementById("experienceFilter").value;
-        var selectedIndustry = document.getElementById("industryFilter").value;
-        var selectedFunction = document.getElementById("functionFilter").value;
-        var tableRows = document.querySelectorAll("#jobTable tbody tr");
-
-        tableRows.forEach(function(row) {
-            var locationCell = row.querySelector(".location");
-            var experienceCell = row.querySelector(".experience");
-            var industryCell = row.querySelector(".Industry");
-            var functionCell = row.querySelector(".function");
-
-            var experienceData = experienceCell.dataset.experience.split(","); // Split experience levels
-
-            var showRow = false;
-
-            experienceData.forEach(function(exp) {
-                if (exp.trim() === selectedExperience || selectedExperience === "all") {
-                    showRow = true;
-                }
-            });
-
-            if ((selectedLocation === "all" || locationCell.textContent.trim() === selectedLocation) && 
-                (selectedIndustry === "all" || industryCell.textContent.trim() === selectedIndustry) &&
-                (selectedFunction === "all" || functionCell.textContent.trim() === selectedFunction) &&
-                showRow) {
-                row.classList.remove('hidden');
-            } else {
-                row.classList.add('hidden');
-            }
-        });
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: auto;
+  box-sizing: border-box;
+  border: none;
+  /* font-family: Arial, Helvetica, sans-serif; */
+ }
+
+ /* Navigation bar */
+nav{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  background: white;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 5%;
+  padding-right: 5%;
+  border-bottom: 1px solid black;
+}
+nav .logo{
+  color: black;
+  font-size: 28px;
+  font-family: 'arima madurai';
+  font-weight: bold;
+}
+
+.logo{
+  text-decoration: none;}
+
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  background: white;
+  column-gap: 20px;
+}
+
+a.active{
+ border-bottom: 5px solid #15c ;
+ border-radius: 0%;
+}
+
+nav a{
+  padding-bottom: 5px;
+  padding-top: 5px;
+
+}
+
+nav ul li a{
+  color: black;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  /* padding: 40px 15px 15px; */
+  border-radius: 5px;
+  letter-spacing: 1px;
+  /* transition: all 0.3s ease; */
+  font-family: Arial, Helvetica, sans-serif; 
+}
+nav .menu-btn i{
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+    padding-top: 5.5px;
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+
+
+  nav ul li a {
+    color: black;
+    background: white;
     }
-</script>
 
 
 
+@media (max-width: 1000px){
+  nav{
+    padding: 0 30px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul{
+    position: fixed;
+    top: 50px;
+    left: -100%;
+    background: white;
+    height: 100vh;
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0.3s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 30px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
 
-</body>
-</html>
+    nav ul li a {
+    color: black;
+    background: white;
+    }
+
+    nav ul li a.active{
+      background: white;
+        color: #1c4587;
+        font-weight: bold;
+        border: white;
+    }
+
+    nav .logo {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 1.5px;
+      margin-top: 4px;
+  }
+  nav{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 50px;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+/* 
+End of Navigation Bar */
+
+
+
+.hidden {
+  display: none;
+}
+
+
+table {
+  width: auto;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+/* Filter Section */
+.filter-container {
+  width: autoA;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  padding: 10px; /* Add padding */
+  column-gap: 30px;
+  justify-content: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.filter-container select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 250px;
+  max-width: 250px;
+  margin-top: 3px;
+}
+
+@media only screen and (max-width: 600px) {
+  .filter-container {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: left;
+      font-size: 14px;
+      align-items: center;
+      align-content: center;
+      width: auto;
+  }
+  .filter-label{
+      font-size: 14px;
+      justify-content: center;
+      width: auto;
+      text-align: center;
+      display: flex;
+      
+  }
+  .filter-container select {
+      width: 250px;
+      max-width: none;
+      justify-content: center;
+      margin-top: 5px;
+      font-size: 14px;
+      width: 250px;
+  }
+  .filter-location, .filter-experience, .filter-industry{
+      margin-bottom: 20px;
+      font-size: 14px;
+      justify-content: center;
+      width: auto;
+  }
+
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+th {
+  background-color: black; /* Change table heading color */
+  color: white; /* Change text color */
+}
+
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+tr:hover {
+  background-color: #d5d5d5; /* Change row hover color */
+}
+
+
+th.job-title {
+  text-align: left;
+  text-align: left;
+}
+
+
+td.job-title {
+  text-align: left;
+  text-align: left;
+  color: blue;
+}
+
+
+th, td {
+  font-size: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+tr:hover {
+  background-color: #d5d5d5; /* Change row hover color */
+}
+
+
+
+/* Filter Section */
+.filter-container {
+  margin-bottom: 20px;
+}
+
+
+.filter-label {
+  font-weight: bold;
+  margin-left: 3px;
+  text-align: center;
+  margin-bottom: -16px;
+}
+
+
+.filter-select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+
+th.job-title,{
+  width: 300px;
+  font-size: 16px;
+  text-align: left;
+}
+
+
+/* Hover effect and clickable job titles */
+tr.job-row:hover td.job-title {
+  text-decoration: underline;
+}
+
+
+td.job-title a {
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+}
+
+
+/* Make the entire row clickable */
+tr.job-row {
+  cursor: pointer;
+}
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+      display: block;
+      max-width: auto;
+      align-items: center;
+      justify-content: center;
+  }
+
+
+  thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      justify-content: center;
+  }
+
+
+  table {
+      justify-content: center;
+  }
+
+
+  td,
+  th {
+      font-size: 14px;
+      max-width: 320px;
+      padding: 2px;
+      font-weight: normal;
+  }
+
+
+  th.job-title,
+  td.job-title {
+      width: auto;
+      white-space: wrap;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: normal ;
+      max-width: auto;
+      /* Adjust maximum width for job title */
+  }
+
+
+  th.function,
+  td.function,
+  th.Industry,
+  td.Industry {
+      width: auto;
+      white-space: wrap;
+      max-width: auto;
+      /* Adjust maximum width for job title */
+  }
+
+
+  th.job-title {
+      display: block;
+      padding-left: 10px;
+      font-size: 14px;
+      width: 100%;
+  }
+
+
+  tr {
+      width: 100%; /* Set fixed width for rows */
+      border: 1px solid black;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      min-width: auto; /* Set minimum width for rows */
+      max-width: auto;
+      padding-top: 5px;
+      padding-bottom: 2px;
+      border-radius: 10px;
+  }
+
+
+  td {
+      position: relative;
+      padding-left: 35%;
+      white-space: nowrap;
+      text-align: left;
+  }
+
+
+  th, td {
+      border: none;
+      /* border-bottom: 1px solid #ddd; */
+  }
+
+
+  td.salary, th.salary, td.experience, th.experience, td.location, th.location td.Experience, th.Experience, td.job-id, th.job-id, td.notice, th.notice, td.date-posted, th.date-posted, td.City, th.City {
+      white-space: wrap;
+      max-width: auto;
+      width: auto;
+  }
+
+
+  td:before {
+      position: absolute;
+      left: 6px;
+      width: 100%; /* Change to 100% to underline the whole line */
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align: left;
+
+
+  }
+
+
+  td:nth-of-type(1):before {
+      content: "Job ID";
+  }
+  td:nth-of-type(2):before {
+      content: "Role/Job Title";
+      color: initial; /* Retain default color */
+  }
+  td:nth-of-type(3):before {
+      content: "Industry";
+  }
+  td:nth-of-type(4):before {
+      content: "Job Function";
+  }
+  td:nth-of-type(5):before {
+      content: "State";
+  }
+  td:nth-of-type(6):before {
+      content: "City";
+  }
+  td:nth-of-type(7):before {
+      content: "Experience";
+  }
+  td:nth-of-type(8):before {
+      content: "Salary Offered";
+  }
+  td:nth-of-type(9):before {
+      content: "Notice Period";
+  }
+  td:nth-of-type(10):before {
+      content: "Date posted";
+  }
+}
+
+
+/* Increase width of Industry column in desktop view */
+@media only screen and (min-width: 601px) {
+  th.Industry,
+  td.Industry {
+      min-width: 100px;
+      max-width: 100px;
+      padding: 0;
+      margin: 0;
+  }
+  th.function,
+  td.function {
+      min-width: 12px;
+      max-width: 120px;
+      padding: 0;
+      margin: 0;
+  }
+  th.location,
+  td.location {
+      max-width: 40px;
+      padding: 0;
+      margin: 0;
+  }
+  th.job-id,
+  td.job-id{
+      max-width: 50px;
+      padding: 0;
+      margin: 0;
+  }
+  th.date-posted,
+  td.date-posted{
+      max-width: 80px;
+      padding: 0;
+      margin: 0;
+  }
+  th.salary,
+  td.salary{
+      min-width: 100px;
+      max-width: 125px;
+      padding: 0;
+      margin: 0;
+  }
+  th.experience,
+  td.experience{
+      max-width: 120px;
+      padding: 0;
+      margin: 0;
+  }
+  th.City,
+  td.City {
+      width: 150px;
+      min-width: 150px;
+      max-width: 150px;
+      padding: 0;
+      margin: 0;
+  }
+  th.notice,
+  td.notice {
+      width: 100px;
+      min-width: 100px;
+      max-width: 80px;
+      padding: 10;
+      margin: 10;
+  }
+  th.job-title,
+  td.job-title {
+      width: 380px;
+      min-width: 380px;
+      max-width: 380px;
+      padding: 10;
+      margin: 10;
+  }
+
+  td.job-title{
+      font-size: 17px;
+      font-weight: 500;
+  }
+}
+
+
+
+h1{
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 70px;
+  text-align: center;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-left: 4.5%;
+  margin-right: 4.5%;
+  padding: 20px;
+}
+
+@media (min-width: 250px) and (max-width: 480px){
+  h1{
+    font-size: 26px;
+    padding: 10;
+    margin: 10;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1200px){
+
+  h1{
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 36px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 25px;
+  }
+  
+}
+
+a {
+  text-decoration: none;
+  font-style: normal;
+}
+
+/* below item is related to footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  position: absolute;
+  margin-top: 30px;
+  top: 100%;
+  width: 100%;
+  color: #000;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  column-gap: 33px;
+  background-color: white;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+}
+
+@media only screen and (max-width: 1200px) {
+  .footer {
+    position: relative;
+    padding: 20px 10px; /* Adjust padding for mobile view */
+    margin-top: auto;
+    justify-content: left;
+  }
+  html {
+      position: relative;
+      min-height: 100%;
+  }
+
+  body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
+      margin: 0;
+      padding: 0;
+  }
+    
+  .icon-container {
+    text-align: left; /* Center align the icons for mobile view */
+    margin-left: 8px; 
+    margin-top: -3px;
+  }
+  p.footerheading {
+      font-size: 16px;
+      margin-bottom: 4px;
+  }
+  p.footercontent {
+      font-size: 14px;
+      margin-top: 4px;
+  }
+  a.icon-link{
+    font-size: 2rem;
+  }
+  a.icon-link2{
+    font-size: 2rem;
+  }
+}
+
+.footerheading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  justify-content: center;
+  margin: 10px;
+  color: black;
+  line-height: normal;
+  }
+   
+.footercontent {
+  font-family: 'inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-align: left;
+  margin: 10px;
+  color: black;
+ }
+
+ .box1, .box2, .box3 {
+  box-sizing: border-box; /* added 'border-box' to include padding and border in the box's total width and height */
+  width: 100%;
+  justify-content: space-around; (for the icon-container)
+ }
+
+ .icon-link, .icon-link2 {
+  font-size: 1rem;
+  }
+ 
+.icon-link, .icon-link2 {
+  /* margin: 5px; */
+  color: black;
+  text-decoration: none;
+  font-size: 2.5rem;
+ }
+ 
+.icon-link:hover {
+  color: #007bff;
+ }
+
+.icon-link2:hover{
+  color: green;
+}   
+ 
+.box3 {
+  width: 430px;
+}
+.box1 {
+      width: 460px;
+}
+.box2 {
+      width: 440px;
+}
+
+.content-wrapper { flex: 1; padding: 0 30px; } 
+
+.icon-container{
+  text-align: left;
+  margin-left: 12px;
+}
+/*end of header and footer*/
