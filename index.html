@@ -24,7 +24,7 @@
 
         /* Filter Section */
         .filter-container {
-            width: 580px;
+            width: autoA;
             margin-bottom: 20px;
             display: flex;
             align-items: center;
@@ -73,7 +73,7 @@
                 font-size: 14px;
                 width: 250px;
             }
-            .filter-location{
+            .filter-location, .filter-experience, .filter-industry{
                 margin-bottom: 20px;
                 font-size: 14px;
                 justify-content: center;
@@ -416,16 +416,16 @@
 </head>
 <body>
 
-
 <!-- Filter Section -->
 <div class="filter-container">
+    <!-- Existing filter elements for location, experience, and industry -->
     <div class="filter-location">
         <label class="filter-label">Filter Jobs by State</label><br>
         <select id="locationFilter" class="filter-select">
             <option value="all">All States</option>
             <option value="KA">Karnataka</option>
             <option value="GJ">Gujarat</option>
-            <option value="MH">Maharastra</option>
+            <option value="MH">Maharashtra</option>
             <!-- Add more locations as needed -->
         </select>
     </div>
@@ -437,6 +437,24 @@
             <option value="2-5">2-5 years - Associate Level</option>
             <option value="5-8">5-8 years - Mid Level</option>
             <option value="8+">8+ years - Senior Level</option>
+        </select>
+    </div>
+    <div class="filter-industry">
+        <label class="filter-label">Filter Jobs by Industry</label><br>
+        <select id="industryFilter" class="filter-select">
+            <option value="all">All Industries</option>
+            <option value="Engineering">Engineering</option>
+            <!-- Add more industries as needed -->
+        </select>
+    </div>
+
+    <!-- New filter for job function -->
+    <div class="filter-job-function">
+        <label class="filter-label">Filter Jobs by Job Function</label><br>
+        <select id="functionFilter" class="filter-select">
+            <option value="all">All Job Functions</option>
+            <option value="Sales">Sales</option>
+            <!-- Add more job functions as needed -->
         </select>
     </div>
 </div>
@@ -474,7 +492,7 @@
         <tr class="job-row">
             <td class="job-id">002</td>
             <td class="job-title"><a href="#">Civil Design Engineer</a></td>
-            <td class="Industry">Engineering</td>
+            <td class="Industry">Engineerizxg</td>
             <td class="function">Sales</td>
             <td class="location">GJ</td>
             <td class="City">Thiruvantapuram</td>
@@ -486,8 +504,8 @@
         <tr class="job-row">
             <td class="job-id">003</td>
             <td class="job-title"><a href="#">Business Development Executive - Property Tech</a></td>
-            <td class="Industry">Engineering</td>
-            <td class="function">Sales</td>
+            <td class="Industry">Engineerizxzng</td>
+            <td class="function">Salases</td>
             <td class="location">MH</td>
             <td class="City">Mumbai</td>
             <td class="experience" data-experience="0-2, 2-5">1.5 - 3.5 Years</td>
@@ -499,7 +517,7 @@
             <td class="job-id">004</td>
             <td class="job-title"><a href="https://www.jobnexusindia.com">Business Development Executive - Property Tech</a></td>
             <td class="Industry">Engineering</td>
-            <td class="function">Sales</td>
+            <td class="function">Salases</td>
             <td class="location">MH</td>
             <td class="City">Mumbai</td>
             <td class="experience" data-experience="0-2, 2-5">1-3 Years</td>
@@ -510,32 +528,39 @@
     </tbody>
 </table>
 
-
 <script>
     document.getElementById("locationFilter").addEventListener("change", function() {
         filterJobs();
     });
 
-
     document.getElementById("experienceFilter").addEventListener("change", function() {
         filterJobs();
     });
 
+    document.getElementById("industryFilter").addEventListener("change", function() {
+        filterJobs();
+    });
+
+    document.getElementById("functionFilter").addEventListener("change", function() {
+        filterJobs();
+    });
 
     function filterJobs() {
         var selectedLocation = document.getElementById("locationFilter").value;
         var selectedExperience = document.getElementById("experienceFilter").value;
+        var selectedIndustry = document.getElementById("industryFilter").value;
+        var selectedFunction = document.getElementById("functionFilter").value;
         var tableRows = document.querySelectorAll("#jobTable tbody tr");
-
 
         tableRows.forEach(function(row) {
             var locationCell = row.querySelector(".location");
             var experienceCell = row.querySelector(".experience");
+            var industryCell = row.querySelector(".Industry");
+            var functionCell = row.querySelector(".function");
+
             var experienceData = experienceCell.dataset.experience.split(","); // Split experience levels
 
-
             var showRow = false;
-
 
             experienceData.forEach(function(exp) {
                 if (exp.trim() === selectedExperience || selectedExperience === "all") {
@@ -543,8 +568,10 @@
                 }
             });
 
-
-            if ((selectedLocation === "all" || locationCell.textContent.trim() === selectedLocation) && showRow) {
+            if ((selectedLocation === "all" || locationCell.textContent.trim() === selectedLocation) && 
+                (selectedIndustry === "all" || industryCell.textContent.trim() === selectedIndustry) &&
+                (selectedFunction === "all" || functionCell.textContent.trim() === selectedFunction) &&
+                showRow) {
                 row.classList.remove('hidden');
             } else {
                 row.classList.add('hidden');
@@ -552,8 +579,6 @@
         });
     }
 </script>
-
-
 
 
 
