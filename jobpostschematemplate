@@ -1,0 +1,93 @@
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "JobPosting",
+"title": "Executive / Senior Executive - Treasury",
+"description": "<p><strong>Role:</strong> Executive or Senior Executive - Treasury</p>
+<p><strong>Job ID:</strong> 0038</p>
+<p><strong>Industry:</strong> Manufacturing, B2B and Retail.</p>
+<p><strong>Work Location:</strong> Bandra East, Mumbai, Maharashtra</p>
+<p><strong>Experience Required:</strong> 3 - 5 Years</p>
+<p><strong>Education Qualification:</strong> Bcom + MBA in Finance</p>
+<p><strong>Salary Offered:</strong> Best in the industry.</p>
+<br>
+<p><strong>Requirements:</strong></p>
+<ul>
+    <li>Must have 3 to 5 years of experience in a treasury role.</li>
+    <li>Work experience in relevant industry.</li>
+    <li>Experience in cash flow and income projections</li>
+    <li>Experience in internal audit of investments</li>
+    <li>Experience in accounting of all transactions of investments</li>
+    <li>Experience in IRR reporting and portfolio review</li>
+</ul>
+<br>
+<p><strong>Responsibilities:</strong></p>
+<ul>
+    <li>Cash flow projections for all individuals/Entities.</li>
+    <li>Income projections, monitoring, and quarterly review of the same for all individuals/Entities</li>
+    <li>Internal audit of investments purchase/sale prices and costs/expenses associated with it for all individuals/Entities.</li>
+    <li>Monthly verification of all investments with mutual fund statements/Demat statements and balance confirmations</li>
+    <li>Accounting for all transactions of investments/others for all individuals/Entities</li>
+    <li>Internal Rate of Return (IRR) reporting and portfolio review</li>
+    <li>Transactions execution for all individuals/Entities</li>
+    <li>Proper agreements/Documentation to be filed/maintained for all individuals/Entities.</li>
+</ul>
+<br>
+<p><strong>Note:</strong> Candidates residing in Mumbai, and nearby locations are preferred.</p>
+<br>
+<p><strong>Mandatory Skills Required:</strong> Cash Flow Projection, Internal Rate of Return (IRR), Treasury</p>
+<p><strong>Notice Period:</strong> 30 days</p>
+<p><strong>Interview Process:</strong> Telephonic, Virtual, F2F Interview and Assessment Test.</p>
+<p><strong>Work Mode:</strong> Work From Office</p>",
+    "url": "https://www.jobnexusindia.com/jd/0038.html",
+    "identifier": {
+  "@type": "PropertyValue",
+  "name": "Job ID",
+  "value": "0038"
+},
+"datePosted": "2024-04-04",
+"validThrough": "2024-06-04",
+"employmentType": "FULL_TIME",
+"hiringOrganization": {
+  "@type": "Organization",
+  "name": "Job Nexus India",
+  "sameAs": "https://www.jobnexusindia.com",
+  "logo": "https://www.jobnexusindia.com/job-nexus-india-job-post-logo.png"
+},
+"qualifications": "Any Graduate",
+"educationRequirements" : {
+    "@type" : "EducationalOccupationalCredential",
+    "credentialCategory" : "bachelor degree"
+},
+"jobLocation": {
+    "@type": "Place",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bandra East, Mumbai, Maharastra",
+      "addressLocality": "Mumbai",
+      "addressRegion": "Maharastra",
+      "postalCode": "400051",
+      "addressCountry": "IN"
+    }
+  },
+        "occupationalRequirements": {
+    "@context": "https://schema.org",
+    "@type": "OccupationalRequirements",
+    "requiredExperienceLevel": {
+      "@type": "QuantitativeValue",
+      "minValue": 3,
+      "maxValue": 5,
+      "unitText": "years"
+    }
+  },
+  "baseSalary": {
+    "@type": "MonetaryAmount",
+    "currency": "INR",
+      "value": {
+      "@type": "QuantitativeValue",
+      "value": "To be discussed",
+      "unitText": "YEAR"
+      }
+  }
+    }
+</script>
