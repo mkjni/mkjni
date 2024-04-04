@@ -1,1 +1,171 @@
+* {
+  margin: 0;
+  background: white;
+  padding: 0;
+  height: auto;
+  width: auto;
+  box-sizing: border-box;
+  border: none;
+  /* font-family: Arial, Helvetica, sans-serif; */
+}
 
+
+
+table {
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+
+th, td {
+  border: 1px solid #666666;
+  padding: 5px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+
+th {
+  background-color: black; /* Change table heading color */
+  color: white; /* Change text color */
+}
+
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+tr:hover {
+  background-color: #d5d5d5; /* Change row hover color */
+}
+
+
+th.job-title {
+  text-align: left;
+  text-align: left;
+}
+
+
+td.job-title {
+  text-align: left;
+  text-align: left;
+  color: blue;
+}
+
+
+th, td {
+  font-size: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+tr:hover {
+  background-color: #d5d5d5; /* Change row hover color */
+}
+
+
+
+
+th.job-title,{
+  width: 300px;
+  font-size: 16px;
+  text-align: left;
+}
+
+
+/* Hover effect and clickable job titles */
+tr.job-row:hover td.job-title {
+  text-decoration: underline;
+}
+
+
+td.job-title a {
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+}
+
+
+/* Make the entire row clickable */
+tr.job-row {
+  cursor: pointer;
+}
+
+
+
+h1{
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 50px;
+  text-align: center;
+  justify-content: center;
+  margin-left: 4.5%;
+  margin-right: 4.5%;
+  padding: 20px;
+}
+
+h2{
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+  margin-left: 4.5%;
+  margin-right: 4.5%;
+  padding: 20px;
+}
+
+
+@media print {
+  body {
+    margin: 0; /* Resetting margins for printing */
+  }
+  
+  table {
+    width: 100%; /* Expand table width to fit the printed page */
+    margin: 0 auto; /* Center-align the table */
+    height: auto !important; /* Ensure table height adjusts to content */
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  
+  th, td {
+    font-size: 12px; /* Adjust font size for printing */
+  }
+  
+  h1 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 35px; /* Adjust heading size for printing */
+    margin: 0; /* Remove margin for heading */
+    page-break-after: avoid; /* Prevent page break after heading */
+  }
+
+  h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 35px; /* Adjust heading size for printing */
+    margin: 0; /* Remove margin for heading */
+    page-break-after: avoid; /* Prevent page break after heading */
+    font-size: 20px;
+  }
+  
+  @page {
+    size: auto; /* Use auto page size */
+    margin: 10mm; /* Set margins for the printed page */
+  }
+  
+  /* Adjust container height */
+  body, html {
+    height: auto !important; /* Ensure body and html height adjusts to content */
+  }
+}
