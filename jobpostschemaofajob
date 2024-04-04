@@ -1,0 +1,86 @@
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    "title": "Team Leader - BFSI",
+    "description": "<p><strong>Role:</strong> Team Leader - BFSI</p>
+    <p><strong>Industry:</strong> BFSI</p>
+    <p><strong>Work Location:</strong> Hyderabad, Telangana.</p>
+    <p><strong>Experience Required:</strong> 2-6 Years.</p>
+    <p><strong>Salary Offered:</strong> 4 - 5.5 LPA</p>
+    <p><strong>Education Qualification:</strong> Graduate / Post Graduate</p>
+    <br>
+    <p>We are seeking candidates for a well-established financial services firm, renowned for its expertise in the BFSI industry. Our company prioritizes integrity and client satisfaction, offering innovative investment solutions. Join our team to be part of a trusted leader in the industry.</p>
+    <br>
+    <p><strong>Requirements:</strong></p>
+    <ul>
+        <li>Experience in Team Handling and mentoring a team of sales agents.</li>
+        <li>Experience in Auditing calls of team members.</li>
+        <li>Experience in conducting mock calls with team members.</li>
+        <li>Knowledge of Trading, Brokering, or any other investment products is a must.</li>
+    </ul>
+    <br>
+    <p><strong>Responsibilities:</strong></p>
+    <ul>
+        <li>Team handling and mentoring for account opening and selling investment products.</li>
+        <li>Guiding the team to generate referrals from existing customers.</li>
+        <li>Conducting mock calls with team members.</li>
+        <li>Auditing calls of team members.</li>
+        <li>Organizing training sessions for team members.</li>
+    </ul>
+    <br>
+    <p><strong>Work Mode:</strong> Work From Office</p>
+    <p><strong>Working Day:</strong> 6 Days a week</p>
+    <p><strong>Notice Period:</strong> Immediate Joiners Preferred</p>",
+        "url": "https://www.jobnexusindia.com/jd/0037.html",
+        "identifier": {
+      "@type": "PropertyValue",
+      "name": "Job ID",
+      "value": "0037"
+    },
+    "datePosted": "2024-04-04",
+    "validThrough": "2024-06-04",
+    "employmentType": "FULL_TIME",
+    "hiringOrganization": {
+      "@type": "Organization",
+      "name": "Job Nexus India",
+      "sameAs": "https://www.jobnexusindia.com",
+      "logo": "https://www.jobnexusindia.com/job-nexus-india-job-post-logo.png"
+    },
+    "qualifications": "Any Graduate",
+    "educationRequirements" : {
+        "@type" : "EducationalOccupationalCredential",
+        "credentialCategory" : "bachelor degree"
+    },
+    "jobLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hyderbad, Telangana",
+          "addressLocality": "Hyderabad",
+          "addressRegion": "Telangana",
+                "postalCode": "500001",
+          "addressCountry": "IN"
+        }
+      },
+            "occupationalRequirements": {
+        "@context": "https://schema.org",
+        "@type": "OccupationalRequirements",
+        "requiredExperienceLevel": {
+          "@type": "QuantitativeValue",
+          "minValue": 2,
+          "maxValue": 6,
+          "unitText": "years"
+        }
+      },
+      "baseSalary": {
+        "@type": "MonetaryAmount",
+        "currency": "INR",
+          "value": {
+          "@type": "QuantitativeValue",
+          "value": "To be discussed",
+          "unitText": "YEAR"
+          }
+      }
+    }
+    </script>
