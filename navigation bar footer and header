@@ -1,0 +1,347 @@
+* {
+  margin: 0;
+  background: white;
+  padding: 0;
+  height: auto;
+  width: auto;
+  box-sizing: border-box;
+  border: none;
+  /* font-family: Arial, Helvetica, sans-serif; */
+ }
+
+nav{
+  display: flex;
+  width: 100%;
+  background: white;
+  padding-left: 5%;
+  padding-right: 5%;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid black;
+  height: 50px;
+}
+nav .logo{
+  color: black;
+  font-size: 25px;
+  font-family: 'arima madurai';
+  font-weight: bold;
+}
+
+nav ul li a {
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav ul li a.active {
+  font-weight: 500;
+  color: #1c4587;
+}
+
+nav ul li a:hover {
+  color: #1c4587;
+  transition: 0s;
+}
+
+.logo{
+  text-decoration: none;}
+
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  background: white;
+}
+/* nav ul li{
+margin-top: 20px;
+margin-bottom: 15px;
+margin-left: 20px;
+margin-right: 20px;
+padding-bottom: 5px;
+} */
+nav ul li a{
+  color: black;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  /* padding: 40px 15px 15px; */
+  border-radius: 5px;
+  letter-spacing: 1px;
+  /* transition: all 0.3s ease; */
+  font-family: Arial, Helvetica, sans-serif; 
+}
+nav .menu-btn i{
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+/* nav ul li a.active:{
+    background: #e6e6fa;
+    color: #007bff;
+    font-weight: bold;
+  } */
+
+  nav ul li a {
+    color: black;
+    background: white;
+    }
+
+    /* nav ul li a.active{
+      /* background: #1c4587;
+        color: white; */
+        /* font-weight: bold; */
+        padding: 5px;
+        padding-left: 0;
+        padding-right: 0;
+        border-radius: 0;
+        border-bottom: 5px solid #1c4587;
+    } */
+
+@media (max-width: 1000px){
+  nav{
+    padding: 0 30px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 40px; /* Adjust this value as needed */
+    left: -100%;
+    background: white;
+    height: calc(100vh - 50px); /* Adjust this value based on your header height */
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: all 0s ease;
+  }
+  #click:checked ~ ul{
+    left: 0;
+  }
+  nav ul li{
+    width: 100%;
+    margin: 30px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+
+    nav ul li a {
+    color: black;
+    background: white;
+    }
+
+    nav ul li a.active{
+      background: white;
+        color: #1c4587;
+        font-weight: bold;
+        border: white;
+    }
+
+    nav .logo {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 1.5px;
+    margin-left: -3px;
+  }
+  nav{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 40px;
+  }
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+
+/* 
+End of Navigation Bar */
+
+
+
+.hidden {
+  display: none;
+}
+
+
+/* below item is related to footer */
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer {
+    position: absolute;
+    margin-top: 30px;
+    top: 100%;
+    width: 100%;
+    color: #000;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    column-gap: 33px;
+    background-color: white;
+    flex-wrap: wrap;
+    border-top: 1px solid black;
+  }
+  
+  @media only screen and (max-width: 1200px) {
+    .footer {
+      position: relative;
+      padding: 20px 10px; /* Adjust padding for mobile view */
+      margin-top: auto;
+      justify-content: left;
+    }
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+  
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
+        margin: 0;
+        padding: 0;
+    }
+      
+    .icon-container {
+      text-align: left; /* Center align the icons for mobile view */
+      margin-left: 8px; 
+      margin-top: -3px;
+    }
+    p.footerheading {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+    p.footercontent {
+        font-size: 14px;
+        margin-top: 4px;
+    }
+    a.icon-link{
+      font-size: 2rem;
+    }
+    a.icon-link2{
+      font-size: 2rem;
+    }
+  }
+  
+  .footerheading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    justify-content: center;
+    margin: 10px;
+    color: black;
+    line-height: normal;
+    }
+     
+  .footercontent {
+    font-family: 'inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-align: left;
+    margin: 10px;
+    color: black;
+   }
+  
+   .box1, .box2, .box3 {
+    box-sizing: border-box; /* added 'border-box' to include padding and border in the box's total width and height */
+    width: 100%;
+    justify-content: space-around; (for the icon-container)
+   }
+  
+   .icon-link, .icon-link2 {
+    font-size: 1rem;
+    }
+   
+  .icon-link, .icon-link2 {
+    /* margin: 5px; */
+    color: black;
+    text-decoration: none;
+    font-size: 2.5rem;
+   }
+   
+  .icon-link:hover {
+    color: #007bff;
+   }
+  
+  .icon-link2:hover{
+    color: green;
+  }   
+   
+  .box3 {
+    width: 430px;
+  }
+  .box1 {
+        width: 460px;
+  }
+  .box2 {
+        width: 440px;
+  }
+  
+  .content-wrapper { flex: 1; padding: 0 30px; } 
+  
+  .icon-container{
+    text-align: left;
+    margin-left: 12px;
+  }
+  /*end of header and footer*/
+
+
+!!<below is code required if a page contain li tag>!!
+  .bodybox li{margin-left: 18px;
+      font-size: 16px;}
+  @media only screen and (max-width: 768px){
+   .bodybox li{font-size: 14px}
+  }
