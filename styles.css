@@ -97,6 +97,11 @@ input[type="checkbox"]{
     padding: 0 30px 0 50px;
     background: white;
   }
+
+  tr th{
+    background: white;
+  }
+
 }
 @media (max-width: 920px) {
   nav .menu-btn i{
@@ -116,10 +121,17 @@ input[type="checkbox"]{
     display: block;
     transition: 0ms;
   }
+
   #click:checked ~ ul{
     left: 0;
     height: 100vh;
+    min-height: 100vh;
+    position: absolute;
   }
+
+
+
+  
   nav ul li{
     width: 100%;
     margin: 30px 0;
@@ -135,7 +147,6 @@ input[type="checkbox"]{
   #click:checked ~ ul li a{
     margin-left: 0px;
   }
-
     nav ul li a {
     color: black;
     background: white;
@@ -162,8 +173,24 @@ input[type="checkbox"]{
     padding-top: 0;
     padding-bottom: 0;
     height: 40px;
-    position: fixed;
+    position: absolute;
     background: white;
+  }
+
+  tr th{
+    background: white;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    background-color: white; /* Set the background color of the navigation bar */
+    z-index: 1000; /* Ensure navigation bar stays on top */
+  }
+  
+  /* Adjust padding for the content to prevent it from being hidden behind the navigation bar */
+  .content-wrapper {
+    padding-top: 60px; /* Adjust based on the height of the navigation bar */
   }
 
 }
@@ -762,7 +789,7 @@ tbody{
   }
 
 
-  td:before {
+  table td:before {
       position: absolute;
       left: 6px;
       width: 100%; /* Change to 100% to underline the whole line */
