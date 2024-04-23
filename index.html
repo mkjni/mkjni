@@ -178,7 +178,7 @@ Join us in our mission to bridge talent with opportunities and transform the job
         </tr>
     </thead>
     <tbody>
-      <tr class="job-row" onclick="window.location.href='https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93915&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined'" 
+      <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93915&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
         data-industry="Health and Wellness / Nutraceutical" 
         data-state="MH"
         data-city="Santacruz East, Mumbai" 
@@ -313,7 +313,7 @@ Join us in our mission to bridge talent with opportunities and transform the job
           <p class="footercontent">Job Nexus India emphasize ethical recruitment practices and we Job Nexus India will never charge candidates for any part of the recruitment process. Please be cautious of any fraudulent activities.</p>
       </div>
       <div class="box2">
-          <p class="footerheading">For any inquiries or assistance with technical issues while filling out the job application form, please contact us:</p>
+          <p class="footerheading">For any inquiries or assistance with technical issues while filling out the job application form, please contact:</p>
           <p class="footercontent">hello@jobnexusindia.com <br>7899586564 (Whatsapp)</p>
       </div>
       <div class="box3">
@@ -358,6 +358,7 @@ document.getElementById("sectorFilter").addEventListener("change", function() {
 document.getElementById("cityFilter").addEventListener("input", function() {
     filterJobsByCity();
 });
+
 
 function filterJobs() {
     var selectedLocation = document.getElementById("locationFilter").value;
