@@ -176,6 +176,7 @@ input[type="checkbox"]{
 }
 
 
+
 /* 
 End of Navigation Bar */
 
@@ -244,7 +245,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     width: 100%;
-    position: relative;
+    position: static;
     padding: 20px 10px; /* Adjust padding for mobile view */
     margin-top: auto;
     justify-content: left;
