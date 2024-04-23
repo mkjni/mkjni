@@ -71,7 +71,7 @@ nav ul li a{
   border-radius: 5px;
   letter-spacing: 1px;
   /* transition: all 0.3s ease; */
-  
+  background: white;
   font-family: Arial, Helvetica, sans-serif; 
 }
 nav .menu-btn i{
@@ -95,6 +95,7 @@ input[type="checkbox"]{
 @media (max-width: 1000px){
   nav{
     padding: 0 30px 0 50px;
+    background: white;
   }
 }
 @media (max-width: 920px) {
@@ -129,6 +130,7 @@ input[type="checkbox"]{
     display: block;
     font-size: 20px;
     transition: 0.6s cubic-bezier(0.68, 0.55, 0.265, 1.55);
+    background: white;
   }
   #click:checked ~ ul li a{
     margin-left: 0px;
@@ -144,6 +146,7 @@ input[type="checkbox"]{
         color: #1c4587;
         font-weight: bold;
         border: white;
+        background: white;
     }
 
     nav .logo {
@@ -151,6 +154,7 @@ input[type="checkbox"]{
     font-weight: bold;
     padding-top: 1.5px;
     margin-left: -3px;
+    background: white;
   }
   nav{
     padding-left: 20px;
@@ -159,7 +163,9 @@ input[type="checkbox"]{
     padding-bottom: 0;
     height: 40px;
     position: fixed;
+    background: white;
   }
+
 }
 .content{
   position: absolute;
@@ -239,6 +245,7 @@ body {
 
 .footerheading{
   width: fit-content;
+
 }
 
 @media only screen and (max-width: 900px) {
@@ -307,6 +314,7 @@ body {
   justify-content: left;
   color: black;
   line-height: normal;
+  margin-bottom: 8px;
   }
    
 .footercontent {
@@ -341,6 +349,7 @@ body {
 
 .icon-container{
   text-align: left;
+  margin-top: 8px;
 }
 /*end of header and footer*/
 
@@ -363,6 +372,7 @@ h1{
     justify-content: center;
     padding: 25px;
     background-color: transparent;
+    margin-top: 30px;
   }
 }
 
@@ -376,6 +386,7 @@ h1{
     text-align: center;
     justify-content: center;
     padding-top: 25px;
+    margin-top: 30px;
   }
 }
 
@@ -589,6 +600,7 @@ table {
   margin-bottom: 20px;
   justify-content: center;
   align-content: center;
+  background: white;
 }
 
 #jobTable{
@@ -630,6 +642,10 @@ td.job-title a {
 /* Make the entire row clickable */
 tr.job-row {
   cursor: pointer;
+}
+
+tbody{
+  background: white;
 }
 
 /* Mobile Styles */
@@ -878,21 +894,6 @@ tr.job-row {
   }
 }
 
-/* Alternate row colors
-tr:nth-child(even) {
-  background-color:#F6FCFD; Set background color for even rows
-/ */
-/* tr:nth-child(odd) {
-  background-color: white; /* Set background color for odd rows */
-  */
-
- /* th {
-#E7F2F8 Change table heading color
-  background-color: #3B8FF7; 
-  border: 1px solid black;
-  color: white; /* Change text color
-} */
-
 
 /* Alternate row colors */
 tr:nth-child(even) {
@@ -928,18 +929,6 @@ th {
     table tr td:nth-child(10) {
       display: none;
     }
-
-    /* Hide the Date posted column
-    table tr th:nth-child(7),
-    table tr td:nth-child(7) {
-      display: none;
-    } */
-
-    /* Hide the Date posted column */
-    /* table tr th:nth-child(9),
-    table tr td:nth-child(9) {
-      display: none;
-    } */
 
     tr, th, td{
       font-size: 20px;
