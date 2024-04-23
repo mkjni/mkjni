@@ -1,341 +1,223 @@
-* {
-  margin: 0;
-  background: transparent;
-  padding: 0;
-  height: auto;
-  width: auto;
-  box-sizing: border-box;
-  border: none;
-  /* font-family: Arial, Helvetica, sans-serif; */
- }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msvalidate.01" content="A4D40B1AA5475B07D06649F7D8970D5F" />
+  <meta name="verify-v1" content="unique-string">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/png" href="https://www.jobnexusindia.com/Job-Nexus-India-Logo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Arima Madurai' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<title>Job Nexus India</title>
+<meta name="description" content="Welcome to Job Nexus India - 'Bridging Talent with Opportunities'. We are a dedicated platform committed to connecting job seekers with potential employers, fostering a community that thrives on mutual growth and success.
 
-nav{
-  display: flex;
-  width: 100%;
-  background: white;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  border-bottom: 1px solid black;
-  height: 50px;
-  padding-left: 4%;
-  padding-right: 4%;
-}
-nav .logo{
-  color: black;
-  font-size: 25px;
-  font-family: 'arima madurai';
-  font-weight: bold;
-}
+At Job Nexus India, we specialize in connecting top talent with leading companies. As a trusted partner, we deliver tailored recruitment solutions to source, screen, and submit qualified candidates, driving the growth and success of our client organizations.
 
-nav ul li a {
-  margin: 0;
-  padding: 0;
-  margin-left: 10px;
-  margin-right: 10px;
-}
+Our mission is to streamline the job search process, making it more efficient and less daunting for candidates. We understand the challenges of job hunting and aim to alleviate them by providing a curated selection of job opportunities from various industries.
 
-nav ul li a.active {
-  font-weight: 500;
-  color: #1c4587;
-}
+In our pursuit to create a supportive ecosystem for job seekers, we have established dedicated WhatsApp and Telegram groups. These platforms serve as interactive forums where job seekers can engage, share opportunities, and support each other in their job search journey.
 
-nav ul li a:hover {
-  color: #1c4587;
-  transition: 0s;
-}
+At Job Nexus India, we believe in the power of community and collaboration. We are not just about connecting individuals to jobs; we are about building relationships, fostering growth, and empowering individuals to achieve their career goals.
 
-a.logo{
-  text-decoration: none;
-  margin-left: 10px;
-  margin-right: 10px;
-}
+Join us in our mission to bridge talent with opportunities and transform the job search experience. Together, we can create a vibrant community that supports, uplifts, and propels each member towards their career aspirations.">
+<meta property="og:image" content="https://www.jobnexusindia.com/Job-Nexus-India-Logo.png">
+  <meta name="title" property="og:title" content="Job Nexus India">
+<meta property="og:url" content="https://www.jobnexusindia.com/">
+<meta property="og:type" content="website">
+  <meta name="author" content="Job Nexus India">
+</head>
+<body>
 
-nav ul{
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  background: white;
-}
-
-nav ul li a{
-  color: black;
-  text-decoration: none;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-  font-size: 18px;
-  font-weight: 500;
-  /* padding: 40px 15px 15px; */
-  border-radius: 5px;
-  letter-spacing: 1px;
-  /* transition: all 0.3s ease; */
-  
-  font-family: Arial, Helvetica, sans-serif; 
-}
-nav .menu-btn i{
-  color: black;
-  font-size: 18px;
-  cursor: pointer;
-  display: none;
-/*     padding-top: 3px; */
-}
-input[type="checkbox"]{
-  display: none;
-}
+<header>
+    <nav>
+      <a class="logo" href="https://www.jobnexusindia.com/"><div class="logo">Job Nexus India</div></a>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a class="active" href="https://www.jobnexusindia.com/">Current Openings</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a class="active" href="https://www.jobnexusindia.com/">Current Openings</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a class="active" href="https://www.jobnexusindia.com/">Current Openings</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+      </ul>
+    </nav>
+</header>
 
 
-  nav ul li a {
-    color: black;
-    background: white;
-    }
 
+<footer>
+    <div class="footer" >
+      <div class="box1">
+          <p class="footerheading">Important Notice</p>
+          <p class="footercontent">Job Nexus India emphasize ethical recruitment practices and we Job Nexus India will never charge candidates for any part of the recruitment process. Please be cautious of any fraudulent activities.</p>
+      </div>
+      <div class="box2">
+          <p class="footerheading">For any inquiries or assistance with technical issues while filling out the job application form, please contact us:</p>
+          <p class="footercontent">hello@jobnexusindia.com <br>7899586564 (Whatsapp)</p>
+      </div>
+      <div class="box3">
+          <p class="footerheading">Join us on your preferred social media platforms to never miss job updates</p>
+          <p class="footercontent" style="margin-top: 5px;">Click on the icons given below to join.</p>
+              <div class="icon-container">
+                  <span><a href="https://in.linkedin.com/company/jobnexusindia" alt:"Job Nexus India Job Updates Linkedin Company Page Link" class="icon-link">
+                      <i class="fab fa-linkedin-in"></i>
+                      </a></span>                
+                  <span><a href="https://chat.whatsapp.com/CLUuvoRuViAF77TGPbSAom" alt:"Job Nexus India Job Updates Whatsapp Group Link" class="icon-link2">
+                      <i class="fab fa-whatsapp"></i>
+                      </a></span>
+                  <span><a href="https://t.me/jobnexusindia" alt:"Job Nexus India Telegram Channel Link" class="icon-link">
+                       <i class="fab fa-telegram"></i>
+                      </a></span>
+              </div>
+      </div>
+    </div>
+</footer>
 
-@media (max-width: 1000px){
-  nav{
-    padding: 0 30px 0 50px;
-  }
-}
-@media (max-width: 920px) {
-  nav .menu-btn i{
-    display: block;
-  }
-  #click:checked ~ .menu-btn i:before{
-    content: "\f00d";
-  }
-  nav ul {
-    position: fixed;
-    top: 40px; /* Adjust this value as needed */
-    left: -100%;
-    background: white;
-    height: calc(100vh - 50px); /* Adjust this value based on your header height */
-    width: 100%;
-    text-align: center;
-    display: block;
-    transition: all 0s ease;
-  }
-  #click:checked ~ ul{
-    left: 0;
-  }
-  nav ul li{
-    width: 100%;
-    margin: 30px 0;
-  }
-  nav ul li a{
-    width: 100%;
-    margin-left: -100%;
-    display: block;
-    font-size: 20px;
-    transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  }
-  #click:checked ~ ul li a{
-    margin-left: 0px;
-  }
+<script>
+document.getElementById("locationFilter").addEventListener("change", function() {
+    filterJobs();
+});
 
-    nav ul li a {
-    color: black;
-    background: white;
-    }
+document.getElementById("experienceFilter").addEventListener("change", function() {
+    filterJobs();
+});
 
-    nav ul li a.active{
-      background: white;
-        color: #1c4587;
-        font-weight: bold;
-        border: white;
-    }
+document.getElementById("industryFilter").addEventListener("change", function() {
+    filterJobs();
+});
 
-    nav .logo {
-    font-size: 20px;
-    font-weight: bold;
-    padding-top: 1.5px;
-    margin-left: -3px;
-  }
-  nav{
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 0;
-    padding-bottom: 0;
-    height: 40px;
-  }
-}
-.content{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  z-index: -1;
-  width: 100%;
-  padding: 0 30px;
-  color: #1b1b1b;
-}
-.content div{
-  font-size: 40px;
-  font-weight: 700;
+document.getElementById("functionFilter").addEventListener("change", function() {
+    filterJobs();
+});
+
+document.getElementById("sectorFilter").addEventListener("change", function() {
+    filterJobs();
+});
+
+document.getElementById("cityFilter").addEventListener("input", function() {
+    filterJobsByCity();
+});
+
+function filterJobs() {
+    var selectedLocation = document.getElementById("locationFilter").value;
+    var selectedExperience = document.getElementById("experienceFilter").value;
+    var selectedIndustry = document.getElementById("industryFilter").value;
+    var selectedFunction = document.getElementById("functionFilter").value;
+    var selectedSector = document.getElementById("sectorFilter").value;
+    var tableRows = document.querySelectorAll("#jobTable tbody tr");
+
+    tableRows.forEach(function(row) {
+        var locationCell = row.querySelector(".location");
+        var experienceCell = row.querySelector(".experience");
+        var industryCell = row.querySelector(".Industry");
+        var functionCell = row.querySelector(".function");
+        var cityCell = row.querySelector(".City");
+        var sectorData = row.dataset.sector.split(","); // Get sector data from dataset
+        var industryData = row.dataset.industry.split(","); // Get industry data from dataset
+        var stateData = row.dataset.state.split(","); // Split state data
+        var functionData = row.dataset.jobFunction;
+
+        var experienceData = experienceCell.dataset.experience.split(","); // Split experience levels
+
+        var showRow = false;
+
+        experienceData.forEach(function(exp) {
+            if (exp.trim() === selectedExperience || selectedExperience === "all") {
+                showRow = true;
+            }
+        });
+
+        // Check if selected state is included in the list of states
+        if ((selectedLocation === "all" || stateData.includes(selectedLocation)) &&
+            (selectedFunction === "all" || functionData.includes(selectedFunction)) &&
+            (selectedIndustry === "all" || industryData.includes(selectedIndustry)) && // Check if selected industry is in industry data
+            (selectedSector === "all" || sectorData.includes(selectedSector)) && // Check if selected sector is in sector data
+            showRow) {
+            row.classList.remove('hidden');
+        } else {
+            row.classList.add('hidden');
+        }
+    });
 }
 
+function filterJobsByCity() {
+    var input = document.getElementById("cityFilter").value.trim().toLowerCase();
+    var tableRows = document.querySelectorAll("#jobTable tbody tr");
 
+    tableRows.forEach(function(row) {
+        var cityCell = row.querySelector(".City");
+        var cities = row.dataset.city.split(','); // Split city data
 
-/* 
-End of Navigation Bar */
+        var showRow = false;
 
+        cities.forEach(function(city) {
+            if (city.trim().toLowerCase().includes(input)) { // Check if the input is included in any city
+                showRow = true;
+            }
+        });
 
-/* below item is related to footer */
-html {
-  position: relative;
-  min-height: 100%;
+        if (showRow) {
+            row.classList.remove('hidden');
+        } else {
+            row.classList.add('hidden');
+        }
+    });
 }
 
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
-  margin: 0;
-  padding: 0;
+document.getElementById("click").addEventListener("change", function() {
+    toggleTableVisibility();
+});
+
+function toggleTableVisibility() {
+    var tableCells = document.querySelectorAll("td, th");
+
+    tableCells.forEach(function(cell) {
+        cell.classList.toggle('hidden');
+    });
 }
 
-.footer {
-  justify-content: center;
-  position: absolute;
-  margin-top: 30px;
-  top: 100%;
-  width: 100%;
-  color: #000;
-  text-align: left;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  display: flex;
-  background-color: white;
-  flex-wrap: wrap;
-  border-top: 1px solid black;
-  column-gap: 38px;
+// Search job by job id 
+document.getElementById("jobIdFilter").addEventListener("input", function() {
+    filterJobsById();
+});
+
+function filterJobsById() {
+    var input = document.getElementById("jobIdFilter").value.toLowerCase();
+    var tableRows = document.querySelectorAll("#jobTable tbody tr");
+
+    tableRows.forEach(function(row) {
+        var jobIdCell = row.querySelector(".job-id");
+        var jobId = jobIdCell.textContent.toLowerCase();
+
+        if (jobId.indexOf(input) > -1) {
+            row.classList.remove('hidden');
+        } else {
+            row.classList.add('hidden');
+        }
+    });
 }
 
-
-.box1, .box2, .box3{
-  margin-bottom: 15px;
-}
-
-.box1{
-  width: 29.3%;
-}
-
-.box2{
-  width: 27.3%;
-}
-
-.box3{
-  width: 26.4%;
-}
+</script>
 
 
-
-.footercontent{
-  width: fit-content;
-}
-
-.footerheading{
-  width: fit-content;
-}
-
-@media only screen and (max-width: 1200px) {
-  .footer {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-    position: static;
-    padding: 20px 10px; /* Adjust padding for mobile view */
-    margin-top: auto;
-    justify-content: left;
-  }
-  html {
-      position: relative;
-      min-height: 100%;
-  }
-
-  body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
-      margin: 0;
-      padding: 0;
-  }
-    
-  .icon-container {
-    text-align: left; /* Center align the icons for mobile view */
-
-  }
-  p.footerheading {
-      font-size: 16px;
-      margin-bottom: 4px;
-  }
-  p.footercontent {
-      font-size: 14px;
-      margin-top: 4px;
-  }
-  a.icon-link{
-    font-size: 2rem;
-  }
-  a.icon-link2{
-    font-size: 2rem;
-  }
-
-  .box1{
-    width: 90%;
-  }
-  
-  .box2{
-    width: 90%;
-  }
-  
-  .box3{
-    width: 90%;
-  }
-}
-
-.footerheading {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: left;
-  justify-content: left;
-  color: black;
-  line-height: normal;
-  }
-   
-.footercontent {
-  font-family: 'inter', sans-serif;
-  font-size: 18px;
-  line-height: 1.25;
-  font-weight: 400;
-  text-align: left;
-  color: black;
- }
-
- .icon-link, .icon-link2 {
-  font-size: 1rem;
-  }
- 
-.icon-link, .icon-link2 {
-  /* margin: 5px; */
-  color: black;
-  text-decoration: none;
-  font-size: 2.5rem;
- }
- 
-.icon-link:hover {
-  color: #007bff;
- }
-
-.icon-link2:hover{
-  color: green;
-}   
- 
-.content-wrapper { flex: 1; padding: 0 30px; } 
-
-.icon-container{
-  text-align: left;
-}
-/*end of header and footer*/
+</body>
+</html>
