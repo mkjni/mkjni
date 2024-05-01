@@ -8,6 +8,614 @@
   border: none;
   /* font-family: Arial, Helvetica, sans-serif; */
  }
+nav{
+  display: flex;
+  width: 100%;
+  background: white;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid black;
+  height: 50px;
+  padding-left: 4%;
+  padding-right: 4%;
+}
+nav .logo{
+  color: black;
+  font-size: 25px;
+  font-family: 'arima madurai';
+  font-weight: bold;
+}
+
+nav ul li a {
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav ul li a.active {
+  font-weight: 500;
+  color: #1c4587;
+}
+
+nav ul li a:hover {
+  color: #1c4587;
+  transition: 0s;
+}
+
+a.logo{
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  background: white;
+}
+
+nav ul li a{
+  color: black;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  /* padding: 40px 15px 15px; */
+  border-radius: 5px;
+  letter-spacing: 1px;
+  /* transition: all 0.3s ease; */
+  background: white;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+nav .menu-btn i{
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+/*     padding-top: 3px; */
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+
+  nav ul li a {
+    color: black;
+    background: white;
+    }
+
+
+@media (max-width: 1000px){
+  nav{
+    padding: 0 30px 0 50px;
+    background: white;
+  }
+
+  tr th{
+    background: white;
+  }
+
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 40px; /* Adjust this value as needed */
+    left: -100%;
+    background: white;
+    height: calc(100vh - 50px); /* Adjust this value based on your header height */
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: 0ms;
+  }
+
+  #click:checked ~ ul{
+    left: 0;
+    height: 100vh;
+    min-height: 100vh;
+    position: absolute;
+  }
+
+
+
+  
+  nav ul li{
+    width: 100%;
+    margin: 30px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, 0.55, 0.265, 1.55);
+    background: white;
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+    nav ul li a {
+    color: black;
+    background: white;
+    }
+
+    nav ul li a.active{
+      background: white;
+        color: #1c4587;
+        font-weight: bold;
+        border: white;
+        background: white;
+    }
+
+    nav .logo {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 1.5px;
+    margin-left: -3px;
+    background: white;
+  }
+  nav{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 40px;
+    position: absolute;
+    background: white;
+  }
+
+  tr th{
+    background: white;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    background-color: white; /* Set the background color of the navigation bar */
+    z-index: 1000; /* Ensure navigation bar stays on top */
+  }
+  
+  /* Adjust padding for the content to prevent it from being hidden behind the navigation bar */
+  .content-wrapper {
+    padding-top: 60px; /* Adjust based on the height of the navigation bar */
+  }
+
+}
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+
+
+/* 
+End of Navigation Bar */
+
+
+/* below item is related to footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  justify-content: center;
+  position: absolute;
+  margin-top: 30px;
+  top: 100%;
+  width: 100%;
+  color: #000;
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  display: flex;
+  background-color: white;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+  column-gap: 50px;
+}
+
+
+.box1, .box2, .box3{
+  margin-bottom: 15px;
+}
+
+.box1{
+  width: 29.3%;
+}
+
+.box2{
+  width: 25.3%;
+}
+
+.box3{
+  width: 26.4%;
+}
+
+
+
+.footercontent{
+  width: fit-content;
+}
+
+.footerheading{
+  width: fit-content;
+
+}
+
+@media only screen and (max-width: 900px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    position: static;
+    padding: 20px 10px; /* Adjust padding for mobile view */
+    margin-top: auto;
+    justify-content: center;
+    border-top: 1px solid black;
+      align-content: left;
+      padding-left: 15px;
+  }
+  html {
+      position: relative;
+      min-height: 100%;
+  }
+
+  body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
+      margin: 0;
+      padding: 0;
+  }
+    
+  .icon-container {
+    text-align: left; /* Center align the icons for mobile view */
+
+  }
+  p.footerheading {
+      font-size: 16px;
+      margin-bottom: 4px;
+  }
+  p.footercontent {
+      font-size: 14px;
+      margin-top: 4px;
+  }
+  a.icon-link{
+    font-size: 2rem;
+  }
+  a.icon-link2{
+    font-size: 2rem;
+  }
+
+  .box1{
+    width: 90%;
+  }
+  
+  .box2{
+    width: 90%;
+  }
+  
+  .box3{
+    width: 90%;
+  }
+}
+
+.footerheading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  justify-content: left;
+  color: black;
+  line-height: normal;
+  margin-bottom: 8px;
+  }
+   
+.footercontent {
+  font-family: 'inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-align: left;
+  color: black;
+ }
+
+ .icon-link, .icon-link2 {
+  font-size: 1rem;
+  }
+ 
+.icon-link, .icon-link2 {
+  /* margin: 5px; */
+  color: black;
+  text-decoration: none;
+  font-size: 2.5rem;
+ }
+ 
+.icon-link:hover {
+  color: #007bff;
+ }
+
+.icon-link2:hover{
+  color: green;
+}   
+ 
+.content-wrapper { flex: 1; padding: 0 30px; } 
+
+.icon-container{
+  text-align: left;
+  margin-top: 8px;
+}
+/*end of header and footer*/
+
+
+h1{
+  width: 100%;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-style: normal;
+  font-size: 50px;
+  text-align: center;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+@media (min-width: 250px) and (max-width: 480px){
+  h1{
+    font-size: 26px;
+    justify-content: center;
+    padding: 25px;
+    background-color: transparent;
+    margin-top: 30px;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 1200px){
+
+  h1{
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-style: normal;
+    font-size: 36px;
+    text-align: center;
+    justify-content: center;
+    padding-top: 25px;
+    margin-top: 30px;
+  }
+}
+
+
+/* Filter Section */
+.filter-container {
+  width: 90%;
+  display: flex;
+  margin-bottom: 20px;
+  align-items: center;
+  padding: 15px; /* Add padding */
+  column-gap: 30px;
+  justify-content: center;
+  border-bottom: 1px solid black;
+  flex-wrap: wrap;
+  row-gap: 20px;
+
+}
+
+.filterc{
+  display: flex;
+  justify-content: center;
+}
+
+#jobIdFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 100px;
+  max-width: 100px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#experienceFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 220px;
+  max-width: 220px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#locationFilter {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 170px;
+  max-width: 170px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#sectorFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 120px;
+  max-width: 120px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#industryFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 180px;
+  max-width: 180px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#functionFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 180px;
+  max-width: 180px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#cityFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 160px;
+  max-width: 160px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+
+.filter-container select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 250px;
+  max-width: 250px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+
+
+@media only screen and (max-width: 600px) {
+  .filter-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: left;
+      font-size: 14px;
+      width: auto;
+      border: 1px solid #ddd;
+      margin-left: 10px;
+      margin-right: 10px;
+      border-radius: 10px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background: transparent;
+      min-width: 320px;
+  }
+  .filter-label{
+      font-size: 14px;
+      width: 250px;
+      font-family: Roboto;
+      justify-content: center;
+  }
+  .filter-container select {
+    min-width: 250px;
+      width: 250px;
+      max-width: none;
+      justify-content: center;
+      margin-top: 5px;
+      font-size: 14px;
+      width: 250px;
+  }
+  .filter-location, .filter-experience, .filter-industry, .filter-sector, .filter-job-id, .filter-city {
+      margin-bottom: 10px;
+      font-size: 14px;
+      min-width: 250px;
+      width: 250px;
+  }
+
+ .filter-job-function {
+    font-size: 14px;
+    min-width: 250px;
+    justify-content: center;
+    width: 250px;
+  }
+}
+
+
+/* Filter Section */
+.filter-container {
+  margin-bottom: 20px;
+}
+
+
+.filter-label {
+  font-weight: bold;
+  margin-left: 3px;
+  text-align: center;
+  margin-bottom: -16px;
+  font-family: Roboto;
+}
+
+.filter-select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
 
 table {
   width: 90%;
@@ -560,4 +1168,31 @@ td.job-status{
 }
 
 /* Adjust the rest of the styles as needed */
+
+
+.print-message {
+  display: none; /* Initially hide the message */
+  font-family: 'Arial';
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+  background-color: #f8f8f8; /* Set background color for even rows */
+}
+tr:nth-child(odd) {
+  background-color: white; /* Set background color for odd rows */
+}
+
+  th {
+    background-color: #1155cc; 
+    color: white; /* Change text color */
+  }
+
+
+.hidden {
+  display: none;
+}
+
+tr:hover {background-color: #f4f4f4;}
+
 
