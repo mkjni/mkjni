@@ -530,7 +530,7 @@ h1{
 }
 
 
-.filter-container select {
+nav .filter-container select {
   padding: 5px;
   font-size: 16px;
   border: 1px solid black;
@@ -570,7 +570,7 @@ h1{
       font-family: Roboto;
       justify-content: center;
   }
-  .filter-container select {
+  nav .filter-container select {
     min-width: 250px;
       width: 250px;
       max-width: none;
@@ -609,7 +609,7 @@ h1{
   font-family: Roboto;
 }
 
-.filter-select {
+nav .filter-select {
   padding: 5px;
   font-size: 16px;
   border: 1px solid #ddd;
