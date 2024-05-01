@@ -866,7 +866,7 @@ tbody{
       content: "Role/Job Title:";
       color: initial; /* Retain default color */
   }
-  td:nth-of-type(8):before {
+  td:nth-of-type(9):before {
       content: "Industry:";
   }
   td:nth-of-type(10):before {
@@ -1163,13 +1163,3 @@ td.job-status{
   max-width: 80px;
   justify-content: center;
 }
-
-/* Adjust the rest of the styles as needed */
-
-
-.print-message {
-  display: none; /* Initially hide the message */
-  font-family: 'Arial';
-}
-
-
