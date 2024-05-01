@@ -1124,9 +1124,6 @@ input[type="checkbox"] {
   background-color: #0056b3;
 }
 
-
-
-
 .job-checkbox {
     transform: scale(0.8); /* Adjust the scale value to resize the checkbox */
 }
