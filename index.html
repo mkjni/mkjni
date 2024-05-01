@@ -20,453 +20,1010 @@
   <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
-<title>Job Nexus India</title>
-<meta name="description" content="Welcome to Job Nexus India - 'Bridging Talent with Opportunities'. We are a dedicated platform committed to connecting job seekers with potential employers, fostering a community that thrives on mutual growth and success.
-
-At Job Nexus India, we specialize in connecting top talent with leading companies. As a trusted partner, we deliver tailored recruitment solutions to source, screen, and submit qualified candidates, driving the growth and success of our client organizations.
-
-Our mission is to streamline the job search process, making it more efficient and less daunting for candidates. We understand the challenges of job hunting and aim to alleviate them by providing a curated selection of job opportunities from various industries.
-
-In our pursuit to create a supportive ecosystem for job seekers, we have established dedicated WhatsApp and Telegram groups. These platforms serve as interactive forums where job seekers can engage, share opportunities, and support each other in their job search journey.
-
-At Job Nexus India, we believe in the power of community and collaboration. We are not just about connecting individuals to jobs; we are about building relationships, fostering growth, and empowering individuals to achieve their career goals.
-
-Join us in our mission to bridge talent with opportunities and transform the job search experience. Together, we can create a vibrant community that supports, uplifts, and propels each member towards their career aspirations.">
-<meta property="og:image" content="https://www.jobnexusindia.com/Job-Nexus-India-Logo.png">
-  <meta name="title" property="og:title" content="Job Nexus India">
-<meta property="og:url" content="https://www.jobnexusindia.com/">
-<meta property="og:type" content="website">
-  <meta name="author" content="Job Nexus India">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <title>Job Nexus India</title>
 </head>
 <body>
-
-<header>
-    <nav>
-      <a class="logo" href="https://www.jobnexusindia.com/"><div class="logo">Job Nexus India</div></a>
-      <input type="checkbox" id="click">
-      <label for="click" class="menu-btn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <ul>
-        <li><a class="active" href="https://www.jobnexusindia.com/">Current Openings</a></li>
-        <li><a href="about-us.html">About Us</a></li>
-      </ul>
-    </nav>
-</header>
-
-<h1>We're hiring the following positions for our clients</h1>
-  <div id="printMessage" class="print-message">
-    To know more and apply, please visit our website <a href="https://www.jobnexusindia.com/">www.jobnexusindia.com</a>
-</div>
+    <br>
 
 
-<div class="filterc">
-<div class="filter-container">
-    <div class="filter-job-id">
-        <label class="filter-label">Job ID</label><br>
-        <input type="text" id="jobIdFilter" class="filter-select">
-    </div>
-    <!-- Existing filter elements for location, experience, and industry -->
-    <div class="filter-location">
-        <label class="filter-label">State/Union Territory</label><br>
-        <select id="locationFilter" class="filter-select">
-            <option value="all">All States/UTs</option>
-            <option value="AP">Andhra Pradesh - AP</option>
-            <option value="AS">Assam - AS</option>
-            <option value="BR">Bihar - BR</option>
-            <option value="CH">Chandigarh - CH</option>
-            <option value="CG">Chhattisgarh - CG</option>
-            <option value="DL">Delhi - DL</option>
-            <option value="GA">Goa - GA</option>
-            <option value="GJ">Gujarat - GJ</option>
-            <option value="HR">Haryana - HR</option>
-            <option value="JK">Jammu and Kashmir - JK</option>
-            <option value="JH">Jharkhand - JH</option>
-            <option value="KA">Karnataka - KA</option>
-            <option value="KL">Kerala - KL</option>
-            <option value="MP">Madhya Pradesh - MP</option>
-            <option value="MH">Maharashtra - MH</option>
-            <option value="OR">Orissa/Odisha - OR</option>
-            <option value="PY">Pondicherry - PY</option>
-            <option value="PB">Punjab - PB</option>
-            <option value="RJ">Rajasthan - RJ</option>
-            <option value="TN">Tamil Nadu - TN</option>
-            <option value="TG">Telangana - TN</option>
-            <option value="UP">Uttar Pradesh - UP</option>
-            <option value="WB">West Bengal - WB</option>
-        </select>
-    </div>
-      <!-- New filter for city -->
-    <div class="filter-city">
-        <label class="filter-label">City</label><br>
-        <input type="text" id="cityFilter" class="filter-select">
-    </div>
-        <!-- New filter for sector -->
-    <div class="filter-sector">
-        <label class="filter-label">Sector</label><br>
-        <select id="sectorFilter" class="filter-select">
-            <option value="all">All Sectors</option>
-            <option value="IT">IT</option>
-            <option value="Non IT">Non IT</option>
-        </select>
-    </div>
-    <div class="filter-experience">
-        <label class="filter-label">Experience Levels</label><br>
-        <select id="experienceFilter" class="filter-select">
-            <option value="all">All Experience Levels</option>
-            <option value="0-2">0-2 Years - Junior Level</option>
-            <option value="2-5">2-5 years - Associate Level</option>
-            <option value="5-8">5-8 years - Mid Level</option>
-            <option value="8+">8+ years - Senior Level</option>
-        </select>
-    </div>
-    <div class="filter-industry">
-        <label class="filter-label">Industry</label><br>
-        <select id="industryFilter" class="filter-select">
-            <option value="all">All Industries</option>
-            <option value="BFSI">BFSI</option>
-            <option value="Manufacturing">Manufacturing</option>
-            <option value="B2B">B2B</option>
-            <option value="SAAS/ERP">SAAS/ERP</option>
-            <option value="Retail">Retail</option>
-            <option value="FMCG">FMCG</option>
-            <option value="Real Estate">Real Estate</option>
-         <option value="Education">Education</option>
-          <option value="Software Development">Software Development</option>
-          <option value="Digital Marketing">Digital Marketing</option>
-                    <option value="Health and Wellness / Nutraceutical">Health and Wellness / Nutraceutical</option>
-        </select>
+    <div class="tablepagesmanager">
+        <!-- Add a dropdown to select the number of rows per page -->
+    <label for="rowsPerPage">Rows per page:</label>
+    <select id="rowsPerPage">
+        <option value="5">5</option>
+      <option value="10" selected>10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+      <option value="25">25</option>
+      <option value="all">All</option>
+    </select>
+    <span id="pageInfo"></span>
+    <!-- Add pagination buttons -->
+    <button id="prevPage">Previous</button>
+    <button id="nextPage">Next</button>
+    <div id="pageInfo"></div>
     </div>
 
-    <!-- New filter for job function -->
-    <div class="filter-job-function">
-        <label class="filter-label">Department</label><br>
-        <select id="functionFilter" class="filter-select">
-            <option value="all">All Departments</option>
-            <option value="Accounts / Finance">Accounts / Finance</option>
-            <option value="Legal">Legal</option>
-            <option value="Sales">Sales</option>
-            <option value="Customer Support">Customer Support</option>
-            <option value="Operations">Operations</option>
-            <option value="Marketing">Marketing</option>
-            <option value="Admission">Admission</option>
-                      <option value="Human Resource">Human Resource</option>
-        </select>
+    <table id="jobTable" style="margin-left: 4%;">
+        <thead>
+            <tr>
+                <th class="job-status"></th>
+                <th class="job-id">Job ID</th>
+                <th class="job-title">Role/Job Title</th>
+                <th class="location">S / UT</th>
+                <th class="City">City</th> 
+                <th class="experience">Experience</th>
+                <th class="salary">Salary</th>
+                <th class="notice">NP</th>
+                <th class="Industry">Industry</th>
+                <th class="function">Department</th>
+                <th class="date-posted">Date posted</th>
+                <th class="select-checkbox">Select</th> <!-- Add a new column for checkboxes -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Faculty (English) | English Language Trainer | SAT/GRE/GMAT/TOEFL/IELTS Trainer.</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+            <tr class="job-row" data-job-id="0055" data-job-title="Executive or Sr. Executive - Project Management" data-location="MH" data-city="Pune" data-experience="1 - 4 Years" data-salary="20-25% Hike" data-notice="15 Days" data-industry="Laboratory Glassware, Process Science Equipments" data-function="Project Management" data-date-posted="30-04-2024">
+                <td class="job-status">
+                    <span class="status-text active">Active</span>
+                </td>
+                <td class="job-id">0055</td>
+                <td class="job-title">Executive or Sr. Executive - Project Management</td>
+                <td class="location">MH</td>
+                <td class="City">Pune</td>
+                <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+                <td class="salary">20-25% Hike</td>
+                <td class="notice">15 Days</td>
+                <td class="Industry">Laboratory Glassware, Process Science Equipments</td>
+                <td class="function">Project Management</td>
+                <td class="date-posted">30-04-2024</td>
+                <td class="select-checkbox"><input type="checkbox" class="job-checkbox"></td> <!-- Add a checkbox in each row -->
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="action-buttons">
+        <input type="checkbox" id="selectAll">
+        <label class="checkbox-label" for="selectAll">Select All Job Info</label>
+        <button id="copyButton" class="button">Copy Job Info</button>
     </div>
 
-</div>
-</div>
-
-<!-- Table Section -->
-<table id="jobTable">
-    <thead>
-        <tr>
-            <th class="job-id">Job ID</th>
-            <th class="job-title">Role/Job Title</th>
-            <th class="location">State / UT</th>
-            <th class="City">City</th> 
-            <th class="experience">Experience</th>
-            <th class="salary">Salary</th>
-            <th class="notice">Notice Period</th>
-            <th class="Industry">Industry</th>
-            <th class="function">Department</th>
-            <th class="date-posted">Date posted</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93915&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
-        data-industry="Health and Wellness / Nutraceutical" 
-        data-state="MH"
-        data-city="Santacruz East, Mumbai" 
-        data-job-function="Human Resource" 
-        data-sector="Non IT">
-        <td class="job-id">0047</td>
-        <td class="job-title">HR Generalist</td>
-        <td class="location">MH</td>
-        <td class="City">Mumbai</td>
-        <td class="experience" data-experience="0-2" >0 - 2 Years</td>
-        <td class="salary">3 - 5 LPA</td>
-        <td class="notice">30 Days</td>
-        <td class="Industry">Health and Wellness / Nutraceutical</td>
-        <td class="function">Human Resource</td>
-        <td class="date-posted">20-04-2024</td>
-    </tr>
-<tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93820&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
-        data-industry="Software Development,Digital Marketing" 
-        data-state="MH"
-        data-city="Kharadi,Pune" 
-        data-job-function="Sales" 
-        data-sector="IT">
-        <td class="job-id">0046</td>
-        <td class="job-title">Business Development Manager - Digital Marketing And Software Development Solutions</td>
-        <td class="location">MH</td>
-        <td class="City">Pune</td>
-        <td class="experience" data-experience="2-5, 5-8, 8+" >3 - 8 Years</td>
-        <td class="salary">Confidential</td>
-        <td class="notice">10 Days</td>
-        <td class="Industry">Software Development, Digital Marketing</td>
-        <td class="function">Sales</td>
-        <td class="date-posted">19-04-2024</td>
-    </tr>
-      <tr class="job-row"  onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93600&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
-        data-industry="Education" 
-        data-state="TG"
-        data-city="Hyderabad" 
-        data-job-function="Admission,Marketing" 
-        data-sector="Non IT">
-        <td class="job-id">0045</td>
-        <td class="job-title">Admission & Marketing Head - CBSE School</td>
-        <td class="location">TG</td>
-        <td class="City">Hyderabad</td>
-        <td class="experience" data-experience="2-5, 5-8" >3 - 6 Years</td>
-        <td class="salary">50 - 75K PM</td>
-        <td class="notice">15 Days</td>
-        <td class="Industry">Education</td>
-        <td class="function">Admission, Marketing</td>
-        <td class="date-posted">17-04-2024</td>
-    </tr>
-      <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93590&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
-        data-industry="Real Estate" data-state="MH" data-city="Kandivali, Mumbai" data-job-function="Sales" data-sector="Non IT">
-        <td class="job-id">0044</td>
-        <td class="job-title">Real Estate Channel Partner Sourcing Manager (Mandate Sales)</td>
-        <td class="location">MH</td>
-        <td class="City">Mumbai</td>
-        <td class="experience" data-experience="2-5, 5-8" >3 - 6 Years</td>
-        <td class="salary">Upto 6 LPA</td>
-        <td class="notice">10 Days</td>
-        <td class="Industry">Real Estate</td>
-        <td class="function">Mandate Sales</td>
-        <td class="date-posted">17-04-2024</td>
-    </tr>
-      <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93583&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
-        data-industry="FMCG,Retail" data-state="MP" data-city="Indore, Bhopal" data-job-function="Operations" data-sector="Non IT">
-        <td class="job-id">0043</td>
-        <td class="job-title">Team Leader - Business Development (FMCG)</td>
-        <td class="location">MP</td>
-        <td class="City">Bhopal and Indore</td>
-        <td class="experience" data-experience="2-5, 5-8, 8+" >5 - 8 Years</td>
-        <td class="salary">5 - 10 LPA</td>
-        <td class="notice">10 Days</td>
-        <td class="Industry">Retail, FMCG</td>
-        <td class="function">Operations</td>
-        <td class="date-posted">17-04-2024</td>
-    </tr>
-    <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93416&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
-        data-industry="Manufacturing,B2B,Retail" data-state="MH" data-city="Bandra, Mumbai" data-job-function="Accounts / Finance" data-sector="Non IT">
-        <td class="job-id">0042</td>
-        <td class="job-title">SAP Finance Operations Manager - Accounts / Manager - Accounts (SAP)</td>
-        <td class="location">MH</td>
-        <td class="City">Mumbai</td>
-        <td class="experience" data-experience="2-5, 5-8, 8+" >5 - 8 Years</td>
-        <td class="salary">10 - 12 LPA</td>
-        <td class="notice">30 Days</td>
-        <td class="Industry">Manufacturing</td>
-        <td class="function">Accounts / Finance</td>
-        <td class="date-posted">17-04-2024</td>
-    </tr>
-    <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=92816&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
-        data-industry="Manufacturing,B2B,Retail" data-state="MH" data-city="Bandra, Mumbai" data-job-function="Legal" data-sector="Non IT">
-        <td class="job-id">0041</td>
-        <td class="job-title">Legal Coordinator</td>
-        <td class="location">MH</td>
-        <td class="City">Mumbai</td>
-        <td class="experience" data-experience="2-5, 5-8, 8+" >5 - 8 Years</td>
-        <td class="salary">4 - 5 LPA</td>
-        <td class="notice">30 Days</td>
-        <td class="Industry">Manufacturing</td>
-        <td class="function">Legal</td>
-        <td class="date-posted">12-04-2024</td>
-    </tr>
-        <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=91460&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
-            data-industry="BFSI" data-state="TG" data-city="Hyderabad" data-job-function="Operations" data-sector="Non IT">
-            <td class="job-id">0037</td>
-            <td class="job-title">Team Leader - BFSI</td>
-            <td class="location">TG</td>
-            <td class="City">Hyderabad</td>
-            <td class="experience" data-experience="2-5, 5-8" >2 - 6 Years</td>
-            <td class="salary">4 - 5.5 LPA</td>
-            <td class="notice">15 Days</td>
-            <td class="Industry">BFSI</td>
-            <td class="function">Operations</td>
-            <td class="date-posted">04-04-2024</td>
-        </tr>
-        <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=91436&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
-            data-industry="Manufacturing,B2B,Retail" data-state="MH" data-city="Bandra, Mumbai" data-job-function="Accounts / Finance" data-sector="Non IT">
-            <td class="job-id">0038</td>
-            <td class="job-title">Executive / Senior Executive - Treasury</td>
-            <td class="location">MH</td>
-            <td class="City">Mumbai</td>
-            <td class="experience" data-experience="2-5, 5-8" >3 - 5 Years</td>
-            <td class="salary">Confidential</td>
-            <td class="notice">30 Days</td>
-            <td class="Industry">Manufacturing</td>
-            <td class="function">Accounts / Finance</td>
-            <td class="date-posted">04-04-2024</td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-<footer>
-    <div class="footer" >
-      <div class="box1">
-          <p class="footerheading">Important Notice</p>
-          <p class="footercontent">Job Nexus India emphasize ethical recruitment practices and we Job Nexus India will never charge candidates for any part of the recruitment process. Please be cautious of any fraudulent activities.</p>
-      </div>
-      <div class="box2">
-          <p class="footerheading">For any inquiries or assistance with technical issues while filling out the job application form, please contact:</p>
-          <p class="footercontent">hello@jobnexusindia.com <br>7899586564 (Whatsapp)</p>
-      </div>
-      <div class="box3">
-          <p class="footerheading">Join us on your preferred social media platforms to never miss job updates</p>
-          <p class="footercontent" style="margin-top: 5px;">Click on the icons given below to join.</p>
-              <div class="icon-container">
-                  <span><a href="https://in.linkedin.com/company/jobnexusindia" alt:"Job Nexus India Job Updates Linkedin Company Page Link" class="icon-link">
-                      <i class="fab fa-linkedin-in"></i>
-                      </a></span>                
-                  <span><a href="https://chat.whatsapp.com/CLUuvoRuViAF77TGPbSAom" alt:"Job Nexus India Job Updates Whatsapp Group Link" class="icon-link2">
-                      <i class="fab fa-whatsapp"></i>
-                      </a></span>
-                  <span><a href="https://t.me/jobnexusindia" alt:"Job Nexus India Telegram Channel Link" class="icon-link">
-                       <i class="fab fa-telegram"></i>
-                      </a></span>
-              </div>
-      </div>
-    </div>
-</footer>
-
-<script>
-document.getElementById("locationFilter").addEventListener("change", function() {
-    filterJobs();
+    <script>
+        // Add event listener to the select all checkbox
+        document.getElementById("selectAll").addEventListener("change", function() {
+            var checkboxes = document.querySelectorAll('.job-checkbox');
+            checkboxes.forEach(function(checkbox) {
+                checkbox.checked = this.checked;
+            }, this);
+        });
+        
+        // Function to copy job info from the selected rows
+        function copySelectedJobs() {
+            var selectedJobs = [];
+            var jobRows = document.querySelectorAll(".job-row");
+            jobRows.forEach(function(row) {
+                var checkbox = row.querySelector(".job-checkbox");
+                if (checkbox.checked) {
+                    var jobId = row.dataset.jobId;
+                    var jobTitle = row.dataset.jobTitle;
+                    var city = row.dataset.city;
+                    var experience = row.dataset.experience;
+                    selectedJobs.push(jobId + " - " + jobTitle + ", " + city + ", " + experience);
+                }
+            });
+        
+            var jobInfo = selectedJobs.join("\n");
+            if (selectedJobs.length > 0) {
+                // Create a temporary textarea element to copy text to clipboard
+                var tempTextarea = document.createElement('textarea');
+                tempTextarea.value = jobInfo;
+                document.body.appendChild(tempTextarea);
+        
+                // Select and copy the text
+                tempTextarea.select();
+                document.execCommand('copy');
+        
+                // Remove the temporary textarea
+                document.body.removeChild(tempTextarea);
+        
+                // Show a popup message
+                var popup = document.createElement('div');
+                popup.textContent = "Job information copied to clipboard: \n" + jobInfo;
+                popup.style.position = "fixed";
+                popup.style.bottom = "20px";
+                popup.style.left = "50%";
+                popup.style.transform = "translateX(-50%)";
+                popup.style.background = "#007bff";
+                popup.style.color = "white";
+                popup.style.padding = "10px";
+                popup.style.borderRadius = "5px";
+                popup.style.zIndex = "9999";
+                document.body.appendChild(popup);
+        
+                // Automatically close the popup after 3 seconds
+                setTimeout(function() {
+                    document.body.removeChild(popup);
+                }, 3000);
+            } else {
+                alert("Please select at least one job to copy.");
+            }
+        }
+        
+        // Add event listener to the copy button
+        document.getElementById("copyButton").addEventListener("click", function() {
+            copySelectedJobs();
+        });
+        
+        // Global variables to store pagination state
+        var currentPage = 1;
+        var rowsPerPage = 10;
+        
+        // Function to display rows based on pagination state
+        function displayRows() {
+            var jobRows = document.querySelectorAll(".job-row");
+            var startIndex = (currentPage - 1) * rowsPerPage;
+            var endIndex = startIndex + rowsPerPage;
+            var totalRows = jobRows.length;
+            var totalPages = Math.ceil(totalRows / rowsPerPage);
+        
+            // Hide all rows
+            jobRows.forEach(function(row) {
+                row.style.display = "none";
+            });
+        
+            // Display rows based on current page
+            for (var i = startIndex; i < endIndex && i < totalRows; i++) {
+                jobRows[i].style.display = "table-row";
+            }
+        
+            // Update total pages display
+            document.getElementById("pageInfo").textContent = "Page " + currentPage + " of " + totalPages;
+        }
+        
+        document.getElementById("rowsPerPage").addEventListener("change", function() {
+    var value = this.value;
+    if (value === "all") {
+        rowsPerPage = document.querySelectorAll(".job-row").length; // Set rowsPerPage to total rows
+    } else {
+        rowsPerPage = parseInt(value);
+    }
+    currentPage = 1;
+    displayRows();
 });
-
-document.getElementById("experienceFilter").addEventListener("change", function() {
-    filterJobs();
-});
-
-document.getElementById("industryFilter").addEventListener("change", function() {
-    filterJobs();
-});
-
-document.getElementById("functionFilter").addEventListener("change", function() {
-    filterJobs();
-});
-
-document.getElementById("sectorFilter").addEventListener("change", function() {
-    filterJobs();
-});
-
-document.getElementById("cityFilter").addEventListener("input", function() {
-    filterJobsByCity();
-});
-
-
-function filterJobs() {
-    var selectedLocation = document.getElementById("locationFilter").value;
-    var selectedExperience = document.getElementById("experienceFilter").value;
-    var selectedIndustry = document.getElementById("industryFilter").value;
-    var selectedFunction = document.getElementById("functionFilter").value;
-    var selectedSector = document.getElementById("sectorFilter").value;
-    var tableRows = document.querySelectorAll("#jobTable tbody tr");
-
-    tableRows.forEach(function(row) {
-        var locationCell = row.querySelector(".location");
-        var experienceCell = row.querySelector(".experience");
-        var industryCell = row.querySelector(".Industry");
-        var functionCell = row.querySelector(".function");
-        var cityCell = row.querySelector(".City");
-        var sectorData = row.dataset.sector.split(","); // Get sector data from dataset
-        var industryData = row.dataset.industry.split(","); // Get industry data from dataset
-        var stateData = row.dataset.state.split(","); // Split state data
-        var functionData = row.dataset.jobFunction;
-
-        var experienceData = experienceCell.dataset.experience.split(","); // Split experience levels
-
-        var showRow = false;
-
-        experienceData.forEach(function(exp) {
-            if (exp.trim() === selectedExperience || selectedExperience === "all") {
-                showRow = true;
+        // Event listener for previous page button
+        document.getElementById("prevPage").addEventListener("click", function() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayRows();
             }
         });
-
-        // Check if selected state is included in the list of states
-        if ((selectedLocation === "all" || stateData.includes(selectedLocation)) &&
-            (selectedFunction === "all" || functionData.includes(selectedFunction)) &&
-            (selectedIndustry === "all" || industryData.includes(selectedIndustry)) && // Check if selected industry is in industry data
-            (selectedSector === "all" || sectorData.includes(selectedSector)) && // Check if selected sector is in sector data
-            showRow) {
-            row.classList.remove('hidden');
-        } else {
-            row.classList.add('hidden');
-        }
-    });
-}
-
-function filterJobsByCity() {
-    var input = document.getElementById("cityFilter").value.trim().toLowerCase();
-    var tableRows = document.querySelectorAll("#jobTable tbody tr");
-
-    tableRows.forEach(function(row) {
-        var cityCell = row.querySelector(".City");
-        var cities = row.dataset.city.split(','); // Split city data
-
-        var showRow = false;
-
-        cities.forEach(function(city) {
-            if (city.trim().toLowerCase().includes(input)) { // Check if the input is included in any city
-                showRow = true;
+        
+        // Event listener for next page button
+        document.getElementById("nextPage").addEventListener("click", function() {
+            var jobRows = document.querySelectorAll(".job-row");
+            var totalRows = jobRows.length;
+            var totalPages = Math.ceil(totalRows / rowsPerPage);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayRows();
             }
         });
-
-        if (showRow) {
-            row.classList.remove('hidden');
-        } else {
-            row.classList.add('hidden');
-        }
-    });
-}
-
-document.getElementById("click").addEventListener("change", function() {
-    toggleTableVisibility();
-});
-
-function toggleTableVisibility() {
-    var tableCells = document.querySelectorAll("td, th");
-
-    tableCells.forEach(function(cell) {
-        cell.classList.toggle('hidden');
-    });
-}
-
-// Search job by job id 
-document.getElementById("jobIdFilter").addEventListener("input", function() {
-    filterJobsById();
-});
-
-function filterJobsById() {
-    var input = document.getElementById("jobIdFilter").value.toLowerCase();
-    var tableRows = document.querySelectorAll("#jobTable tbody tr");
-
-    tableRows.forEach(function(row) {
-        var jobIdCell = row.querySelector(".job-id");
-        var jobId = jobIdCell.textContent.toLowerCase();
-
-        if (jobId.indexOf(input) > -1) {
-            row.classList.remove('hidden');
-        } else {
-            row.classList.add('hidden');
-        }
-    });
-}
-
-</script>
-
-
+        
+        // Initial display of rows
+        displayRows();
+        </script>
 </body>
 </html>
