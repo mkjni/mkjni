@@ -924,7 +924,7 @@ font-family: 'Roboto';
       content: "Date posted:";
   } */
   td:nth-of-type(10):before {
-    content: "Status of Job:";
+    content: "Status:";
 }
 }
 
@@ -1307,7 +1307,7 @@ tr:hover {background-color: #f4f4f4;}
 
 /* Define different styles for different statuses */
 .status-text.active {
-  color: green;
+  color: darkgreen;
   background-color: lightgreen;
 }
 
