@@ -796,10 +796,7 @@ tbody{
       text-align: left;
   }
 
-  td.location{
-    margin-bottom: -22px;
-    margin-left: 180px;
-  }
+
 
   table td.location:before{
     left: 50%;
@@ -916,7 +913,7 @@ font-family: 'Roboto';
       content: "S/UT:";
   }
   td:nth-of-type(4):before {
-      content: "Work Location:";
+      content: "City:";
   }
   td:nth-of-type(5):before {
       content: "Experience:";
