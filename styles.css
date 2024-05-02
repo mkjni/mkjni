@@ -8,6 +8,7 @@
   border: none;
   /* font-family: Arial, Helvetica, sans-serif; */
  }
+
 nav{
   display: flex;
   width: 100%;
@@ -285,7 +286,7 @@ body {
     margin-top: auto;
     justify-content: center;
     border-top: 1px solid black;
-      align-content: left;
+      align-content: center;
       padding-left: 15px;
   }
   html {
@@ -530,7 +531,7 @@ h1{
 }
 
 
-nav .filter-container select {
+.filter-container select {
   padding: 5px;
   font-size: 16px;
   border: 1px solid black;
@@ -570,7 +571,7 @@ nav .filter-container select {
       font-family: Roboto;
       justify-content: center;
   }
-  nav .filter-container select {
+  .filter-container select {
     min-width: 250px;
       width: 250px;
       max-width: none;
@@ -609,7 +610,7 @@ nav .filter-container select {
   font-family: Roboto;
 }
 
-nav .filter-select {
+.filter-select {
   padding: 5px;
   font-size: 16px;
   border: 1px solid #ddd;
@@ -617,10 +618,12 @@ nav .filter-select {
 }
 
 
+/* Table related code */
+
 table {
   width: 90%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
   border-collapse: collapse;
   margin-bottom: 20px;
   justify-content: center;
@@ -629,7 +632,7 @@ table {
 }
 
 #jobTable{
-  width: 90%;
+  width: 95%;
   justify-content: center;
   align-content: center;
 }
@@ -674,7 +677,7 @@ tbody{
 }
 
 /* Mobile Styles */
-@media only screen and (max-width: 1240px) {
+@media only screen and (max-width: 1239px) {
   table,
   thead,
   tbody,
@@ -758,7 +761,7 @@ tbody{
       align-items: center;
       align-content: center;
       align-items: center;
-      margin-bottom: 47px;
+      margin-bottom: 20px;
       min-width: auto; /* Set minimum width for rows */
       max-width: auto;
       border-radius: 10px;
@@ -779,7 +782,7 @@ tbody{
   }
 
 
-  td.salary, th.salary, td.experience, th.experience, td.location, th.location td.Experience, th.Experience, td.job-id, th.job-id, td.notice, th.notice, td.date-posted, th.date-posted, td.City, th.City, th.job-status, td.job-status {
+  td.salary, th.salary, td.experience, th.experience, td.location, th.location td.Experience, th.Experience, td.job-id, th.job-id, td.notice, th.notice, td.date-posted, th.date-posted, td.City, th.City {
       white-space: wrap;
       max-width: auto;
       width: auto;
@@ -796,10 +799,14 @@ tbody{
       text-align: left;
   }
 
-  th.select-checkbox,
-  td.select-checkbox{
-      display: none;
-    }
+  td.location{
+    margin-bottom: -22px;
+    margin-left: 180px;
+  }
+
+  table td.location:before{
+    left: 50%;
+  }
 
   td.job-id{
     border-top-left-radius: 10px;
@@ -815,15 +822,12 @@ tbody{
 
   th.job-status,
   td.job-status {
-    border: none;
-    margin-left: 170px;
-    margin-bottom: -22px;
     background: none;
     text-align: left;
     display: flex;
     justify-content: left;
   }
-
+  
   .status-text{
     display: inline-block;
     padding: 3px;
@@ -836,60 +840,42 @@ tbody{
     text-align: center;
   }
 
-  
-  
-    .tablepagesmanager {
-      /* margin-left: 8%; */
-      margin-bottom: 20px;
-      justify-content: center;
-      align-items: center;
-      align-content: center;
-      text-align: center;
-      row-gap: 10px;
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: 15px;
-      margin-right: 15px;
-      column-gap: 10px;
-  }
 
-
-  
 
   td:nth-of-type(1):before {
-    content: "";
-  }
-  td:nth-of-type(2):before {
       content: "Job ID:";
   }
-  td:nth-of-type(3):before {
+  td:nth-of-type(2):before {
       content: "Role/Job Title:";
       color: initial; /* Retain default color */
   }
-  td:nth-of-type(9):before {
+  td:nth-of-type(8):before {
       content: "Industry:";
   }
-  td:nth-of-type(10):before {
+  td:nth-of-type(9):before {
       content: "Department:";
   }
+  td:nth-of-type(3):before {
+      content: "S/UT:";
+  }
   td:nth-of-type(4):before {
-      content: "State/UT:";
+      content: "Work Location:";
   }
   td:nth-of-type(5):before {
-      content: "City:";
-  }
-  td:nth-of-type(6):before {
       content: "Experience:";
   }
-  td:nth-of-type(7):before {
+  td:nth-of-type(6):before {
       content: "Salary Offered:";
   }
-  td:nth-of-type(8):before {
+  td:nth-of-type(7):before {
       content: "Notice Period:";
   }
-  td:nth-of-type(11):before {
+  /* td:nth-of-type(10):before {
       content: "Date posted:";
-  }
+  } */
+  td:nth-of-type(10):before {
+    content: "Status of Job:";
+}
 }
 
 
@@ -897,64 +883,88 @@ tbody{
 @media only screen and (min-width: 1240px) {
   th.Industry,
   td.Industry {
-      min-width: 100px;
-      max-width: 100px;
+      width: 130px;
+      min-width: 130px;
+      max-width: 130px;
   }
   th.function,
   td.function {
-    min-width: 100px;
-    max-width: 100px;
+    width: 130px;
+    min-width: 130px;
+    max-width: 130px;
   }
   th.location,
   td.location {
-    min-width: 45px;
-      max-width: 45px;
+      width: 40px;
+      min-width: 40px;
+      max-width: 40px;
   }
+
+
   th.job-id,
   td.job-id{
-      min-width: 45Spx;
-      max-width: 45px;
+      width: 40px;
+      min-width: 40px;
+      max-width: 40px;
   }
+
+  th.job-status,
+  td.job-status{
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+  }
+
   th.date-posted,
   td.date-posted{
-    min-width: 70px;
-      max-width: 70px;
+    min-width: 55px;
+      max-width: 55px;
   }
   th.salary,
   td.salary{
-      width: 120px;
-      min-width: 120px;
-      max-width: 120px;
+      width: 100px;
+      min-width: 100px;
+      max-width: 100px;
   }
   th.experience,
   td.experience{
-    min-width: 90px;
-      max-width: 90px;
-  }
-  th.City,
-  td.City {
-      width: 120px;
-      min-width: 120px;
-      max-width: 120px;
-  }
-  th.notice,
-  td.notice {
       width: 80px;
       min-width: 80px;
       max-width: 80px;
   }
+  th.City,
+  td.City {
+      width: 100px;
+      min-width: 100px;
+      max-width: 100px;
+  }
+  th.notice,
+  td.notice {
+      width: 60px;
+      min-width: 60px;
+      max-width: 60px;
+  }
   th.job-title,
   td.job-title {
-    min-width: 200px;
-    max-width: 200px;
-    padding-left: 5px;
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
   }
+
+  
+  th.job-status,
+  td.job-status{
+    min-width: 50px;
+    max-width: 50px;
+  }
+
 
   td.job-title{
-      font-size: 15 px;
+      font-size: 16px;
+      font-weight: 500;
   }
 
-  th {
+  th, tr, td {
     padding-left: 5px;
     padding-right: 5px;
   }
@@ -964,20 +974,14 @@ tbody{
     padding-bottom: 8px;
   }
 
-  th, tr, td {
-    padding-left: 5px;
-    padding-right: 5px;
+  td{
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
 
 
-  th.select-checkbox,
-  td.select-checkbox{
-    width: 58px;
-    min-width: 58px;
-    max-width: 58px;
-  }
-
+  
   .status-text {
     display: inline-block;
     padding: 5px;
@@ -988,18 +992,160 @@ tbody{
     border: none;
   }
 
-  .tablepagesmanager{
-    margin-left: 10%;
-    margin-bottom: 20px;
-  }
 
 }
 
+  @media print {
+    /* Hide navigation bar, header, filter, and footer */
+    header, nav, footer, .filterc {
+      display: none !important;
+    }
 
+    /* Set table width to 1400px */
+    table {
+      width: 1400px;
+      margin: 0 auto; Center the table horizontally
+    }
 
-  td.job-checkbox{
-    font-size: 10px;
+      /* Hide the Date posted column */
+    table tr th:nth-child(10),
+    table tr td:nth-child(10) {
+      display: none;
+    }
+
+    table tr th:nth-child(7),
+    table tr td:nth-child(7) {
+      display: none;
+    }
+
+    tr, th, td{
+      font-size: 18px;
+    }
+
+    /* Show message after the table */
+    .print-message {
+      display: block !important;
+      /* font-style: italic; */
+      font-size: 33.3px; /* Adjust the font size here */
+      font-family: 'inter';
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 30px;
+      margin-top: 5px;
+      margin-left: 17px;
+      margin-right: 17px;
+      padding: 0;
+      text-decoration: none;
+    }
+
+    /* Increase font size of h1 */
+    h1 {
+      font-size: 43px !important; /* Adjust the font size here */\
+      margin: 0;
+      padding: 0;
+      margin-top: -5px;
+    }
+
+    .print-message a{
+      color: blue;
+      text-decoration: none;
+    }
+
+    th.Industry,
+    td.Industry {
+        min-width: 150px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 0;
+    }
+    th.function,
+    td.function {
+        min-width: 150px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 0;
+    }
+    th.location,
+    td.location {
+        min-width: 70px;
+        padding: 0;
+        margin: 0;
+    }
+    th.job-id,
+    td.job-id{
+        min-width: 70px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 0;
+    }
+
+    th.salary,
+    td.salary{
+        min-width: 150px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin: 0;
+    }
+    th.experience,
+    td.experience{
+        min-width: 150px;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 0;
+    }
+    th.City,
+    td.City {
+        padding-left: 5px;
+        padding-right: 5px;
+        margin: 0;
+    }
+    th.notice,
+    td.notice {
+        width: 123px;
+        min-width: 130px;
+        max-width: 130px;
+    }
+    th.job-title,
+    td.job-title {
+      min-width: 300px;
+      max-width: 300px;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-bottom: 8px;
+      padding-top: 8px;
+    }
+
+    td job-title{
+      font-weight:500;
+    }
+
+    th, td{
+      font-size: 18px;
+      padding-left: 5px;
+      padding-right: 5px;
+      padding-top: 2px;
+      padding-bottom: 2px;
+      margin: 0;
+    }
+
+    tr{
+    padding: 5px;
+    margin: 0;
+    }
+
+    th {
+      background-color: #15c; 
+      color: white; /* Change text color */
+    }
   }
+
+
+.print-message {
+  display: none; /* Initially hide the message */
+  font-family: 'Arial';
+}
 
 /* Alternate row colors */
 tr:nth-child(even) {
@@ -1021,118 +1167,6 @@ tr:nth-child(odd) {
 
 tr:hover {background-color: #f4f4f4;}
 
-input[type="checkbox"] {
-  height: 20px; /* Set the desired height */
-  width: 20px; /* Set the desired width */
-}
-
-.action-buttons {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.action-buttons .button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin: 0 10px;
-  font-size: 16px;
-  display: inline-block;
-}
-
-.action-buttons .button:hover {
-  background-color: #0056b3;
-}
-
-.action-buttons input[type="checkbox"] {
-  display: none;
-}
-
-.action-buttons input[type="checkbox"] + label::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  border: 2px solid #007bff;
-  border-radius: 3px;
-  vertical-align: middle;
-}
-
-.action-buttons input[type="checkbox"]:checked + label::before {
-  content: '\2713'; /* Unicode checkmark character */
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-/* Additional CSS for the checkbox inside the button */
-.action-buttons .checkbox-label {
-  display: inline-block;
-  vertical-align: middle;
-  cursor: pointer;
-}
-
-.action-buttons .checkbox-label:hover::before {
-  border-color: #0056b3;
-}
-
-.action-buttons .checkbox-label::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  border: 2px solid #007bff;
-  border-radius: 3px;
-  vertical-align: middle;
-}
-
-.action-buttons input[type="checkbox"]:checked + .checkbox-label::before {
-  content: '\2713'; /* Unicode checkmark character */
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  background-color: #007bff;
-  border-color: #007bff;
-}
-
-#rowsPerPage {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-#prevPage,
-#nextPage {
-  padding: 8px 12px;
-  margin-left: 10px;
-  border: none;
-  background-color: #007bff;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-#prevPage:hover,
-#nextPage:hover {
-  background-color: #0056b3;
-}
-
-.job-checkbox {
-    transform: scale(0.8); /* Adjust the scale value to resize the checkbox */
-}
-.job-status {
-  width: 60px; /* Adjust the width as needed */
-}
-
-
-
 /* Define different styles for different statuses */
 .status-text.active {
   color: green;
@@ -1149,17 +1183,80 @@ input[type="checkbox"] {
   background-color: lightcoral;
 }
 
-.job-status {
-  width: 70px; /* Adjust the width as needed */
-  text-align: center; /* Center the status text */
-  border: none;
-  background-color: white;
+
+
+/* Pagination styles */
+/* Styles for pagination and dropdown */
+.pagination-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+
+
 }
 
-th.job-status,
-td.job-status{
-  width: 80px;
-  min-width: 80px;
-  max-width: 80px;
-  justify-content: center;
+.pagination-controls {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    margin-left: 2.2%;
+    margin-right: 2.2%;
+    font-family: 'Roboto';
+    row-gap: 20px;
+    justify-content: space-between;
+}
+
+
+.pagination-controls button {
+    padding: 8px 12px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.jobtablerowfilter{
+  margin-left: 5px;
+}
+
+.pagination-controls select{
+  border: 1px solid black;
+  font-family: 'Roboto';
+}
+
+.pagination-controls select {
+    margin-right: 5px;
+}
+
+.pagination-controls button {
+    margin: 0 5px;
+}
+
+.pagination-controls select:hover,
+.pagination-controls button:hover {
+    background-color: #e0e0e0;
+}
+
+#currentPage {
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+@media screen and (max-width: 1239px) {
+    .pagination-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        row-gap: 10px;
+        padding: 2px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        width: 96%;
+        margin-top: -10px;
+      }
 }
