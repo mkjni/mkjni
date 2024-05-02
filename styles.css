@@ -779,7 +779,8 @@ tbody{
   }
 
 
-  td.salary, th.salary, td.experience, th.experience, td.location, th.location td.Experience, th.Experience, td.job-id, th.job-id, td.notice, th.notice, td.date-posted, th.date-posted, td.City, th.City {
+  td.salary, th.salary, td.experience, th.experience, td.location, th.location td.Experience, th.Experience, td.job-id, th.job-id, td.notice, th.notice, td.date-posted, th.date-posted, td.City, th.City, th.job-status,
+  td.job-status {
       white-space: wrap;
       max-width: auto;
       width: auto;
@@ -822,6 +823,7 @@ tbody{
     text-align: left;
     display: flex;
     justify-content: left;
+    border-radius: 10px;
   }
   
   .status-text{
@@ -1111,7 +1113,7 @@ font-family: 'Roboto';
 
   @media print {
     /* Hide navigation bar, header, filter, and footer */
-    header, nav, footer, .filterc {
+    header, nav, footer, .filterc, .pagination-controls {
       display: none !important;
     }
 
@@ -1169,90 +1171,102 @@ font-family: 'Roboto';
 
     th.Industry,
     td.Industry {
-        min-width: 150px;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin: 0;
-    }
-    th.function,
-    td.function {
-        min-width: 150px;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin: 0;
-    }
-    th.location,
-    td.location {
-        min-width: 70px;
-        padding: 0;
-        margin: 0;
-    }
-    th.job-id,
-    td.job-id{
-        min-width: 70px;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin: 0;
-    }
-
-    th.salary,
-    td.salary{
-        min-width: 150px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin: 0;
-    }
-    th.experience,
-    td.experience{
-        min-width: 150px;
-        padding-left: 5px;
-        padding-right: 5px;
-        margin: 0;
-    }
-    th.City,
-    td.City {
-        padding-left: 5px;
-        padding-right: 5px;
-        margin: 0;
-    }
-    th.notice,
-    td.notice {
-        width: 123px;
+        width: 130px;
         min-width: 130px;
         max-width: 130px;
     }
+    th.function,
+    td.function {
+      width: 130px;
+      min-width: 130px;
+      max-width: 130px;
+    }
+    th.location,
+    td.location {
+        width: 40px;
+        min-width: 40px;
+        max-width: 40px;
+    }
+  
+  
+    th.job-id,
+    td.job-id{
+        width: 40px;
+        min-width: 40px;
+        max-width: 40px;
+    }
+  
+    th.job-status,
+    td.job-status{
+      width: 220px;
+      min-width: 220px;
+      max-width: 220px;
+    }
+  
+    th.date-posted,
+    td.date-posted{
+      min-width: 55px;
+        max-width: 55px;
+    }
+    th.salary,
+    td.salary{
+        width: 100px;
+        min-width: 100px;
+        max-width: 100px;
+    }
+    th.experience,
+    td.experience{
+        width: 80px;
+        min-width: 80px;
+        max-width: 80px;
+    }
+    th.City,
+    td.City {
+        width: 100px;
+        min-width: 100px;
+        max-width: 100px;
+    }
+    th.notice,
+    td.notice {
+        width: 60px;
+        min-width: 60px;
+        max-width: 60px;
+    }
     th.job-title,
     td.job-title {
-      min-width: 300px;
-      max-width: 300px;
+      width: 250px;
+      min-width: 250px;
+      max-width: 250px;
+    }
+  
+    
+    th.job-status,
+    td.job-status{
+      min-width: 50px;
+      max-width: 50px;
+    }
+  
+  
+    td.job-title{
+        font-size: 16px;
+        font-weight: 500;
+    }
+  
+    th, tr, td {
       padding-left: 5px;
       padding-right: 5px;
-      padding-bottom: 8px;
+    }
+  
+    th{
       padding-top: 8px;
+      padding-bottom: 8px;
     }
-
-    td job-title{
-      font-weight:500;
+  
+    td{
+      padding-top: 5px;
+      padding-bottom: 5px;
     }
-
-    th, td{
-      font-size: 18px;
-      padding-left: 5px;
-      padding-right: 5px;
-      padding-top: 2px;
-      padding-bottom: 2px;
-      margin: 0;
-    }
-
-    tr{
-    padding: 5px;
-    margin: 0;
-    }
-
-    th {
-      background-color: #15c; 
-      color: white; /* Change text color */
-    }
+  
   }
 
 
