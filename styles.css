@@ -554,9 +554,10 @@ h1{
       font-size: 14px;
       width: auto;
       border: 1px solid #ddd;
+      border-radius: 10px;
       margin-left: 10px;
       margin-right: 10px;
-      border-radius: 10px;
+
       padding-top: 20px;
       padding-bottom: 20px;
       background: transparent;
@@ -1340,4 +1341,35 @@ tr:hover {background-color: #f4f4f4;}
         margin-right: 5%;
         margin-top: -10px;
       }
+}
+
+@media screen and (min-width: 601px) {
+.abbrevation{
+  font-family: 'Roboto';
+  flex-wrap: wrap;  
+  display: flex;
+  column-gap: 30px;
+  justify-content: center;
+  margin-bottom: 10px;
+  row-gap: 5px;
+}
+}
+
+@media screen and (max-width: 600px) {
+
+  .abbrevation{
+    font-family: 'Roboto';
+    display: block;
+    flex-wrap: wrap;
+    justify-content: left;
+    margin-bottom: 20px;
+    align-content: left;
+    align-items: left;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+  }
 }
