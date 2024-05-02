@@ -952,17 +952,19 @@ font-family: 'Roboto';
   }
   th.location,
   td.location {
-      width: 40px;
-      min-width: 40px;
-      max-width: 40px;
+    width: 30px;
+    min-width: 30px;
+    max-width: 30px;
   }
 
 
   th.job-id,
   td.job-id{
-      width: 40px;
-      min-width: 40px;
-      max-width: 40px;
+      width: 35px;
+      min-width: 35px;
+      max-width: 35px;
+      padding: 0;
+      margin: 0;
   }
 
   th.job-status,
@@ -997,15 +999,17 @@ font-family: 'Roboto';
   }
   th.notice,
   td.notice {
-      width: 60px;
-      min-width: 60px;
-      max-width: 60px;
+      width: 50px;
+      min-width: 50px;
+      max-width: 50px;
+      padding: 0;
+      margin: 0;
   }
   th.job-title,
   td.job-title {
-    width: 250px;
-    min-width: 250px;
-    max-width: 250px;
+    width: 230px;
+    min-width: 230px;
+    max-width: 230px;
   }
 
   
@@ -1119,8 +1123,9 @@ font-family: 'Roboto';
 
     /* Set table width to 1400px */
     table {
-      width: 1400px;
-      margin: 0 auto; Center the table horizontally
+      width: 95%;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
     }
 
       /* Hide the Date posted column */
@@ -1144,56 +1149,64 @@ font-family: 'Roboto';
       /* font-style: italic; */
       font-size: 33.3px; /* Adjust the font size here */
       font-family: 'inter';
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-      text-align: center;
+      justify-content: left;
+      align-content: ;
+      align-items: ;
+      text-align: left;
       margin-bottom: 30px;
-      margin-top: 5px;
+      margin-top: 20px;
       margin-left: 17px;
       margin-right: 17px;
       padding: 0;
       text-decoration: none;
+      line-height: 1.3;
     }
 
+ 
     /* Increase font size of h1 */
     h1 {
-      font-size: 43px !important; /* Adjust the font size here */\
+      font-size: 43px !important; /* Adjust the font size here */
       margin: 0;
       padding: 0;
-      margin-top: -5px;
+      margin-top: 20px;
+      text-align: left;
+      margin-left: 10px;
     }
 
     .print-message a{
-      color: blue;
+      color: black;
       text-decoration: none;
     }
 
     th.Industry,
     td.Industry {
-        width: 130px;
-        min-width: 130px;
-        max-width: 130px;
+        width: 180px;
+        min-width: 180px;
+        max-width: 180px;
     }
     th.function,
     td.function {
-      width: 130px;
-      min-width: 130px;
-      max-width: 130px;
+      width: 150px;
+      min-width: 150px;
+      max-width: 150px;
     }
     th.location,
     td.location {
-        width: 40px;
-        min-width: 40px;
-        max-width: 40px;
+        width: 50px;
+        min-width: 50px;
+        max-width: 50px;
+        padding: 0;
+        margin: 0;
     }
   
   
     th.job-id,
     td.job-id{
-        width: 40px;
-        min-width: 40px;
-        max-width: 40px;
+        width: 50px;
+        min-width: 50px;
+        max-width: 50px;
+        padding: 0;
+        margin: 0;
     }
   
     th.job-status,
@@ -1210,21 +1223,27 @@ font-family: 'Roboto';
     }
     th.salary,
     td.salary{
-        width: 100px;
-        min-width: 100px;
-        max-width: 100px;
+        width: 130px;
+        min-width: 130px;
+        max-width: 130px;
+        padding: 0;
+        margin: 0;
     }
     th.experience,
     td.experience{
-        width: 80px;
-        min-width: 80px;
-        max-width: 80px;
+        width: 130px;
+        min-width: 130px;
+        max-width: 130px;
+        padding: 0;
+        margin: 0;
     }
     th.City,
     td.City {
-        width: 100px;
-        min-width: 100px;
-        max-width: 100px;
+        width: 120px;
+        min-width: 120px;
+        max-width: 150px;
+        padding: 0;
+        margin: 0;
     }
     th.notice,
     td.notice {
@@ -1234,21 +1253,17 @@ font-family: 'Roboto';
     }
     th.job-title,
     td.job-title {
-      width: 250px;
-      min-width: 250px;
-      max-width: 250px;
+      width: 350px;
+      min-width: 350px;
+      max-width: 350px;
+      margin-left: 15px;
     }
-  
-    
-    th.job-status,
-    td.job-status{
-      min-width: 50px;
-      max-width: 50px;
-    }
-  
+
+
+
   
     td.job-title{
-        font-size: 16px;
+        font-size: 18px;
         font-weight: 500;
     }
   
@@ -1266,6 +1281,8 @@ font-family: 'Roboto';
       padding-top: 5px;
       padding-bottom: 5px;
     }
+
+
   
   }
 
