@@ -137,12 +137,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Update table visibility based on pagination
     function updateTableVisibility() {
-        var startIndex = (currentPage - 1) * jobsPerPage;
-        var endIndex = startIndex + jobsPerPage;
-
         var tableRows = document.querySelectorAll("#jobTable tbody tr");
+
         tableRows.forEach(function(row, index) {
-            if (index >= startIndex && index < endIndex) {
+            if (jobsPerPage === 'all' || (index >= (currentPage - 1) * jobsPerPage && index < currentPage * jobsPerPage)) {
                 row.classList.remove('hidden');
             } else {
                 row.classList.add('hidden');
@@ -156,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Event listeners for dropdown and pagination buttons
     document.getElementById("jobsPerPage").addEventListener("change", function() {
-        jobsPerPage = parseInt(this.value);
+        jobsPerPage = this.value === 'all' ? 'all' : parseInt(this.value);
         currentPage = 1;
         updatePagination();
         updateTableVisibility();
