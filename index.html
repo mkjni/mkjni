@@ -1,1 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="msvalidate.01" content="A4D40B1AA5475B07D06649F7D8970D5F" />
+  <meta name="verify-v1" content="unique-string">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/png" href="https://www.jobnexusindia.com/Job-Nexus-India-Logo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Arima Madurai' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<title>Job Nexus India</title>
+<meta name="description" content="Welcome to Job Nexus India - 'Bridging Talent with Opportunities'. We are a dedicated platform committed to connecting job seekers with potential employers, fostering a community that thrives on mutual growth and success.
 
+At Job Nexus India, we specialize in connecting top talent with leading companies. As a trusted partner, we deliver tailored recruitment solutions to source, screen, and submit qualified candidates, driving the growth and success of our client organizations.
+
+Our mission is to streamline the job search process, making it more efficient and less daunting for candidates. We understand the challenges of job hunting and aim to alleviate them by providing a curated selection of job opportunities from various industries.
+
+In our pursuit to create a supportive ecosystem for job seekers, we have established dedicated WhatsApp and Telegram groups. These platforms serve as interactive forums where job seekers can engage, share opportunities, and support each other in their job search journey.
+
+At Job Nexus India, we believe in the power of community and collaboration. We are not just about connecting individuals to jobs; we are about building relationships, fostering growth, and empowering individuals to achieve their career goals.
+
+Join us in our mission to bridge talent with opportunities and transform the job search experience. Together, we can create a vibrant community that supports, uplifts, and propels each member towards their career aspirations.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://www.jobnexusindia.com/Job-Nexus-India-Linkedin-logo.png">
+  <meta name="title" property="og:title" content="Job Nexus India">
+  <meta property="og:url" content="https://www.jobnexusindia.com/">
+  <meta name="author" content="Job Nexus India">
+</head>
+<body>
+
+<header>
+    <nav>
+      <a class="logo" href="https://www.jobnexusindia.com/"><div class="logo">Job Nexus India</div></a>
+      <input type="checkbox" id="click">
+      <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <ul>
+        <li><a class="active" href="https://www.jobnexusindia.com/">Current Openings</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+      </ul>
+    </nav>
+</header>
+
+<h1>We're hiring the following positions for our clients</h1>
+  <div id="printMessage" class="print-message">
+    <a href="https://www.jobnexusindia.com/">  Visit our website to search jobs using filters, and to know more and apply <br><i class="fa-solid fa-globe"></i><span style="color: blue;"> www.jobnexusindia.com</span></a>
+</div>
+
+
+<div class="filterc">
+<div class="filter-container">
+    <div class="filter-job-id">
+        <label class="filter-label">Job ID</label><br>
+        <input type="text" id="jobIdFilter" class="filter-select">
+    </div>
+    <!-- Existing filter elements for location, experience, and industry -->
+    <div class="filter-location">
+        <label class="filter-label">State/Union Territory</label><br>
+        <select id="locationFilter" class="filter-select">
+            <option value="all">All States/UTs</option>
+            <option value="AP">Andhra Pradesh - AP</option>
+            <option value="AS">Assam - AS</option>
+            <option value="BR">Bihar - BR</option>
+            <option value="CH">Chandigarh - CH</option>
+            <option value="CG">Chhattisgarh - CG</option>
+            <option value="DL">Delhi - DL</option>
+            <option value="GA">Goa - GA</option>
+            <option value="GJ">Gujarat - GJ</option>
+            <option value="HR">Haryana - HR</option>
+            <option value="JK">Jammu and Kashmir - JK</option>
+            <option value="JH">Jharkhand - JH</option>
+            <option value="KA">Karnataka - KA</option>
+            <option value="KL">Kerala - KL</option>
+            <option value="MP">Madhya Pradesh - MP</option>
+            <option value="MH">Maharashtra - MH</option>
+            <option value="OR">Orissa/Odisha - OR</option>
+            <option value="PY">Pondicherry - PY</option>
+            <option value="PB">Punjab - PB</option>
+            <option value="RJ">Rajasthan - RJ</option>
+            <option value="TN">Tamil Nadu - TN</option>
+            <option value="TG">Telangana - TG</option>
+            <option value="UP">Uttar Pradesh - UP</option>
+            <option value="WB">West Bengal - WB</option>
+        </select>
+    </div>
+      <!-- New filter for city -->
+    <div class="filter-city">
+        <label class="filter-label">City</label><br>
+        <input type="text" id="cityFilter" class="filter-select">
+    </div>
+        <!-- New filter for sector -->
+    <div class="filter-sector">
+        <label class="filter-label">Sector</label><br>
+        <select id="sectorFilter" class="filter-select">
+            <option value="all">All Sectors</option>
+            <option value="IT">IT</option>
+            <option value="Non IT">Non IT</option>
+        </select>
+    </div>
+    <div class="filter-experience">
+        <label class="filter-label">Experience Levels</label><br>
+        <select id="experienceFilter" class="filter-select">
+            <option value="all">All Experience Levels</option>
+            <option value="0-2">0-2 Years - Junior Level</option>
+            <option value="2-5">2-5 years - Associate Level</option>
+            <option value="5-8">5-8 years - Mid Level</option>
+            <option value="8+">8+ years - Senior Level</option>
+        </select>
+    </div>
+    <div class="filter-industry">
+        <label class="filter-label">Industry</label><br>
+        <select id="industryFilter" class="filter-select">
+            <option value="all">All Industries</option>
+            <option value="BFSI">BFSI</option>
+            <option value="Manufacturing">Manufacturing / Production</option>
+            <option value="Fossil / Renewable Energy">Fossil / Renewable Energy</option>
+            <option value="Real Estate">Real Estate / Construction</option>
+            <option value="Retail">Retail</option>
+            <option value="Education">Education</option>
+            <option value="Software Development">Software Development</option>
+            <option value="Digital Marketing">Digital Marketing</option>
+            <option value="Hospital / Healthcare">Hospital / Healthcare</option>
+            <option value="Laboratory Glassware Process Science Equipments">Glass Lab Equipments</option>
+        </select>
+    </div>
+
+    <!-- New filter for job function -->
+    <div class="filter-job-function">
+        <label class="filter-label">Department</label><br>
+        <select id="functionFilter" class="filter-select">
+            <option value="all">All Departments</option>
+            <option value="Accounts / Finance">Accounts / Finance</option>
+            <option value="Legal">Legal</option>
+            <option value="Sales">Sales</option>
+            <option value="Customer Support">Customer Support</option>
+            <option value="Operations">Operations</option>
+            <option value="Marketing">Marketing</option>
+            <option value="Admission">Admission</option>
+            <option value="Human Resource">Human Resource</option>
+            <option value="Project Management">Project Management</option>
+            <option value="Administration">Administration</option>
+            <option value="Teaching">Teaching</option>
+        </select>
+    </div>
+</div>
+</div>
+<div class="abbrevation">  <strong>Abbreviations Used:</strong>
+    <P><strong> ID:</strong> Unique Job ID.</P>
+    <P><strong>S/UT:</strong> State/Union Territory.</P>
+    <P><strong>NP:</strong> Notice Period.</P>
+    <P><strong>IJP:</strong> Immediate Joiners Preferred.</P>
+    <P><strong>Status:</strong> Status of the Job.</P>
+    <P><strong>Industry:</strong> Describes the primary business sector.</P>
+    <P><strong>Sub Industry:</strong> Specifies a particular business within that sector.</P>
+    <P><strong>Department:</strong> Shows the specific team seeking new members.</P>
+      </div>
+<!-- Table Section -->
+<table id="jobTable">
+    <thead>
+        <tr>
+            <th class="job-id">ID</th>
+            <th class="job-title">Role/Job Title</th>
+            <th class="location">S/UT</th>
+            <th class="City">City</th> 
+            <th class="experience">Experience</th>
+            <th class="salary">Salary</th>
+            <th class="notice">NP</th>
+            <th class="Industry">Sub Industry</th>
+            <th class="function">Department</th>
+            <th class="job-status">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+      <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=95295&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="Education" 
+        data-state="GJ"
+        data-city="Surat" 
+        data-job-function="Teaching" 
+        data-sector="Non IT">
+        <td class="job-id">0058</td>
+        <td class="job-title">Faculty (English) / English Language Trainer / TOEFL/IELTS Trainer</td>
+        <td class="location">GJ</td>
+        <td class="City">Surat</td>
+        <td class="experience" data-experience="0-2, 2-5" >0 - 4 Years</td>
+        <td class="salary">up to 22K PM</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Oversee Education Consultancy</td>
+        <td class="function">Teaching</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+        <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=95293&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="Education" 
+        data-state="KA"
+        data-city="Bengaluru,Bangaluru,Bangalore,Bengalore,Benglore,Bengluru" 
+        data-job-function="Teaching" 
+        data-sector="Non IT">
+
+        <td class="job-id">0057</td>
+        <td class="job-title">Faculty (English) / English Language Trainer / TOEFL/IELTS Trainer</td>
+        <td class="location">KA</td>
+        <td class="City">Bengaluru</td>
+        <td class="experience" data-experience="0-2, 2-5" >0 - 4 Years</td>
+        <td class="salary">up to 22K PM</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Oversee Education Consultancy</td>
+        <td class="function">Teaching</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+        <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=95292&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="Education" 
+        data-state="MH"
+        data-city="Vashi, Navi Mumbai" 
+        data-job-function="Administration" 
+        data-sector="Non IT">
+
+        <td class="job-id">0056</td>
+        <td class="job-title">Front Office Executive / Receptionist</td>
+        <td class="location">MH</td>
+        <td class="City">Vashi</td>
+        <td class="experience" data-experience="0-2" >0 - 1 Years</td>
+        <td class="salary">up to 14K PM</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Oversee Education Consultancy</td>
+        <td class="function">Administration</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+      <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=95280&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="Laboratory Glassware Process Science Equipments" 
+        data-state="MH"
+        data-city="Pune" 
+        data-job-function="Project Management" 
+        data-sector="Non IT">
+        <td class="job-id">0055</td>
+        <td class="job-title">Executive or Sr. Executive - Project Management</td>
+        <td class="location">MH</td>
+        <td class="City">Pune</td>
+        <td class="experience" data-experience="0-2, 2-5" >1 - 4 Years</td>
+        <td class="salary">20-25% Hike</td>
+        <td class="notice">15 Days</td>
+        <td class="Industry">Glass Lab Equipments. Process Science</td>
+        <td class="function">Project Management</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+     <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=94845&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="Retail" 
+        data-state="HR"
+        data-city="Rohtak" 
+        data-job-function="Sales" 
+        data-sector="Non IT">
+        <td class="job-id">0054</td>
+        <td class="job-title">Sales Executive / Sales Person - Retail Store</td>
+        <td class="location">HR</td>
+        <td class="City">Rohtak</td>
+        <td class="experience" data-experience="0-2" >1 - 2 Years</td>
+        <td class="salary">15000 PM</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Apparel Store</td>
+        <td class="function">Sales</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+          <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=94844&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="Retail" 
+        data-state="DL"
+        data-city="Udyog Nagar" 
+        data-job-function="Accounts / Finance" 
+        data-sector="Non IT">
+        <td class="job-id">0053</td>
+        <td class="job-title">Accounts Executive / Accountant</td>
+        <td class="location">DL</td>
+        <td class="City">Udyog Nagar</td>
+        <td class="experience" data-experience="5-8, 8+" >6 - 10 Years</td>
+        <td class="salary">35000 PM</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Watch Showroom</td>
+        <td class="function">Accounts</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+    <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=94841&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="Hospital / Healthcare" 
+        data-state="TN"
+        data-city="Chennai" 
+        data-job-function="Human Resource" 
+        data-sector="Non IT">
+
+        <td class="job-id">0052</td>
+        <td class="job-title">HR Generalist / HR Analyst</td>
+        <td class="location">TN</td>
+        <td class="City">Chennai</td>
+        <td class="experience" data-experience="5-8, 8+" >8 - 12 Years</td>
+        <td class="salary">4 - 5 LPA</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Hospital / Healthcare</td>
+        <td class="function">Human Resource</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+
+        <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=94835&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="BFSI" 
+        data-state="GJ"
+        data-city="Rajkot" 
+        data-job-function="Sales" 
+        data-sector="Non IT">
+
+        <td class="job-id">0051</td>
+        <td class="job-title">Field Sales Officer - Mortgage Sales</td>
+        <td class="location">GJ</td>
+        <td class="City">Rajkot</td>
+        <td class="experience" data-experience="0-2, 2-5" >0 - 5 Years</td>
+        <td class="salary">2.3 - 2.9 LPA</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Home Loan</td>
+        <td class="function">Sales</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+    <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=94833&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="BFSI" 
+        data-state="TN"
+        data-city="Chennai" 
+        data-job-function="Sales" 
+        data-sector="Non IT">
+
+        <td class="job-id">0049</td>
+        <td class="job-title">Field Sales Officer - Mortgage Sales</td>
+        <td class="location">TN</td>
+        <td class="City">Chennai</td>
+        <td class="experience" data-experience="2-5" >0.6 - 3 Years</td>
+        <td class="salary">16k - 20k PM</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Home Loan</td>
+        <td class="function">Sales</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+
+      <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=94831&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="BFSI" 
+        data-state="TN"
+        data-city="Chennai" 
+        data-job-function="Sales" 
+        data-sector="Non IT">
+
+        <td class="job-id">0048</td>
+        <td class="job-title">Loan Officer - Mortgage (Telecalling/Telesales)</td>
+        <td class="location">TN</td>
+        <td class="City">Chennai</td>
+        <td class="experience" data-experience="2-5" >0.6 - 5 Years</td>
+        <td class="salary">13k - 22k PM</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Home Loan</td>
+        <td class="function">Sales</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+<tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93820&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="Software Development,Digital Marketing" 
+        data-state="MH"
+        data-city="Kharadi,Pune" 
+        data-job-function="Sales" 
+        data-sector="Non IT">
+
+        <td class="job-id">0046</td>
+        <td class="job-title">Business Development Manager - Software Development and Marketing Services</td>
+        <td class="location">MH</td>
+        <td class="City">Pune</td>
+        <td class="experience" data-experience="2-5, 5-8, 8+" >3 - 8 Years</td>
+        <td class="salary">Confidential</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Software Development, Digital Marketing</td>
+        <td class="function">Sales</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+      <tr class="job-row"  onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93600&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="Education" 
+        data-state="TG"
+        data-city="Hyderabad" 
+        data-job-function="Admission,Marketing" 
+        data-sector="Non IT">
+
+        <td class="job-id">0045</td>
+        <td class="job-title">Admission & Marketing Head - CBSE School</td>
+        <td class="location">TG</td>
+        <td class="City">Hyderabad</td>
+        <td class="experience" data-experience="2-5, 5-8" >3 - 6 Years</td>
+        <td class="salary">50 - 75K PM</td>
+        <td class="notice">15 Days</td>
+        <td class="Industry">CBSE School</td>
+        <td class="function">Admission, Marketing</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+      <tr class="job-row" onclick="window.open('https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=93590&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined', '_blank');" 
+        data-industry="Real Estate" data-state="MH" data-city="Kandivali, Mumbai" data-job-function="Sales" data-sector="Non IT">
+
+        <td class="job-id">0044</td>
+        <td class="job-title">Real Estate Channel Partner Sourcing Manager (Mandate Sales)</td>
+        <td class="location">MH</td>
+        <td class="City">Mumbai</td>
+        <td class="experience" data-experience="2-5, 5-8" >3 - 6 Years</td>
+        <td class="salary">Upto 6 LPA</td>
+        <td class="notice">10 Days</td>
+        <td class="Industry">Real Estate</td>
+        <td class="function">Mandate Sales</td>
+        <td class="job-status">
+            <span class="status-text active">Active</span>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="pagination-controls">
+
+    <div>
+
+        <button id="prevPage">Previous</button>
+        <span id="currentPage">Page 1</span>
+        <button id="nextPage">Next</button>
+    </div>
+    <div class="jobtablefilter"> 
+        Jobs Per Page: 
+        <select id="jobsPerPage">
+            <option value="5">5 jobs</option>
+            <option value="10" selected>10 jobs</option>
+            <option value="15">15 jobs</option>
+            <option value="20">20 jobs</option>
+            <option value="25">25 jobs</option>
+            <option value="all">All jobs</option>
+        </select>
+    </div>
+</div>
+
+
+<footer>
+    <div class="footer" >
+      <div class="box1">
+          <p class="footerheading">Important Notice</p>
+          <p class="footercontent">Job Nexus India emphasize ethical recruitment practices and we Job Nexus India will never charge candidates for any part of the recruitment process. Please be cautious of any fraudulent activities.</p>
+      </div>
+      <div class="box2">
+          <p class="footerheading">For any inquiries or assistance with technical issues while filling out the job application form, please contact:</p>
+          <p class="footercontent">hello@jobnexusindia.com <br>7899586564 (Whatsapp)</p>
+      </div>
+      <div class="box3">
+          <p class="footerheading">Join us on your preferred social media platforms to receive job alerts</p>
+          <p class="footercontent" style="margin-top: 5px;">Click on the icons given below to join.</p>
+              <div class="icon-container">
+                  <span><a href="https://in.linkedin.com/company/jobnexusindia" alt:"Job Nexus India Job Updates Linkedin Company Page Link" class="icon-link">
+                      <i class="fab fa-linkedin-in"></i>
+                      </a></span>                
+                  <span><a href="https://www.whatsapp.com/channel/0029Va4rNxYDZ4LiuFXuee39" alt:"Job Nexus India Job Updates Whatsapp Group Link" class="icon-link2">
+                      <i class="fab fa-whatsapp"></i>
+                      </a></span>
+              </div>
+      </div>
+    </div>
+</footer>
+
+<script src="myscripts.js"></script>
+
+
+
+</body>
+</html>
