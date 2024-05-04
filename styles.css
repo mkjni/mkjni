@@ -1351,13 +1351,18 @@ tr:hover {background-color: #f4f4f4;}
 @media screen and (min-width: 1001px) {
 .abbrevation{
   font-family: 'Roboto';
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
   display: flex;
   column-gap: 30px;
-  justify-content: center;
+  justify-content: left;
+  align-items: left;
+  align-content: left;
+  text-align: left;
   margin-top: -5px;
   margin-bottom: 15px;
   row-gap: 5px;
+  margin-left: 7%;
+  margin-right: 7%;
 }
 }
 
@@ -1378,5 +1383,11 @@ tr:hover {background-color: #f4f4f4;}
     border-radius: 10px;
     padding: 10px;
     font-size: 14px;
+    width: 330px;
+    row-gap: 10px;
+  }
+
+  .abbrevation p{
+    margin-bottom: 5px;
   }
 }
