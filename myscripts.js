@@ -1,3 +1,4 @@
+<script>
 document.getElementById("locationFilter").addEventListener("change", filterJobs);
 document.getElementById("experienceFilter").addEventListener("change", filterJobs);
 document.getElementById("jobIdFilter").addEventListener("input", filterJobsById);
@@ -31,7 +32,7 @@ function addKeyword(keyword) {
     filterJobs();
 }
 
-function filterJobs() {
+async function filterJobs() {
     var selectedLocation = document.getElementById("locationFilter").value.toUpperCase();
     var selectedExperience = document.getElementById("experienceFilter").value;
     var keywords = Array.from(document.getElementById("keywordContainer").children).map(function(div) {
@@ -40,7 +41,7 @@ function filterJobs() {
 
     var tableRows = document.querySelectorAll("#jobTable tbody tr");
 
-    tableRows.forEach(function(row) {
+    for (let row of tableRows) {
         var locationCell = row.querySelector(".location");
         var experienceCell = row.querySelector(".experience");
         var stateData = locationCell.textContent.trim().toUpperCase();
@@ -49,9 +50,10 @@ function filterJobs() {
         var matchesKeywords = true;
 
         if (keywords.length > 0) {
-            matchesKeywords = keywords.every(function(keyword) {
+            matchesKeywords = await keywords.every(async function(keyword) {
+                var jobDescriptionURL = row.querySelector(".job-id").textContent.trim();
                 var rowText = row.textContent.toLowerCase();
-                return rowText.includes(keyword);
+                return rowText.includes(keyword) || await searchJobDescription(jobDescriptionURL, keyword);
             });
         }
 
@@ -66,9 +68,29 @@ function filterJobs() {
         } else {
             row.classList.add('hidden');
         }
-    });
+    }
 
     updatePagination(); // Update pagination after filtering
+}
+
+async function searchJobDescription(jobId, keyword) {
+    var url = `https://www.jobnexusindia.com/jd/${jobId}.html`;
+
+    try {
+        let response = await fetch(url);
+        if (!response.ok) throw new Error("Network response was not ok");
+
+        let text = await response.text();
+        var parser = new DOMParser();
+        var doc = parser.parseFromString(text, "text/html");
+        var bodyContainer = doc.querySelector(".bodycontainer");
+        if (bodyContainer && bodyContainer.textContent.toLowerCase().includes(keyword)) {
+            return true;
+        }
+    } catch (error) {
+        console.error("Error fetching job description:", error);
+    }
+    return false;
 }
 
 function filterJobsById() {
@@ -154,3 +176,4 @@ document.addEventListener("DOMContentLoaded", function() {
 
     updatePagination();
 });
+</script>
