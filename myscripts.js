@@ -1,180 +1,124 @@
-document.getElementById("locationFilter").addEventListener("change", filterJobs);
-document.getElementById("experienceFilter").addEventListener("change", filterJobs);
-document.getElementById("jobIdFilter").addEventListener("input", filterJobsById);
-document.getElementById("keywordInput").addEventListener("keypress", function(event) {
-    if (event.key === "Enter") {
-        event.preventDefault();
-        addKeyword(this.value);
-        this.value = "";
+const jobDescriptionCache = {};
+
+async function fetchJobDescription(url) {
+    if (jobDescriptionCache[url]) {
+        return jobDescriptionCache[url];
     }
-});
-
-function addKeyword(keyword) {
-    if (keyword.trim() === "") return;
-
-    var keywordContainer = document.getElementById("keywordContainer");
-    var keywordDiv = document.createElement("div");
-    keywordDiv.className = "keyword-div";
-    keywordDiv.textContent = keyword + " ";
-
-    var removeButton = document.createElement("span");
-    removeButton.className = "remove-keyword";
-    removeButton.textContent = "✖";
-    removeButton.addEventListener("click", function() {
-        keywordContainer.removeChild(keywordDiv);
-        filterJobs();
-    });
-
-    keywordDiv.appendChild(removeButton);
-    keywordContainer.appendChild(keywordDiv);
-
-    filterJobs();
-}
-
-async function filterJobs() {
-    var selectedLocation = document.getElementById("locationFilter").value.toUpperCase();
-    var selectedExperience = document.getElementById("experienceFilter").value;
-    var keywords = Array.from(document.getElementById("keywordContainer").children).map(function(div) {
-        return div.textContent.slice(0, -2).toLowerCase();
-    });
-
-    var tableRows = document.querySelectorAll("#jobTable tbody tr");
-
-    for (let row of tableRows) {
-        var locationCell = row.querySelector(".location");
-        var experienceCell = row.querySelector(".experience");
-        var stateData = locationCell.textContent.trim().toUpperCase();
-        var experienceData = experienceCell.dataset.experience.split(",");
-
-        var matchesKeywords = true;
-
-        if (keywords.length > 0) {
-            matchesKeywords = await keywords.every(async function(keyword) {
-                var jobDescriptionURL = row.querySelector(".job-id").textContent.trim();
-                var rowText = row.textContent.toLowerCase();
-                return rowText.includes(keyword) || await searchJobDescription(jobDescriptionURL, keyword);
-            });
-        }
-
-        var showRow = experienceData.some(function(exp) {
-            return exp.trim() === selectedExperience || selectedExperience === "all";
-        });
-
-        var locationMatch = (selectedLocation === "ALL" || stateData === selectedLocation);
-
-        if (locationMatch && showRow && matchesKeywords) {
-            row.classList.remove('hidden');
-        } else {
-            row.classList.add('hidden');
-        }
-    }
-
-    updatePagination(); // Update pagination after filtering
-}
-
-async function searchJobDescription(jobId, keyword) {
-    var url = `https://www.jobnexusindia.com/jd/${jobId}.html`;
-    console.log("Fetching URL: ", url);
 
     try {
         let response = await fetch(url);
-        if (!response.ok) throw new Error("Network response was not ok");
-
         let text = await response.text();
-        var parser = new DOMParser();
-        var doc = parser.parseFromString(text, "text/html");
-        var bodyContainer = doc.querySelector(".bodycontainer");
-
-        if (bodyContainer && bodyContainer.textContent.toLowerCase().includes(keyword)) {
-            console.log("Keyword found in job description");
-            return true;
-        }
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(text, 'text/html');
+        let bodyContainer = doc.querySelector('.bodycontainer');
+        let description = bodyContainer ? bodyContainer.textContent.toLowerCase() : '';
+        jobDescriptionCache[url] = description;
+        return description;
     } catch (error) {
-        console.error("Error fetching job description:", error);
+        console.error('Error fetching job description:', error);
+        return '';
     }
-    return false;
 }
 
-function filterJobsById() {
-    var input = document.getElementById("jobIdFilter").value.toLowerCase();
-    var tableRows = document.querySelectorAll("#jobTable tbody tr");
+async function prefetchAllJobDescriptions() {
+    let tableRows = document.querySelectorAll("#jobTable tbody tr");
+    let jobs = [];
 
-    tableRows.forEach(function(row) {
-        var jobIdCell = row.querySelector(".job-id");
-        var jobId = jobIdCell.textContent.toLowerCase();
+    for (let row of tableRows) {
+        let jobDescriptionUrl = row.getAttribute("onclick").match(/'(.*?)'/)[1];
+        let description = await fetchJobDescription(jobDescriptionUrl);
+        let job = {
+            id: row.querySelector(".job-id").textContent.trim(),
+            title: row.querySelector(".job-title").textContent.trim(),
+            description: description,
+            element: row
+        };
+        jobs.push(job);
+    }
+    return jobs;
+}
 
-        if (jobId.indexOf(input) > -1) {
+async function filterJobs() {
+    let keywordFilter = document.getElementById("keywordFilter").value.toLowerCase();
+    let jobIdFilter = document.getElementById("jobIdFilter").value.toLowerCase();
+    let locationFilter = document.getElementById("locationFilter").value.toLowerCase();
+    let experienceFilter = document.getElementById("experienceFilter").value;
+    
+    let tableRows = document.querySelectorAll("#jobTable tbody tr");
+
+    for (let row of tableRows) {
+        let jobDescriptionUrl = row.getAttribute("onclick").match(/'(.*?)'/)[1];
+        let description = await fetchJobDescription(jobDescriptionUrl);
+        let rowText = row.textContent.toLowerCase();
+        let jobId = row.querySelector(".job-id").textContent.toLowerCase();
+        let location = row.querySelector(".location").textContent.toLowerCase();
+        let experience = row.querySelector(".experience").getAttribute("data-experience").split(', ');
+
+        let matchesKeyword = keywordFilter === '' || rowText.includes(keywordFilter) || description.includes(keywordFilter);
+        let matchesJobId = jobIdFilter === '' || jobId.includes(jobIdFilter);
+        let matchesLocation = locationFilter === 'all' || location.includes(locationFilter);
+        let matchesExperience = experienceFilter === 'all' || experience.includes(experienceFilter);
+
+        if (matchesKeyword && matchesJobId && matchesLocation && matchesExperience) {
             row.classList.remove('hidden');
         } else {
             row.classList.add('hidden');
         }
-    });
+    }
 
-    updatePagination(); // Update pagination after filtering
+    updatePagination();
 }
 
-document.addEventListener("DOMContentLoaded", function() {
-    var currentPage = 1;
-    var jobsPerPage = parseInt(document.getElementById("jobsPerPage").value);
+function updatePagination() {
+    let jobsPerPage = document.getElementById("jobsPerPage").value === 'all' ? 'all' : parseInt(document.getElementById("jobsPerPage").value);
+    let tableRows = document.querySelectorAll("#jobTable tbody tr:not(.hidden)");
+    let currentPage = parseInt(document.getElementById("currentPage").textContent.split(" ")[1]);
+    let totalJobs = tableRows.length;
+    let totalPages = jobsPerPage === 'all' ? 1 : Math.ceil(totalJobs / jobsPerPage);
 
-    function updatePagination() {
-        var tableRows = document.querySelectorAll("#jobTable tbody tr");
-        var visibleRows = Array.from(tableRows).filter(function(row) {
-            return !row.classList.contains('hidden');
-        });
+    document.getElementById("currentPage").textContent = `Page ${currentPage} of ${totalPages}`;
+    document.getElementById("prevPage").disabled = currentPage === 1;
+    document.getElementById("nextPage").disabled = currentPage === totalPages;
 
-        var totalJobs = visibleRows.length;
-        var totalPages = jobsPerPage === 'all' ? 1 : Math.ceil(totalJobs / jobsPerPage);
-
-        if (jobsPerPage === 'all') {
-            document.getElementById("currentPage").textContent = "Showing all jobs";
+    tableRows.forEach((row, index) => {
+        if (jobsPerPage === 'all' || (index >= (currentPage - 1) * jobsPerPage && index < currentPage * jobsPerPage)) {
+            row.style.display = '';
         } else {
-            document.getElementById("currentPage").textContent = "Page " + currentPage + " of " + totalPages;
+            row.style.display = 'none';
         }
+    });
+}
 
-        document.getElementById("prevPage").disabled = currentPage === 1;
-        document.getElementById("nextPage").disabled = currentPage === totalPages;
-
-        updateTableVisibility(visibleRows, totalJobs, totalPages);
-    }
-
-    function updateTableVisibility(visibleRows, totalJobs, totalPages) {
-        visibleRows.forEach(function(row, index) {
-            if (jobsPerPage === 'all' || (index >= (currentPage - 1) * jobsPerPage && index < currentPage * jobsPerPage)) {
-                row.style.display = '';
-            } else {
-                row.style.display = 'none';
-            }
-        });
-    }
-
-    document.getElementById("jobsPerPage").addEventListener("change", function() {
-        jobsPerPage = this.value === 'all' ? 'all' : parseInt(this.value);
-        currentPage = 1;
+document.getElementById("prevPage").addEventListener("click", () => {
+    let currentPage = parseInt(document.getElementById("currentPage").textContent.split(" ")[1]);
+    if (currentPage > 1) {
+        currentPage--;
+        document.getElementById("currentPage").textContent = `Page ${currentPage}`;
         updatePagination();
-    });
+    }
+});
 
-    document.getElementById("prevPage").addEventListener("click", function() {
-        if (currentPage > 1) {
-            currentPage--;
-            updatePagination();
-        }
-    });
+document.getElementById("nextPage").addEventListener("click", () => {
+    let currentPage = parseInt(document.getElementById("currentPage").textContent.split(" ")[1]);
+    let totalPages = parseInt(document.getElementById("currentPage").textContent.split(" ")[3]);
+    if (currentPage < totalPages) {
+        currentPage++;
+        document.getElementById("currentPage").textContent = `Page ${currentPage}`;
+        updatePagination();
+    }
+});
 
-    document.getElementById("nextPage").addEventListener("click", function() {
-        var tableRows = document.querySelectorAll("#jobTable tbody tr");
-        var visibleRows = Array.from(tableRows).filter(function(row) {
-            return !row.classList.contains('hidden');
-        });
+document.getElementById("jobsPerPage").addEventListener("change", () => {
+    document.getElementById("currentPage").textContent = "Page 1";
+    updatePagination();
+});
 
-        var totalJobs = visibleRows.length;
-        var totalPages = jobsPerPage === 'all' ? 1 : Math.ceil(totalJobs / jobsPerPage);
+document.getElementById("keywordFilter").addEventListener("input", filterJobs);
+document.getElementById("jobIdFilter").addEventListener("input", filterJobs);
+document.getElementById("locationFilter").addEventListener("change", filterJobs);
+document.getElementById("experienceFilter").addEventListener("change", filterJobs);
 
-        if (currentPage < totalPages) {
-            currentPage++;
-            updatePagination();
-        }
-    });
-
+document.addEventListener("DOMContentLoaded", async function() {
+    await prefetchAllJobDescriptions();
     filterJobs();
 });
