@@ -1,4 +1,3 @@
-
 document.getElementById("locationFilter").addEventListener("change", filterJobs);
 document.getElementById("experienceFilter").addEventListener("change", filterJobs);
 document.getElementById("jobIdFilter").addEventListener("input", filterJobsById);
@@ -75,6 +74,7 @@ async function filterJobs() {
 
 async function searchJobDescription(jobId, keyword) {
     var url = `https://www.jobnexusindia.com/jd/${jobId}.html`;
+    console.log("Fetching URL: ", url);
 
     try {
         let response = await fetch(url);
@@ -84,7 +84,9 @@ async function searchJobDescription(jobId, keyword) {
         var parser = new DOMParser();
         var doc = parser.parseFromString(text, "text/html");
         var bodyContainer = doc.querySelector(".bodycontainer");
+
         if (bodyContainer && bodyContainer.textContent.toLowerCase().includes(keyword)) {
+            console.log("Keyword found in job description");
             return true;
         }
     } catch (error) {
@@ -174,5 +176,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    updatePagination();
+    filterJobs();
 });
