@@ -20,31 +20,12 @@
   <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<header>
-    <nav>
-      <a class="logo" href="https://www.jobnexusindia.com/"><div class="logo">Job Nexus India</div></a>
-      <input type="checkbox" id="click">
-      <label for="click" class="menu-btn">
-        <i class="fas fa-bars"></i>
-      </label>
-      <ul>
-        <li><a class="active" href="https://www.jobnexusindia.com/">Current Openings</a></li>
-        <li><a href="about-us.html">About Us</a></li>
-      </ul>
-    </nav>
-</header>
-
-<h1>We're hiring the following positions for our clients</h1>
-  <div id="printMessage" class="print-message">
-    <a href="https://www.jobnexusindia.com/">  Visit our website to search jobs using filters, and to know more and apply <br><i class="fa-solid fa-globe"></i><span style="color: blue;"> www.jobnexusindia.com</span></a>
-</div>
 
 <div class="filterc">
     <div class="filter-container">
@@ -52,7 +33,6 @@
             <label class="filter-label">Job ID</label><br>
             <input type="text" id="jobIdFilter" class="filter-select">
         </div>
-        <!-- Existing filter elements for location, experience, and industry -->
         <div class="filter-location">
             <label class="filter-label">State/Union Territory</label><br>
             <select id="locationFilter" class="filter-select">
@@ -82,7 +62,6 @@
                 <option value="WB">West Bengal - WB</option>
             </select>
         </div>
-
         <div class="filter-experience">
             <label class="filter-label">Experience Levels</label><br>
             <select id="experienceFilter" class="filter-select">
@@ -93,16 +72,12 @@
                 <option value="8+">8+ years - Senior Level</option>
             </select>
         </div>
-
-        <div class="filter-keyword">
-            <label class="filter-label" style="text-align: left;">Search by Job Title, Skill, Industry, or Department</label><br>
-            <input type="text" id="keywordInput" class="filter-select" placeholder="Enter keyword and press Enter"> 
-            <div id="keywordContainer"></div>
-        </div>
     </div>
 </div>
 
 <br>
+
+<input type="text" id="keywordFilter" placeholder="Search by keyword" class="filter-select">
 
 <table id="jobTable">
     <thead>
@@ -117,148 +92,201 @@
         </tr>
     </thead>
     <tbody>
-
-  <tr class="job-row" onclick="window.open('https://www.jobnexusindia.com/jd/0066.html', '_blank');">
-        <td class="job-id">0066</td>
-        <td class="job-title">Guest Relations Executive</td>
-        <td class="location">MH</td>
-        <td class="City">Mumbai, Navi Mumbai, Thane and Raigad</td>
-        <td class="experience" data-experience="0-2">Freshers</td>
-        <td class="salary">20000 - 25000 PM</td>
-        <td class="job-status">
-        <span class="status-text active">Active</span>
-        </td>
-    </tr>
-
-   <tr class="job-row" onclick="window.open('https://www.jobnexusindia.com/jd/0065.html', '_blank');">
-        <td class="job-id">0065</td>
-        <td class="job-title">Ladle Refining Shift Incharge - Steel Melting Shop</td>
-        <td class="location">JH</td>
-        <td class="City">Bokaro</td>
-        <td class="experience" data-experience="5-8, 8+">6 Months to 2 years</td>
-        <td class="salary">Confidential</td>
-        <td class="job-status">
-        <span class="status-text active">Active</span>
-        </td>
-    </tr>
-   <!-- Additional job rows... -->
+        <tr class="job-row"  onclick="window.open('https://www.jobnexusindia.com/jd/0066.html', '_blank');">
+            <td class="job-id">0066</td>
+            <td class="job-title">Guest Relations Executive</td>
+            <td class="location">MH</td>
+            <td class="City">Mumbai, Navi Mumbai, Thane and Raigad</td>
+            <td class="experience" data-experience="0-2" >Freshers</td>
+            <td class="salary">20000 - 25000 PM</td>
+            <td class="job-status">
+            <span class="status-text active">Active</span>
+            </td>
+        </tr>
+        <tr class="job-row"  onclick="window.open('https://www.jobnexusindia.com/jd/0065.html', '_blank');">
+            <td class="job-id">0065</td>
+            <td class="job-title">Ladle Refining Shift Incharge - Steel Melting Shop</td>
+            <td class="location">JH</td>
+            <td class="City">Bokaro</td>
+            <td class="experience" data-experience="5-8, 8+" >6 Months to 2 years</td>
+            <td class="salary">Confidential</td>
+            <td class="job-status">
+            <span class="status-text on-hold">On Hold</span>
+            </td>
+        </tr>
     </tbody>
 </table>
 
-<div class="pagination">
-    <button id="prevPage">Previous</button>
-    <button id="nextPage">Next</button>
-    <span id="currentPage">Page 1</span>
-</div>
-
-<div class="jobs-per-page">
-    <label for="jobsPerPage">Jobs Per Page:</label>
-    <select id="jobsPerPage">
-        <option value="10">10</option>
-        <option value="20">20</option>
-        <option value="50">50</option>
-        <option value="all">All</option>
-    </select>
+<div class="pagination-controls">
+    <div>
+        <button id="prevPage">Previous</button>
+        <span id="currentPage">Page 1</span>
+        <button id="nextPage">Next</button>
+    </div>
+    <div class="jobtablefilter"> 
+        Jobs Per Page: 
+        <select id="jobsPerPage">
+            <option value="5">5 jobs</option>
+            <option value="10" selected>10 jobs</option>
+            <option value="15">15 jobs</option>
+            <option value="20">20 jobs</option>
+            <option value="25">25 jobs</option>
+            <option value="all">All jobs</option>
+        </select>
+    </div>
 </div>
 
 <script>
-document.getElementById("jobIdFilter").addEventListener("input", filterJobsById);
-document.getElementById("locationFilter").addEventListener("change", filterJobs);
-document.getElementById("experienceFilter").addEventListener("change", filterJobs);
+    document.getElementById("locationFilter").addEventListener("change", filterJobs);
+    document.getElementById("experienceFilter").addEventListener("change", filterJobs);
+    document.getElementById("jobIdFilter").addEventListener("input", filterJobsById);
+    document.getElementById("keywordFilter").addEventListener("input", filterJobsByKeyword);
 
-document.getElementById("keywordInput").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-        var keyword = event.target.value.trim();
-        if (keyword !== "") {
-            var keywordElement = document.createElement("div");
-            keywordElement.className = "keyword-tag";
-            keywordElement.textContent = keyword;
-            keywordElement.addEventListener("click", function() {
-                this.remove();
-                filterJobs();
-            });
-            document.getElementById("keywordContainer").appendChild(keywordElement);
-            event.target.value = "";
-            filterJobs();
+    async function fetchJobDescription(url) {
+        try {
+            let response = await fetch(url);
+            let text = await response.text();
+            let parser = new DOMParser();
+            let doc = parser.parseFromString(text, 'text/html');
+            let bodyContainer = doc.querySelector('.bodycontainer');
+            return bodyContainer ? bodyContainer.textContent.toLowerCase() : '';
+        } catch (error) {
+            console.error('Error fetching job description:', error);
+            return '';
         }
     }
-});
 
-function filterJobs() {
-    var tableRows = document.querySelectorAll("#jobTable tbody tr");
-    var selectedLocation = document.getElementById("locationFilter").value;
-    var selectedExperience = document.getElementById("experienceFilter").value;
-    var keywordElements = document.querySelectorAll(".keyword-tag");
-    var keywords = Array.from(keywordElements).map(function(element) {
-        return element.textContent.toLowerCase();
-    });
+    async function filterJobsByKeyword() {
+        let input = document.getElementById("keywordFilter").value.toLowerCase();
+        let tableRows = document.querySelectorAll("#jobTable tbody tr");
 
-    for (let row of tableRows) {
-        var stateData = row.querySelector(".location").textContent;
-        var experienceData = row.querySelector(".experience").getAttribute("data-experience");
-        var rowText = row.textContent.toLowerCase();
+        for (let row of tableRows) {
+            let titleCell = row.querySelector(".job-title");
+            let jobTitle = titleCell.textContent.toLowerCase();
+            let jobDescriptionUrl = row.getAttribute("onclick").match(/'(.*?)'/)[1];
+            let jobDescription = await fetchJobDescription(jobDescriptionUrl);
 
-        var matchesKeywords = keywords.every(function(keyword) {
-            return rowText.includes(keyword);
+            if (jobTitle.includes(input) || jobDescription.includes(input)) {
+                row.classList.remove('hidden');
+            } else {
+                row.classList.add('hidden');
+            }
+        }
+
+        updatePagination(); // Update pagination after filtering
+    }
+
+    function filterJobs() {
+        var selectedLocation = document.getElementById("locationFilter").value.toUpperCase();
+        var selectedExperience = document.getElementById("experienceFilter").value;
+
+        var tableRows = document.querySelectorAll("#jobTable tbody tr");
+
+        tableRows.forEach(function(row) {
+            var locationCell = row.querySelector(".location");
+            var experienceCell = row.querySelector(".experience");
+            var stateData = locationCell.textContent.trim().toUpperCase();
+            var experienceData = experienceCell.dataset.experience.split(",");
+
+            var showRow = experienceData.some(function(exp) {
+                return exp.trim() === selectedExperience || selectedExperience === "all";
+            });
+
+            var locationMatch = (selectedLocation === "ALL" || stateData === selectedLocation);
+
+            if (locationMatch && showRow) {
+                row.classList.remove('hidden');
+            } else {
+                row.classList.add('hidden');
+            }
         });
 
-        var matchesLocation = selectedLocation === "all" || stateData === selectedLocation;
-        var matchesExperience = selectedExperience === "all" || experienceData.includes(selectedExperience);
-
-        row.style.display = matchesLocation && matchesExperience && matchesKeywords ? "" : "none";
-    }
-}
-
-function filterJobsById() {
-    var input = document.getElementById("jobIdFilter").value.toUpperCase();
-    var tableRows = document.querySelectorAll("#jobTable tbody tr");
-
-    for (let row of tableRows) {
-        var jobIdCell = row.querySelector(".job-id");
-        var jobIdData = jobIdCell.textContent.toUpperCase();
-
-        row.style.display = jobIdData.includes(input) ? "" : "none";
-    }
-}
-
-document.getElementById("jobsPerPage").addEventListener("change", function() {
-    var jobsPerPage = parseInt(this.value);
-    var tableRows = document.querySelectorAll("#jobTable tbody tr");
-
-    for (let i = 0; i < tableRows.length; i++) {
-        tableRows[i].style.display = i < jobsPerPage || this.value === "all" ? "" : "none";
-    }
-});
-
-document.getElementById("prevPage").addEventListener("click", function() {
-    changePage(-1);
-});
-
-document.getElementById("nextPage").addEventListener("click", function() {
-    changePage(1);
-});
-
-var currentPage = 1;
-
-function changePage(step) {
-    var jobsPerPage = parseInt(document.getElementById("jobsPerPage").value);
-    var tableRows = document.querySelectorAll("#jobTable tbody tr");
-    var totalPages = Math.ceil(tableRows.length / jobsPerPage);
-
-    currentPage += step;
-
-    if (currentPage < 1) {
-        currentPage = 1;
-    } else if (currentPage > totalPages) {
-        currentPage = totalPages;
+        updatePagination(); // Update pagination after filtering
     }
 
-    for (let i = 0; i < tableRows.length; i++) {
-        tableRows[i].style.display = (i >= (currentPage - 1) * jobsPerPage && i < currentPage * jobsPerPage) || document.getElementById("jobsPerPage").value === "all" ? "" : "none";
+    function filterJobsById() {
+        var input = document.getElementById("jobIdFilter").value.toLowerCase();
+        var tableRows = document.querySelectorAll("#jobTable tbody tr");
+
+        tableRows.forEach(function(row) {
+            var jobIdCell = row.querySelector(".job-id");
+            var jobId = jobIdCell.textContent.toLowerCase();
+
+            if (jobId.indexOf(input) > -1) {
+                row.classList.remove('hidden');
+            } else {
+                row.classList.add('hidden');
+            }
+        });
+
+        updatePagination(); // Update pagination after filtering
     }
 
-    document.getElementById("currentPage").textContent = `Page ${currentPage}`;
-}
+    document.addEventListener("DOMContentLoaded", function() {
+        var currentPage = 1;
+        var jobsPerPage = parseInt(document.getElementById("jobsPerPage").value);
+
+        function updatePagination() {
+            var tableRows = document.querySelectorAll("#jobTable tbody tr");
+            var visibleRows = Array.from(tableRows).filter(function(row) {
+                return !row.classList.contains('hidden');
+            });
+
+            var totalJobs = visibleRows.length;
+            var totalPages = jobsPerPage === 'all' ? 1 : Math.ceil(totalJobs / jobsPerPage);
+
+            if (jobsPerPage === 'all') {
+                document.getElementById("currentPage").textContent = "Showing all jobs";
+            } else {
+                document.getElementById("currentPage").textContent = "Page " + currentPage + " of " + totalPages;
+            }
+
+            document.getElementById("prevPage").disabled = currentPage === 1;
+            document.getElementById("nextPage").disabled = currentPage === totalPages;
+
+            updateTableVisibility(visibleRows, totalJobs, totalPages);
+        }
+
+        function updateTableVisibility(visibleRows, totalJobs, totalPages) {
+            visibleRows.forEach(function(row, index) {
+                if (jobsPerPage === 'all' || (index >= (currentPage - 1) * jobsPerPage && index < currentPage * jobsPerPage)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+
+        document.getElementById("jobsPerPage").addEventListener("change", function() {
+            jobsPerPage = this.value === 'all' ? 'all' : parseInt(this.value);
+            currentPage = 1;
+            updatePagination();
+        });
+
+        document.getElementById("prevPage").addEventListener("click", function() {
+            if (currentPage > 1) {
+                currentPage--;
+                updatePagination();
+            }
+        });
+
+        document.getElementById("nextPage").addEventListener("click", function() {
+            var tableRows = document.querySelectorAll("#jobTable tbody tr");
+            var visibleRows = Array.from(tableRows).filter(function(row) {
+                return !row.classList.contains('hidden');
+            });
+
+            var totalJobs = visibleRows.length;
+            var totalPages = jobsPerPage === 'all' ? 1 : Math.ceil(totalJobs / jobsPerPage);
+
+            if (currentPage < totalPages) {
+                currentPage++;
+                updatePagination();
+            }
+        });
+
+        updatePagination();
+    });
 </script>
 
 </body>
