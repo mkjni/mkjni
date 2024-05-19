@@ -1,4 +1,4 @@
-<script>
+
 document.getElementById("locationFilter").addEventListener("change", filterJobs);
 document.getElementById("experienceFilter").addEventListener("change", filterJobs);
 document.getElementById("jobIdFilter").addEventListener("input", filterJobsById);
@@ -176,4 +176,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
     updatePagination();
 });
-</script>
