@@ -598,7 +598,7 @@ body {
       width: 250px;
   }
   .filter-location, .filter-experience, .filter-industry, .filter-sector, .filter-job-id, .filter-city, .filter-keyword {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
       font-size: 14px;
       min-width: 250px;
       width: 250px;
@@ -610,6 +610,12 @@ body {
     justify-content: center;
     width: 250px;
   }
+
+  .filter-keyword{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+
 
   #keywordInput{
     padding: 5px;
@@ -1385,7 +1391,7 @@ tr:hover {background-color: #f4f4f4;}
   }
 }
 
-@media only screen and (min-width: 341px) and (max-width: 408px) {
+@media only screen and (min-width: 341px) and (max-width: 424px) {
   h1{
     font-size: 25px;
     margin-top: 70px;
@@ -1393,17 +1399,21 @@ tr:hover {background-color: #f4f4f4;}
     justify-content: center;
     text-align: center;
     font-family: Montserrat;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
 
 @media only screen and (min-width: 425px) and (max-width: 768px) {
   h1{
-    font-size: 28px;
+    font-size: 30px;
     margin-top: 70px;
     margin-bottom: 30px;
     justify-content: center;
     text-align: center;
     font-family: Montserrat;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
 
