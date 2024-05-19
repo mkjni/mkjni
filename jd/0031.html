@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/png" href="https://github.com/themastankhan/Mastan/raw/main/Job-Nexus-India-Logo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Arima Madurai' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <title>Manager - Accounts and Finance</title>
+<meta name="title" property="og:title" content="Manager - Accounts and Finance">	
+  <meta property="og:image" content="https://www.jobnexusindia.com/job-nexus-india-job-post-link-preview-logo.png"/>
+  <meta property="og:url" content="https://www.jobnexusindia.com/jd/0031.html"/>
+<meta name="author" content="Job Nexus India">
+  <meta property="og:type" content="website"/>
+  <style>
+* {
+    margin: 0;
+    background: white;
+    padding: 0;
+    height: auto;
+    width: auto;
+    box-sizing: border-box;
+    border: none;
+    /* font-family: Arial, Helvetica, sans-serif; */
+   }
+  
+  nav{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background: white;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 125px 0 130px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid black;
+  }
+  nav .logo{
+    color: black;
+    font-size: 30px;
+    font-family: 'arima madurai';
+    font-weight: bold;
+    padding-top: 2px;
+  }
+  
+  .logo{
+    text-decoration: none;}
+  
+  nav ul{
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    background: white;
+  }
+  nav ul li{
+  margin-top: 20px;
+  margin-bottom: 15px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 5px;
+  }
+  nav ul li a{
+    color: black;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    /* padding: 40px 15px 15px; */
+    border-radius: 5px;
+    letter-spacing: 1px;
+    /* transition: all 0.3s ease; */
+    font-family: Arial, Helvetica, sans-serif; 
+  }
+  nav .menu-btn i{
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+  input[type="checkbox"]{
+    display: none;
+  }
+  
+  /* nav ul li a.active:{
+      background: #e6e6fa;
+      color: #007bff;
+      font-weight: bold;
+    } */
+  
+    nav ul li a {
+      color: black;
+      background: white;
+      }
+  
+      nav ul li a.active{
+        /* background: #1c4587;
+          color: white; */
+          /* font-weight: bold; */
+          padding: 5px;
+          padding-left: 0;
+          padding-right: 0;
+          border-radius: 0;
+          border-bottom: 5px solid #1c4587;
+      }
+  
+  @media (max-width: 1000px){
+    nav{
+      padding: 0 30px 0 50px;
+    }
+  }
+  @media (max-width: 920px) {
+    nav .menu-btn i{
+      display: block;
+    }
+    #click:checked ~ .menu-btn i:before{
+      content: "\f00d";
+    }
+    nav ul{
+      position: fixed;
+      top: 50px;
+      left: -100%;
+      background: white;
+      height: 100vh;
+      width: 100%;
+      text-align: center;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    #click:checked ~ ul{
+      left: 0;
+    }
+    nav ul li{
+      width: 100%;
+      margin: 30px 0;
+    }
+    nav ul li a{
+      width: 100%;
+      margin-left: -100%;
+      display: block;
+      font-size: 20px;
+      transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    #click:checked ~ ul li a{
+      margin-left: 0px;
+    }
+  
+      nav ul li a {
+      color: black;
+      background: white;
+      }
+  
+      nav ul li a.active{
+        background: white;
+          color: #1c4587;
+          font-weight: bold;
+          border: white;
+      }
+  
+      nav .logo {
+      font-size: 20px;
+      font-weight: bold;
+      padding-top: 1.5px;
+    }
+    nav{
+      padding-left: 20px;
+      padding-right: 20px;
+      padding-top: 0;
+      padding-bottom: 0;
+      height: 50px;
+    }
+  }
+  .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: -1;
+    width: 100%;
+    padding: 0 30px;
+    color: #1b1b1b;
+  }
+  .content div{
+    font-size: 40px;
+    font-weight: 700;
+  }
+
+
+/* below item is related to footer */
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer {
+    margin-top: auto;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+    background-color: white;
+    flex-wrap: wrap;
+    /* box-shadow:  0 -2px 5px rgba(0, 0, 0, 0.8); */
+    border-top: 1px solid black;
+  }
+
+@media only screen and (max-width: 768px) {
+    .footer {
+      position: relative;
+      padding: 20px 10px; /* Adjust padding for mobile view */
+      margin-top: auto;
+    }
+    html {
+        position: relative;
+        min-height: 100%;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
+        margin: 0;
+        padding: 0;
+    }
+      
+  
+    .box1, .box2, .box3 {
+      width: 100%; /* Set the width to 100% for mobile view */
+    }
+  
+    .icon-container {
+      text-align: left; /* Center align the icons for mobile view */
+      margin-left: 8px; 
+      margin-top: -3px;
+    }
+    p.footerheading {
+        font-size: 16px;
+        margin-bottom: 4px;
+    }
+    p.footercontent {
+        font-size: 14px;
+        margin-top: 4px;
+    }
+    a.icon-link{
+      font-size: 2rem;
+    }
+    a.icon-link2{
+      font-size: 2rem;
+    }
+  }
+
+.footerheading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+    justify-content: center;
+    margin: 10px;
+    color: black;
+    line-height: normal;
+    }
+   
+.footercontent {
+    font-family: 'inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.25;
+    font-weight: 400;
+    text-align: left;
+    margin: 10px;
+    color: black;
+   }
+  
+   .box1, .box2, .box3 {
+    box-sizing: border-box; /* added 'border-box' to include padding and border in the box's total width and height */
+    width: 100%;
+    justify-content: space-around; (for the icon-container)
+   }
+
+   .icon-link, .icon-link2 {
+    font-size: 1rem;
+    }
+      
+  .icon-link, .icon-link2 {
+    /* margin: 5px; */
+    color: black;
+    text-decoration: none;
+    font-size: 2.5rem;
+   }
+   
+  .icon-link:hover {
+    color: #007bff;
+   }
+  
+  .icon-link2:hover{
+    color: green;
+  }   
+   
+.box3 {
+    width: 350px;
+}
+.box1 {
+        width: 400px;
+}
+.box2 {
+        width: 400px;
+}
+  
+  .content-wrapper { flex: 1; padding: 0 30px; } 
+
+  .icon-container{
+    text-align: left;
+    margin-left: 12px;
+  }
+ /*end of header and footer*/
+ 
+ 
+
+
+.bodybox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* max-width:7 00px; */
+    margin-bottom: 30px;
+}
+
+.bodycontainer{
+    max-width: 800px;
+    padding: 40px;
+    margin: 20px;
+    border: 1px solid black;
+    font-family: inter;
+}
+
+body .bodycontainer p {
+    font-family: 'inter';
+    font-size: 16px;
+}
+
+h1{
+  padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    border-bottom: 2px solid #1c4587;
+}
+
+.jdapplybutton {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #1155cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+
+@media only screen and (max-width: 768px){
+  body .bodycontainer p{
+    font-size: 14px;
+  }
+  h1{
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 5px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #1c4587;
+    margin-top: 10px;
+  }
+  .bodycontainer{
+    margin: 5px;
+    padding: 15px;
+    border: #fff;
+  }
+.jdapplybutton {
+  display: inline-block;
+  padding: 10px 15px;
+  background-color: #1155cc;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 20px;
+  font-size: 14px;
+}
+}
+li{margin-left: 18px;
+    font-size: 16px;}
+@media only screen and (max-width: 768px){
+	li{font-size: 14px}
+}
+	
+	  
+
+
+  </style>
+</head>
+<body>
+
+    <nav>
+        <a class="logo" href="https://www.jobnexusindia.com/"><div class="logo">Job Nexus India</div></a>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li><a  href="https://www.jobnexusindia.com/">Current Openings</a></li>
+          <li><a  href="../about-us.html">About Us</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="bodybox" >
+        <div class="bodycontainer">
+        <h1>Manager - Accounts and Finance</h1>
+<div><strong>Role:&nbsp;</strong><span>Manager - Accounts and Finance</span></div>
+<div><strong>Industry:&nbsp;</strong><span>D2C</span></div>
+<div><strong>Education Qualification:</strong><span><strong>&nbsp;</strong>Chartered Accountant</span></div>
+<div><strong>Experience Required:&nbsp;</strong><span>3-6 years of post-qualification experience</span></div>
+<div><strong>Job location:</strong><span>&nbsp;Travel to both Lower Parel and Andheri</span></div>
+<div><strong>Salary:</strong><span><strong>&nbsp;</strong>Best in the industry</span></div>
+<div>&nbsp;</div>
+<div><strong>Description:</strong></div>
+<div><strong>Mandatory:</strong><span>&nbsp;People manager experience</span></div>
+<div>&nbsp;</div>
+<div><span><strong>Personal traits required:</strong>&nbsp;</span><span>Problem-solving, curiosity to learn, challenging the status quo, and being a taskmaster</span></div>
+<div>&nbsp;</div>
+<div><strong>ERP Exp:&nbsp;</strong><span>Excellent knowledge of Zoho</span></div>
+<div>&nbsp;</div>
+<div><strong>Good to have:</strong><span><strong>&nbsp;</strong>1) D2C and Marketplace work experience 2) First attempt CA</span></div>
+<div>&nbsp;</div>
+<div><strong>Direct Team size</strong><span><strong>:</strong> 6</span></div>
+<div><strong>Others:&nbsp;</strong><span>Proficient in Advance Excel and PowerPoint Presentation</span></div>
+<div>&nbsp;</div>
+<div><span><strong>Areas to be covered in the role:</strong>&nbsp;</span><span>Account Payable, MIS, Audit, Tax &amp; GL</span></div>
+<ul>
+<li><span>Lead P&amp;L Review with CEO, COO, and Investors</span></li>
+<li><span>Preparation of Board deck</span></li>
+<li><span>Optimize ERP usage and automation/ process simplification</span></li>
+<li><span>The person will ensure all Accounting and reporting activities from INDAS perspective The person works closely with Process Owners and enables them to provide specialized accounting support to the organization, involving independent judgment and action.</span></li>
+<li><span>This role will ensure completeness of month-end accounting procedures like the creation of accruals, recording of treasury/banking activities, balancing of Inter Company (IC) transactions across entities, accounting and reserves, validating completion of third-party clearing accounts with the intent to make sure our financial positions at end of the month is complete.</span></li>
+<li><span>Being able to perform activities across the various accounting functions: AP, AR, cash and treasury management, IC, and General Accounting.</span></li>
+<li><span>Prepare cash flow and plan payables</span></li>
+<li><span>Conduct a monthly reconciliation of general ledger accounts, including bank reconciliations.</span></li>
+<li><span>Identify synergies between Cash, IC, AP and AR processes and implement best practices.</span></li>
+<li><span>Ensure the closing of financial records monthly and promptly.</span></li>
+<li><span>Drive Statutory / Internal audit closures.</span></li>
+<li><span>Drive and implement new or changed accounting principles and practices that impact Accounting.</span></li>
+<li><span>Handling investor queries and preparing board presentations.</span></li>
+<li><span>To review and analyze closely Monthly Expenditures and identify cost savings opportunities.</span></li>
+<li><span>Compares actual numbers to prior month and year to share analysis</span></li>
+<li><span>Ability to reconcile data from different sources &amp; ensure closure of final settlements with stakeholder partners</span></li>
+<li><span>To be responsible for the preparation of financial reports, daily, weekly, and monthly MIS</span></li>
+<li><span>Extract data cuts in multiple ways (channel-wise, product, , etc) make quick sense out of it and identify actionable insights for business stakeholders.</span></li>
+<li><span>Responsible for review and accuracy of Inventory item/ Product cost.</span></li>
+<li><span>Timely accurate accounting of inventory and follow-up with the supply chain team in this regard.</span></li>
+<li><span>Inventory Valuation report to Management and Auditors for finalisation of Accounts.</span></li>
+<li><span>Maintain templates and schedules that the Senior Management Team will use for review and analysis.</span></li>
+<li><span>Assist Team members in resolving issues or difficulties in their work performance and knowing when issues should be escalated.</span></li>
+<li><span>Develop and Implement MIS-related Reports / Data in ERP System for accurate &amp; timely reporting.</span></li>
+<li><span>Conversant with Income Tax and GST laws</span></li>
+</ul>
+<div>&nbsp;</div>
+<div><strong>Required Skills:</strong><span><strong>&nbsp;</strong>Account payable, MIS, Audit, Tax and GL, People manager experience, Zoho.</span></div>
+<div>&nbsp;</div>
+<div><strong>Notice Period:&nbsp;</strong><span>10 Days</span></div>
+        <a href="https://app.pyjamahr.com/careers?company=Job%20Nexus%20India&job_id=87691&apply_now=true&company_uuid=2AD9EE6CAA&source=false&isHeaderVisible=undefined" class="jdapplybutton">Apply Now</a>
+        </div>
+    </div>
+
+
+
+    <div class="footer" >
+        <div class="box1">
+            <p class="footerheading">Important Notice</p>
+            <p class="footercontent">Job Nexus India emphasize ethical recruitment practices and we Job Nexus India will never charge candidates for any part of the recruitment process. Please be cautious of any fraudulent activities.</p>
+        </div>
+        <div class="box2">
+            <p class="footerheading">For any inquiries or assistance with technical issues while filling out the job application form, please contact us:</p>
+            <p class="footercontent">hello@jobnexusindia.com <br>7899586564 (Whatsapp)</p>
+        </div>
+        <div class="box3">
+            <p class="footerheading">Join us on your preferred social media platforms to never miss job updates</p>
+            <p class="footercontent" style="margin-top: 5px;">Click on the icons given below to join.</p>
+                <div class="icon-container">
+                    <span><a href="https://in.linkedin.com/company/jobnexusindia" alt:"Job Nexus India Job Updates Linkedin Company Page Link" class="icon-link">
+                        <i class="fab fa-linkedin-in"></i>
+                        </a></span>                
+                    <span><a href="https://chat.whatsapp.com/CLUuvoRuViAF77TGPbSAom" alt:"Job Nexus India Job Updates Whatsapp Group Link" class="icon-link2">
+                        <i class="fab fa-whatsapp"></i>
+                        </a></span>
+                    <span><a href="https://t.me/jobnexusindia" alt:"Job Nexus India Telegram Channel Link" class="icon-link">
+                         <i class="fab fa-telegram"></i>
+                        </a></span>
+                </div>
+        </div>
+    </div>
+
+
+
+</body>
+</html>
