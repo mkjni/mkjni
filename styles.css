@@ -422,7 +422,7 @@ body {
   font-family: 'Roboto';
 }
 
-#keywordInput{
+#keywordFilter{
   padding: 5px;
   font-size: 16px;
   border: 1px solid black;
@@ -617,7 +617,7 @@ body {
   }
 
 
-  #keywordInput{
+  #keywordFilter{
     padding: 5px;
     font-size: 16px;
     border: 1px solid black;
@@ -631,9 +631,6 @@ body {
   }
   
 }
-
-
-
 
 .filter-label {
   font-weight: bold;
@@ -654,7 +651,7 @@ body {
 /* Table related code */
 
 table {
-  width: 100%;
+
   border-collapse: collapse;
   margin-bottom: 20px;
   justify-content: center;
@@ -665,10 +662,11 @@ table {
 }
 
 #jobTable{
-  width: 86%;
+  max-width: 100%;
   justify-content: center;
   align-content: center;
-
+  margin-left: 7%;
+  margin-right: 7%;
 }
 
 
@@ -1000,11 +998,9 @@ th {
 
   th.job-id,
   td.job-id{
-      width: 35px;
-      min-width: 35px;
-      max-width: 35px;
-      padding: 0;
-      margin: 0;
+      width: 40px;
+      min-width: 40px;
+      max-width: 40px;
   }
 
   th.job-status,
@@ -1027,9 +1023,9 @@ th {
   }
   th.experience,
   td.experience{
-      width: 80px;
-      min-width: 80px;
-      max-width: 80px;
+      width: 100px;
+      min-width: 100px;
+      max-width: 100px;
   }
   th.City,
   td.City {
@@ -1056,8 +1052,10 @@ th {
   
   th.job-status,
   td.job-status{
-    min-width: 50px;
-    max-width: 50px;
+    min-width: 80px;
+    max-width: 80px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
 
 
@@ -1387,6 +1385,8 @@ tr:hover {background-color: #f4f4f4;}
     margin-bottom: 30px;
     justify-content: center;
     text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
     font-family: Montserrat;
   }
 }
@@ -1417,7 +1417,7 @@ tr:hover {background-color: #f4f4f4;}
   }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 849px) {
+@media only screen and (min-width: 769px) and (max-width: 850px) {
   h1{
     font-size: 30px;
     margin-top: 70px;
@@ -1425,6 +1425,8 @@ tr:hover {background-color: #f4f4f4;}
     justify-content: center;
     text-align: center;
     font-family: Montserrat;
+    margin-left: 5%;
+    margin-right: 5%;
   }
 }
 
