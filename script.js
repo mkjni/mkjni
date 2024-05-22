@@ -93,9 +93,18 @@ function formatHTML(html) {
 
 function copyHTML() {
     const output = document.getElementById('output').textContent;
-    navigator.clipboard.writeText(output).then(() => {
-        alert('HTML code copied to clipboard!');
-    }).catch(err => {
-        console.error('Failed to copy text: ', err);
-    });
+    
+    // Create a temporary textarea to hold the HTML
+    const tempTextArea = document.createElement('textarea');
+    tempTextArea.value = output;
+    document.body.appendChild(tempTextArea);
+    
+    // Select and copy the text
+    tempTextArea.select();
+    document.execCommand('copy');
+    
+    // Clean up
+    document.body.removeChild(tempTextArea);
+    
+    alert('HTML code copied to clipboard!');
 }
