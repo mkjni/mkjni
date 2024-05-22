@@ -4,20 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text to HTML Converter</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 10px;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+        }
+        #output {
+            white-space: pre-wrap;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        #generatedCode {
+            white-space: pre-wrap;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div class="editor-container">
-        <div id="toolbar">
-            <button onclick="formatText('bold')"><strong>B</strong></button>
-            <button onclick="createList('ul')">UL</button>
-            <button onclick="createList('ol')">OL</button>
-        </div>
-        <div id="editor" contenteditable="true"></div>
-        <button onclick="generateHTML()">Generate HTML</button>
-        <button onclick="copyHTML()">Copy HTML Code</button>
-    </div>
-    <pre id="output"></pre>
-    <script src="script.js"></script>
+    <h1>Text to HTML Converter</h1>
+    <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+    <br>
+    <button onclick="convertToHTML()">Convert to HTML</button>
+    <button onclick="applyBold()">Bold</button>
+    <button onclick="applyUL()">UL</button>
+    <button onclick="applyOL()">OL</button>
+    <h2>Output</h2>
+    <div id="output"></div>
+    <h2>Generated HTML Code</h2>
+    <pre id="generatedCode"></pre>
+
+    <script>
+        function convertToHTML() {
+            const textInput = document.getElementById('textInput').value;
+            const paragraphs = textInput.split('\n').filter(line => line.trim() !== '');
+            const htmlOutput = paragraphs.map(paragraph => `<p>${paragraph}</p>`).join('\n');
+            document.getElementById('output').innerHTML = htmlOutput;
+            document.getElementById('generatedCode').textContent = htmlOutput;
+        }
+
+        function applyBold() {
+            const textInput = document.getElementById('textInput');
+            const selectedText = textInput.value.substring(textInput.selectionStart, textInput.selectionEnd);
+            if (selectedText) {
+                const newText = textInput.value.replace(selectedText, `<strong>${selectedText}</strong>`);
+                textInput.value = newText;
+                convertToHTML();
+            }
+        }
+
+        function applyUL() {
+            const textInput = document.getElementById('textInput');
+            const selectedText = textInput.value.substring(textInput.selectionStart, textInput.selectionEnd);
+            if (selectedText) {
+                const listItems = selectedText.split('\n').map(item => `<li>${item}</li>`).join('\n');
+                const newText = textInput.value.replace(selectedText, `<ul>\n${listItems}\n</ul>`);
+                textInput.value = newText;
+                convertToHTML();
+            }
+        }
+
+        function applyOL() {
+            const textInput = document.getElementById('textInput');
+            const selectedText = textInput.value.substring(textInput.selectionStart, textInput.selectionEnd);
+            if (selectedText) {
+                const listItems = selectedText.split('\n').map(item => `<li>${item}</li>`).join('\n');
+                const newText = textInput.value.replace(selectedText, `<ol>\n${listItems}\n</ol>`);
+                textInput.value = newText;
+                convertToHTML();
+            }
+        }
+    </script>
 </body>
 </html>
