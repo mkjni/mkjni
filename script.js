@@ -92,19 +92,13 @@ function formatHTML(html) {
 }
 
 function copyHTML() {
-    const output = document.getElementById('output').textContent;
-    
-    // Create a temporary textarea to hold the HTML
-    const tempTextArea = document.createElement('textarea');
-    tempTextArea.value = output;
-    document.body.appendChild(tempTextArea);
-    
-    // Select and copy the text
-    tempTextArea.select();
+    const output = document.getElementById('output');
+    const range = document.createRange();
+    range.selectNode(output);
+    window.getSelection().removeAllRanges();
+    window.getSelection().addRange(range);
     document.execCommand('copy');
-    
-    // Clean up
-    document.body.removeChild(tempTextArea);
-    
+    window.getSelection().removeAllRanges();
     alert('HTML code copied to clipboard!');
 }
+
