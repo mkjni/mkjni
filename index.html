@@ -7,17 +7,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="editor-container">
-        <div id="toolbar">
-            <button onclick="formatText('bold')"><strong>B</strong></button>
-            <button onclick="createList('ul')">UL</button>
-            <button onclick="createList('ol')">OL</button>
-        </div>
-        <div id="editor" contenteditable="true"></div>
-        <button onclick="generateHTML()">Generate HTML</button>
-        <button onclick="copyHTML()">Copy HTML Code</button>
+    <div class="container">
+        <h1>Text to HTML Converter</h1>
+        <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+        <button id="convertButton">Convert</button>
+        <pre id="htmlOutput"></pre>
     </div>
-    <pre id="output"></pre>
     <script src="script.js"></script>
 </body>
 </html>
