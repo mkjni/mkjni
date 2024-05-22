@@ -1,51 +1,58 @@
-function formatText(command) {
-    document.execCommand(command, false, null);
-}
+document.getElementById("convertButton").addEventListener("click", function() {
+    const textInput = document.getElementById("textInput").value;
+    const htmlOutput = textToHTML(textInput);
+    document.getElementById("htmlOutput").textContent = htmlOutput;
+});
 
-function createList(type) {
-    document.execCommand(type === 'ul' ? 'insertUnorderedList' : 'insertOrderedList', false, null);
-}
-
-function generateHTML() {
-    const editorContent = document.getElementById('editor').innerText;
-    const formattedHTML = convertTextToHTML(editorContent);
-    const output = document.getElementById('output');
-    output.textContent = formattedHTML;
-}
-
-function convertTextToHTML(input) {
-    const lines = input.split('\n');
-    let html = '';
+function textToHTML(text) {
+    let html = "";
     let inList = false;
+    let listType = null;
 
-    lines.forEach(line => {
-        const trimmedLine = line.trim();
-        if (trimmedLine) {
-            if (trimmedLine.startsWith('* ')) {
-                if (!inList) {
-                    html += '<ul>';
-                    inList = true;
-                }
-                html += `<li>${trimmedLine.substring(2)}</li>`;
-            } else {
-                if (inList) {
-                    html += '</ul>';
-                    inList = false;
-                }
-                const parts = trimmedLine.split(': ');
-                if (parts.length === 2) {
-                    html += `<p><strong>${parts[0]}:</strong> ${parts[1]}</p>`;
+    const lines = text.split("\n");
+    for (let i = 0; i < lines.length; i++) {
+        const line = lines[i].trim();
+
+        if (!line) {
+            continue;
+        }
+
+        if (line.startsWith("- ")) {
+            if (!inList) {
+                html += "<ul>";
+                inList = true;
+                listType = "ul";
+            }
+            html += "<li>" + line.slice(2) + "</li>";
+        } else if (/^(\d+)\. /.test(line)) {
+            if (!inList) {
+                html += "<ol>";
+                inList = true;
+                listType = "ol";
+            }
+            html += "<li>" + line.slice(line.indexOf(".") + 2) + "</li>";
+        } else {
+            if (inList) {
+                html += "</" + listType + ">";
+                inList = false;
+            }
+            html += "<p>";
+            const words = line.split(" ");
+            for (let j = 0; j < words.length; j++) {
+                const word = words[j];
+                if (word.startsWith("*") && word.endsWith("*")) {
+                    html += "<strong>" + word.slice(1, -1) + "</strong> ";
                 } else {
-                    html += `<p>${trimmedLine}</p>`;
+                    html += word + " ";
                 }
             }
+            html += "</p>";
         }
-    });
+    }
 
     if (inList) {
-        html += '</ul>';
+        html += "</" + listType + ">";
     }
 
     return html;
 }
- 
