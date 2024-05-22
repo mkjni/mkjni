@@ -24,7 +24,7 @@ function textToHTML(text) {
                 listType = "ul";
             }
             html += "<li>" + line.slice(2) + "</li>";
-        } else if (/^(\d+)\. /.test(line)) {
+        } else if (/^\d+\. /.test(line)) {
             if (!inList) {
                 html += "<ol>";
                 inList = true;
