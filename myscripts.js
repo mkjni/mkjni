@@ -18,19 +18,31 @@ function sanitizeHTML(input) {
     tempDiv.innerHTML = input;
 
     const allowedTags = ['P', 'STRONG', 'BR', 'UL', 'OL', 'LI'];
-    const elements = tempDiv.getElementsByTagName('*');
 
-    for (let i = elements.length - 1; i >= 0; i--) {
-        const el = elements[i];
-        if (!allowedTags.includes(el.tagName)) {
-            el.parentNode.removeChild(el);
-        } else {
-            // Remove all attributes
-            for (let j = el.attributes.length - 1; j >= 0; j--) {
-                el.removeAttribute(el.attributes[j].name);
+    // Function to recursively sanitize the HTML
+    function clean(node) {
+        const children = [...node.childNodes];
+        for (let child of children) {
+            if (child.nodeType === Node.ELEMENT_NODE) {
+                if (!allowedTags.includes(child.tagName)) {
+                    // Replace the child with its contents
+                    child.replaceWith(...child.childNodes);
+                } else {
+                    // Remove all attributes
+                    while (child.attributes.length > 0) {
+                        child.removeAttribute(child.attributes[0].name);
+                    }
+                    clean(child);  // Recursively clean child elements
+                }
+            } else if (child.nodeType === Node.TEXT_NODE) {
+                // Allow text nodes
+            } else {
+                // Remove any other type of node
+                node.removeChild(child);
             }
         }
     }
 
+    clean(tempDiv);
     return tempDiv.innerHTML;
 }
