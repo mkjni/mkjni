@@ -32,7 +32,7 @@
 </head>
 <body>
     <h1>Text to HTML Converter</h1>
-    <textarea id="textInput" placeholder="Enter your text here..."></textarea>
+    <textarea id="textInput" placeholder="Enter your text here..." onkeydown="handleKeyDown(event)"></textarea>
     <br>
     <button onclick="convertToHTML()">Convert to HTML</button>
     <button onclick="applyBold()">Bold</button>
@@ -47,7 +47,7 @@
         function convertToHTML() {
             const textInput = document.getElementById('textInput').value;
             const paragraphs = textInput.split('\n').filter(line => line.trim() !== '');
-            const htmlOutput = paragraphs.map(paragraph => `<p>${paragraph}</p>`).join('\n');
+            const htmlOutput = paragraphs.map(paragraph => `<p>${paragraph.replace(/\n/g, '<br>')}</p>`).join('\n');
             document.getElementById('output').innerHTML = htmlOutput;
             document.getElementById('generatedCode').textContent = htmlOutput;
         }
@@ -82,6 +82,26 @@
                 textInput.value = newText;
                 convertToHTML();
             }
+        }
+
+        function handleKeyDown(event) {
+            if (event.ctrlKey && event.key === 'b') {
+                event.preventDefault();
+                applyBold();
+            } else if (event.shiftKey && event.key === 'Enter') {
+                event.preventDefault();
+                insertLineBreak();
+            }
+        }
+
+        function insertLineBreak() {
+            const textInput = document.getElementById('textInput');
+            const start = textInput.selectionStart;
+            const end = textInput.selectionEnd;
+            const newValue = textInput.value.substring(0, start) + '<br>' + textInput.value.substring(end);
+            textInput.value = newValue;
+            textInput.selectionStart = textInput.selectionEnd = start + 4; // Adjust cursor position after <br>
+            convertToHTML();
         }
     </script>
 </body>
