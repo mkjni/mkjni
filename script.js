@@ -9,9 +9,8 @@ function createList(type) {
 function generateHTML() {
     const editorContent = document.getElementById('editor').innerText;
     const formattedHTML = convertTextToHTML(editorContent);
-    const sanitizedContent = sanitizeHTML(formattedHTML);
     const output = document.getElementById('output');
-    output.textContent = sanitizedContent;
+    output.textContent = formattedHTML;
 }
 
 function convertTextToHTML(input) {
@@ -48,32 +47,4 @@ function convertTextToHTML(input) {
     }
 
     return html;
-}
-
-function sanitizeHTML(input) {
-    const tempDiv = document.createElement('div');
-    tempDiv.innerHTML = input;
-
-    const allowedTags = ['P', 'STRONG', 'BR', 'UL', 'OL', 'LI'];
-
-    function clean(node) {
-        const children = [...node.childNodes];
-        for (let child of children) {
-            if (child.nodeType === Node.ELEMENT_NODE) {
-                if (!allowedTags.includes(child.tagName)) {
-                    child.replaceWith(...child.childNodes);
-                } else {
-                    while (child.attributes.length > 0) {
-                        child.removeAttribute(child.attributes[0].name);
-                    }
-                    clean(child);
-                }
-            } else if (child.nodeType !== Node.TEXT_NODE) {
-                node.removeChild(child);
-            }
-        }
-    }
-
-    clean(tempDiv);
-    return tempDiv.innerHTML;
 }
