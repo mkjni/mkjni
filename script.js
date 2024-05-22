@@ -99,4 +99,3 @@ function copyHTML() {
         console.error('Failed to copy text: ', err);
     });
 }
-
