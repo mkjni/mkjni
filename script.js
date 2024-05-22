@@ -92,13 +92,11 @@ function formatHTML(html) {
 }
 
 function copyHTML() {
-    const output = document.getElementById('output');
-    const range = document.createRange();
-    range.selectNode(output);
-    window.getSelection().removeAllRanges();
-    window.getSelection().addRange(range);
-    document.execCommand('copy');
-    window.getSelection().removeAllRanges();
-    alert('HTML code copied to clipboard!');
+    const output = document.getElementById('output').textContent;
+    navigator.clipboard.writeText(output).then(() => {
+        alert('HTML code copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy text: ', err);
+    });
 }
 
