@@ -1,108 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text to HTML Converter</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        textarea {
-            width: 100%;
-            height: 200px;
-            margin-bottom: 10px;
-        }
-        button {
-            margin: 5px;
-            padding: 10px;
-        }
-        #output {
-            white-space: pre-wrap;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-        #generatedCode {
-            white-space: pre-wrap;
-            border: 1px solid #ccc;
-            padding: 10px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Digital Clock with Task Tracker</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    #clock {
+        font-size: 3em;
+    }
+
+    #date {
+        font-size: 1.5em;
+    }
+
+    #taskInput {
+        margin-top: 20px;
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+    }
+
+    #taskList {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    #taskList li {
+        margin-top: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #taskList li span {
+        flex-grow: 1;
+        text-align: left;
+    }
+
+    #taskList li button {
+        margin-left: 10px;
+        padding: 5px 10px;
+    }
+
+    #themeSwitcher {
+        margin-top: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+        border: 1px solid #ccc;
+        background-color: #f4f4f4;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    #history {
+        margin-top: 20px;
+        text-align: left;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .history-item {
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .history-item button {
+        margin-left: 10px;
+        padding: 5px 10px;
+    }
+
+    body.dark {
+        background-color: #121212;
+        color: #ffffff;
+    }
+
+    body.dark #taskInput,
+    body.dark #themeSwitcher {
+        background-color: #333333;
+        color: #ffffff;
+        border-color: #555555;
+    }
+
+    body.dark #taskList li {
+        border-color: #555555;
+    }
+
+    body.dark .history-item {
+        border-color: #555555;
+    }
+</style>
 </head>
 <body>
-    <h1>Text to HTML Converter</h1>
-    <textarea id="textInput" placeholder="Enter your text here..." onkeydown="handleKeyDown(event)"></textarea>
-    <br>
-    <button onclick="convertToHTML()">Convert to HTML</button>
-    <button onclick="applyBold()">Bold</button>
-    <button onclick="applyUL()">UL</button>
-    <button onclick="applyOL()">OL</button>
-    <h2>Output</h2>
-    <div id="output"></div>
-    <h2>Generated HTML Code</h2>
-    <pre id="generatedCode"></pre>
+<div id="clock"></div>
+<div id="date"></div>
+<input type="text" id="taskInput" placeholder="Add a task...">
+<ul id="taskList"></ul>
+<div id="themeSwitcher">Switch to Dark Mode</div>
+<div id="history">
+    <h3>Task History</h3>
+    <div id="historyList"></div>
+</div>
 
-    <script>
-        function convertToHTML() {
-            const textInput = document.getElementById('textInput').value;
-            const paragraphs = textInput.split('\n').filter(line => line.trim() !== '');
-            const htmlOutput = paragraphs.map(paragraph => `<p>${paragraph.replace(/\n/g, '<br>')}</p>`).join('\n');
-            document.getElementById('output').innerHTML = htmlOutput;
-            document.getElementById('generatedCode').textContent = htmlOutput;
-        }
+<script>
+    // Function to display current time in 12-hour format
+    function updateTime() {
+        const now = new Date();
+        const offset = now.getTimezoneOffset() + 330; // IST offset in minutes
+        const istTime = new Date(now.getTime() + offset * 60 * 1000);
 
-        function applyBold() {
-            const textInput = document.getElementById('textInput');
-            const selectedText = textInput.value.substring(textInput.selectionStart, textInput.selectionEnd);
-            if (selectedText) {
-                const newText = textInput.value.replace(selectedText, `<strong>${selectedText}</strong>`);
-                textInput.value = newText;
-                convertToHTML();
-            }
-        }
+        let hours = istTime.getHours();
+        let minutes = istTime.getMinutes();
+        let seconds = istTime.getSeconds();
+        let ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12 || 12;
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+        const timeString = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+        document.getElementById('clock').textContent = timeString;
+    }
 
-        function applyUL() {
-            const textInput = document.getElementById('textInput');
-            const selectedText = textInput.value.substring(textInput.selectionStart, textInput.selectionEnd);
-            if (selectedText) {
-                const listItems = selectedText.split('\n').map(item => `<li>${item}</li>`).join('\n');
-                const newText = textInput.value.replace(selectedText, `<ul>\n${listItems}\n</ul>`);
-                textInput.value = newText;
-                convertToHTML();
-            }
-        }
+    // Function to display current date
+    function updateDate() {
+        const now = new Date();
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const dateString = now.toLocaleDateString('en-IN', options);
+        document.getElementById('date').textContent = dateString;
+    }
 
-        function applyOL() {
-            const textInput = document.getElementById('textInput');
-            const selectedText = textInput.value.substring(textInput.selectionStart, textInput.selectionEnd);
-            if (selectedText) {
-                const listItems = selectedText.split('\n').map(item => `<li>${item}</li>`).join('\n');
-                const newText = textInput.value.replace(selectedText, `<ol>\n${listItems}\n</ol>`);
-                textInput.value = newText;
-                convertToHTML();
-            }
-        }
+    // Function to load task history from localStorage
+    function loadHistory() {
+        const historyList = document.getElementById('historyList');
+        const historyData = JSON.parse(localStorage.getItem('taskHistory')) || [];
+        historyList.innerHTML = '';
+        historyData.forEach((entry, index) => {
+            const div = document.createElement('div');
+            div.className = 'history-item';
+            div.innerHTML = `<span>${entry.task} - Time taken: ${entry.time}</span>`;
+            const button = document.createElement('button');
+            button.textContent = 'Remove';
+            button.onclick = () => removeHistoryItem(index);
+            div.appendChild(button);
+            historyList.appendChild(div);
+        });
+    }
 
-        function handleKeyDown(event) {
-            if (event.ctrlKey && event.key === 'b') {
-                event.preventDefault();
-                applyBold();
-            } else if (event.shiftKey && event.key === 'Enter') {
-                event.preventDefault();
-                insertLineBreak();
-            }
-        }
+    // Function to save task history to localStorage
+    function saveHistory(task, timeTaken) {
+        const historyData = JSON.parse(localStorage.getItem('taskHistory')) || [];
+        historyData.push({ task: task, time: timeTaken });
+        localStorage.setItem('taskHistory', JSON.stringify(historyData));
+        loadHistory();
+    }
 
-        function insertLineBreak() {
-            const textInput = document.getElementById('textInput');
-            const start = textInput.selectionStart;
-            const end = textInput.selectionEnd;
-            const newValue = textInput.value.substring(0, start) + '<br>' + textInput.value.substring(end);
-            textInput.value = newValue;
-            textInput.selectionStart = textInput.selectionEnd = start + 4; // Adjust cursor position after <br>
-            convertToHTML();
+    // Function to remove a specific history item from localStorage
+    function removeHistoryItem(index) {
+        const historyData = JSON.parse(localStorage.getItem('taskHistory')) || [];
+        historyData.splice(index, 1);
+        localStorage.setItem('taskHistory', JSON.stringify(historyData));
+        loadHistory();
+    }
+
+    // Function to add task
+    function addTask() {
+        const taskInput = document.getElementById('taskInput');
+        const task = taskInput.value.trim();
+        if (task !== '') {
+            const taskList = document.getElementById('taskList');
+            const li = document.createElement('li');
+            const span = document.createElement('span');
+            span.textContent = task;
+            const button = document.createElement('button');
+            button.textContent = 'Close';
+            li.appendChild(span);
+            li.appendChild(button);
+            taskList.appendChild(li);
+            taskInput.value = '';
+
+            trackTaskTime(li, span);
         }
-    </script>
+    }
+
+    // Function to track time taken for a task
+    function trackTaskTime(taskElement, taskSpan) {
+        const startTime = new Date();
+        taskElement.querySelector('button').addEventListener('click', function () {
+            const endTime = new Date();
+            const timeDiff = Math.abs(endTime - startTime);
+            const hours = Math.floor((timeDiff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((timeDiff / (1000 * 60)) % 60);
+            const seconds = Math.floor((timeDiff / 1000) % 60);
+            const timeTaken = `${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+            saveHistory(taskSpan.textContent, timeTaken);
+            taskElement.remove();
+        });
+    }
+
+    // Function to toggle dark and light modes
+    function toggleTheme() {
+        document.body.classList.toggle('dark');
+        const themeSwitcher = document.getElementById('themeSwitcher');
+        if (document.body.classList.contains('dark')) {
+            themeSwitcher.textContent = 'Switch to Light Mode';
+        } else {
+            themeSwitcher.textContent = 'Switch to Dark Mode';
+        }
+    }
+
+    // Update time and date every second
+    updateTime();
+    updateDate();
+    setInterval(updateTime, 1000);
+    setInterval(updateDate, 60000);
+
+    // Event listener for adding tasks
+    document.getElementById('taskInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            addTask();
+        }
+    });
+
+    // Event listener for theme switcher
+    document.getElementById('themeSwitcher').addEventListener('click', toggleTheme);
+
+    // Load task history on page load
+    window.addEventListener('load', loadHistory);
+</script>
 </body>
 </html>
