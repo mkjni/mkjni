@@ -36,27 +36,23 @@
         <textarea id="jobText" rows="20" placeholder="Paste your job post here..."></textarea>
         <button type="button" onclick="generatePDF()">Generate PDF</button>
     </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
     <script>
-        async function generatePDF() {
+        function generatePDF() {
             const { jsPDF } = window.jspdf;
-            const element = document.createElement('div');
-            element.style.fontSize = '16px';
-            element.style.width = '210mm';
-            element.style.height = '297mm';
-            element.innerHTML = document.getElementById('jobText').value.replace(/\n/g, '<br>');
-            
-            document.body.appendChild(element);
+            const text = document.getElementById('jobText').value;
+            const pdf = new jsPDF();
 
-            const canvas = await html2canvas(element, { scale: 2 });
-            document.body.removeChild(element);
-
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF('p', 'mm', 'a4');
-            pdf.addImage(imgData, 'PNG', 0, 0, 210, 297);
+            let fontSize = 12;
+            let lines = pdf.splitTextToSize(text, 180);
+            while (pdf.getTextDimensions(lines).h > 297 - 20 && fontSize > 6) {
+                fontSize -= 1;
+                pdf.setFontSize(fontSize);
+                lines = pdf.splitTextToSize(text, 180);
+            }
+            pdf.text(lines, 10, 10);
             pdf.save('job_post.pdf');
         }
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </body>
 </html>
