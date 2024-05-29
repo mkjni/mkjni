@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Post PDF Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        textarea {
+            width: 80%;
+            margin-bottom: 20px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Job Post PDF Generator</h1>
+    <form id="jobForm">
+        <textarea id="jobText" rows="20" placeholder="Paste your job post here..."></textarea>
+        <button type="button" onclick="generatePDF()">Generate PDF</button>
+    </form>
+    <script>
+        function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const text = document.getElementById('jobText').value;
+            const pdf = new jsPDF();
+
+            let fontSize = 12;
+            let lines = pdf.splitTextToSize(text, 180);
+            while (pdf.getTextDimensions(lines).h > 297 - 20 && fontSize > 6) {
+                fontSize -= 1;
+                pdf.setFontSize(fontSize);
+                lines = pdf.splitTextToSize(text, 180);
+            }
+            pdf.text(lines, 10, 10);
+            pdf.save('job_post.pdf');
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</body>
+</html>
