@@ -1,1 +1,1492 @@
 
+* {
+  margin: 0;
+  background: transparent;
+  padding: 0;
+  height: auto;
+  width: auto;
+  box-sizing: border-box;
+  border: none;
+  /* font-family: Arial, Helvetica, sans-serif; */
+ }
+
+nav{
+  display: flex;
+  width: 100%;
+  background: white;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid black;
+  height: 50px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+nav .logo{
+  color: black;
+  font-size: 25px;
+  font-family: 'arima madurai';
+  font-weight: bold;
+}
+
+nav ul li a {
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav ul li a.active {
+  font-weight: 500;
+  color: #1c4587;
+}
+
+nav ul li a:hover {
+  color: #1c4587;
+  transition: 0s;
+}
+
+a.logo{
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav ul{
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  background: white;
+}
+
+nav ul li a{
+  color: black;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  /* padding: 40px 15px 15px; */
+  border-radius: 5px;
+  letter-spacing: 1px;
+  /* transition: all 0.3s ease; */
+  background: white;
+  font-family: Arial, Helvetica, sans-serif; 
+}
+nav .menu-btn i{
+  color: black;
+  font-size: 18px;
+  cursor: pointer;
+  display: none;
+/*     padding-top: 3px; */
+}
+input[type="checkbox"]{
+  display: none;
+}
+
+
+  nav ul li a {
+    color: black;
+    background: white;
+    }
+
+
+@media (max-width: 1000px){
+  nav{
+    padding: 0 30px 0 50px;
+    background: white;
+  }
+
+  tr th{
+    background: white;
+  }
+
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+  #click:checked ~ .menu-btn i:before{
+    content: "\f00d";
+  }
+  nav ul {
+    position: fixed;
+    top: 40px; /* Adjust this value as needed */
+    left: -100%;
+    background: white;
+    height: calc(100vh - 50px); /* Adjust this value based on your header height */
+    width: 100%;
+    text-align: center;
+    display: block;
+    transition: 0ms;
+  }
+
+  nav #click:checked ~ ul{
+    left: 0;
+    height: 100vh;
+    min-height: 100vh;
+    position: absolute;
+  }
+
+
+
+  
+  nav ul li{
+    width: 100%;
+    margin: 30px 0;
+  }
+  nav ul li a{
+    width: 100%;
+    margin-left: -100%;
+    display: block;
+    font-size: 20px;
+    transition: 0.6s cubic-bezier(0.68, 0.55, 0.265, 1.55);
+    background: white;
+  }
+  #click:checked ~ ul li a{
+    margin-left: 0px;
+  }
+    nav ul li a {
+    color: black;
+    background: white;
+    }
+
+    nav ul li a.active{
+      background: white;
+        color: #1c4587;
+        font-weight: bold;
+        border: white;
+        background: white;
+    }
+
+    nav .logo {
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 1.5px;
+    margin-left: -3px;
+    background: white;
+  }
+  nav{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 40px;
+    position: absolute;
+    background: white;
+  }
+
+  tr th{
+    background: white;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    background-color: white; /* Set the background color of the navigation bar */
+    z-index: 1000; /* Ensure navigation bar stays on top */
+  }
+  
+  /* Adjust padding for the content to prevent it from being hidden behind the navigation bar */
+  .content-wrapper {
+    padding-top: 60px; /* Adjust based on the height of the navigation bar */
+  }
+
+}
+nav .content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+
+
+/* 
+End of Navigation Bar */
+
+/* below item is related to footer */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
+  margin: 0;
+  padding: 0;
+}
+
+.footer {
+  justify-content: center;
+  position: absolute;
+  margin-top: 30px;
+  top: 100%;
+  width: 100%;
+  color: #000;
+  text-align: left;
+  padding-top: 20px;
+/*   padding-bottom: 20px; */
+  display: flex;
+  background-color: white;
+  flex-wrap: wrap;
+  border-top: 1px solid black;
+  column-gap: 50px;
+}
+
+
+.box1, .box2, .box3{
+  margin-bottom: 15px;
+}
+
+.box1{
+  width: 28.7%;
+}
+
+.box2{
+  width: 25.3%;
+}
+
+.box3{
+  width: 26.4%;
+}
+
+
+
+.footercontent{
+  width: fit-content;
+}
+
+.footerheading{
+  width: fit-content;
+
+}
+
+@media only screen and (max-width: 900px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    position: static;
+    margin-top: auto;
+    justify-content: center;
+    border-top: 1px solid black;
+      align-content: center;
+  }
+  html {
+      position: relative;
+      min-height: 100%;
+  }
+
+  body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Set a minimum height of the body to fill the viewport */
+      margin: 0;
+      padding: 0;
+  }
+    
+  .icon-container {
+    text-align: left; /* Center align the icons for mobile view */
+
+  }
+  p.footerheading {
+      font-size: 16px;
+      margin-bottom: 4px;
+  }
+  p.footercontent {
+      font-size: 14px;
+      margin-top: 4px;
+  }
+  a.icon-link{
+    font-size: 2rem;
+  }
+  a.icon-link2{
+    font-size: 2rem;
+  }
+
+  .box1{
+    width: 90%;
+  }
+  
+  .box2{
+    width: 90%;
+  }
+  
+  .box3{
+    width: 90%;
+  }
+}
+
+.footerheading {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left;
+  justify-content: left;
+  color: black;
+  line-height: normal;
+  margin-bottom: 8px;
+  }
+   
+.footercontent {
+  font-family: 'inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-align: left;
+  color: black;
+ }
+
+ .icon-link, .icon-link2 {
+  font-size: 1rem;
+  }
+ 
+.icon-link, .icon-link2 {
+  /* margin: 5px; */
+  color: black;
+  text-decoration: none;
+  font-size: 2.3rem;
+ }
+ 
+.icon-link:hover {
+  color: #007bff;
+ }
+
+.icon-link2:hover{
+  color: darkgreen;
+}   
+ 
+.content-wrapper { flex: 1; padding: 0 30px; } 
+
+.icon-container{
+  text-align: left;
+  margin-top: 7px;
+}
+/*end of header and footer*/
+
+
+
+
+
+
+@media only screen and (min-width: 750px) {
+/* Filter Section */
+.filter-container {
+  border: 1px solid #ddd;
+  display: contents;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px; /* Add padding */
+  column-gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 20px;
+
+}
+
+.filterc{
+  display: flex;
+  justify-content: left;
+  column-gap: 30px;
+  flex-wrap: wrap;
+  row-gap: 20px;
+  margin-left: 7%;
+  margin-right: 7%;
+  margin-top: 30px;
+}
+
+#jobIdFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 100px;
+  max-width: 100px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#keywordFilter{
+        padding: 5px;
+        font-size: 16px;
+        border: 1px solid black;
+        border-radius: 10px;
+        border-radius: 5px;
+        min-width: 360px;
+        max-width: 360px;
+        border: 1.5px solid #666666;
+        margin-top: 3px;
+        font-family: 'Roboto';
+        padding-bottom: 5.5px;
+        padding-top: 5.7px;
+
+}
+
+::placeholder {
+  color: #666666;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 5px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding-top: 5px;
+}
+
+#experienceFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 220px;
+  max-width: 220px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#locationFilter {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 170px;
+  max-width: 170px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#sectorFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 120px;
+  max-width: 120px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#industryFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 180px;
+  max-width: 180px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#functionFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 180px;
+  max-width: 180px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#cityFilter{
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 160px;
+  max-width: 160px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+
+.filter-container select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid black;
+  border-radius: 10px;
+  border-radius: 5px;
+  min-width: 250px;
+  max-width: 250px;
+  border: 1.5px solid #666666;
+  margin-top: 3px;
+  font-family: 'Roboto';
+}
+
+#keywordContainer{
+  padding: 0;
+  margin: 0;
+}
+
+
+.keyword-div {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  padding-top: 0px;
+}
+.remove-keyword {
+  cursor: pointer;
+  margin-left: 5px;
+  color: red;
+}
+.hidden {
+  display: none;
+}
+}
+
+
+@media only screen and (max-width: 749px) {
+  .filter-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: left;
+      font-size: 14px;
+      width: auto;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      background: transparent;
+      min-width: 310px;
+
+  }
+
+  .filterc{
+
+    display: flex;
+    justify-content: center;
+    margin-left: 7%;
+    margin-right: 7%;
+  }
+
+  .filter-label{
+      font-size: 14px;
+      width: 250px;
+      font-family: Roboto;
+      justify-content: center;
+      display: contents;
+  }
+  .filter-container select {
+    min-width: 250px;
+      width: 250px;
+      max-width: none;
+      justify-content: center;
+      margin-top: 5px;
+      font-size: 14px;
+      width: 250px;
+  }
+  .filter-location, .filter-experience, .filter-industry, .filter-sector, .filter-job-id, .filter-city, .filter-keyword {
+      margin-bottom: 20px;
+      font-size: 14px;
+      min-width: 250px;
+      width: 250px;
+  }
+
+ .filter-job-function {
+    font-size: 14px;
+    min-width: 250px;
+    justify-content: center;
+    width: 250px;
+  }
+
+  .filter-keyword{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+
+
+  #keywordFilter{
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid black;
+    border-radius: 10px;
+    border-radius: 5px;
+    min-width: 250px;
+    max-width: 250px;
+    border: 1.5px solid #666666;
+    margin-top: 3px;
+    font-family: 'Roboto';
+  }
+  
+}
+
+.filter-label {
+  font-weight: bold;
+  margin-left: 3px;
+  text-align: center;
+  margin-bottom: -16px;
+  font-family: Roboto;
+}
+
+.filter-select {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+
+/* Table related code */
+
+table {
+
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  justify-content: center;
+  align-content: center;
+  margin-left: 7%;
+  margin-right: 7%;
+  background: white;
+}
+
+#jobTable{
+  max-width: 100%;
+  justify-content: center;
+  align-content: center;
+
+}
+
+
+th.job-title {
+  text-align: left;
+  text-align: left;
+}
+
+td.job-title {
+  text-align: left;
+  text-align: left;
+  color: blue;
+}
+
+th, td {
+  font-size: 16px;
+  border: 1px solid black;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Hover effect and clickable job titles */
+tr.job-row:hover td.job-title {
+  text-decoration: underline;
+}
+
+td.job-title a {
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+}
+
+/* Make the entire row clickable */
+tr.job-row {
+  cursor: pointer;
+}
+
+tbody{
+  background: white;
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 850px) {
+  table,
+  thead,
+  tbody,
+  th,
+  td,
+  tr {
+      display: block;
+      max-width: auto;
+      align-items: center;
+      justify-content: center;
+  }
+
+  th {
+    background-color: #1155cc; 
+    color: white; /* Change text color */
+  }
+
+
+  tbody{
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 30px;
+  }
+
+
+  thead tr {
+      position: absolute;
+      top: -9999px;
+      left: -9999px;
+      justify-content: center;
+  }
+
+
+
+  table {
+      justify-content: center;
+  }
+
+
+  td,
+  th {
+      font-size: 14px;
+      max-width: 310px;
+      padding: 2px;
+      font-weight: normal;
+  }
+
+
+  th.job-title,
+  td.job-title {
+      width: auto;
+      white-space: wrap;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: normal ;
+      max-width: auto;
+      /* Adjust maximum width for job title */
+      border-bottom: 1px solid #ddd;
+  }
+
+
+  th.function,
+  td.function,
+  th.Industry,
+  td.Industry {
+      width: auto;
+      white-space: wrap;
+      max-width: auto;
+      /* Adjust maximum width for job title */
+      border-bottom: 1px solid #ddd;
+  }
+
+
+  th.job-title {
+      display: block;
+      padding-left: 10px;
+      font-size: 14px;
+      border-bottom: 1px solid #ddd;
+      width: 100%;
+  }
+
+
+  tr {
+      width: 310px; /* Set fixed width for rows */
+      border: 1px solid black;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+      min-width: auto; /* Set minimum width for rows */
+      max-width: auto;
+      border-radius: 10px;
+  }
+
+
+  td {
+      position: relative;
+      padding-left: 35%;
+      white-space: nowrap;
+      text-align: left;
+  }
+
+
+  th, td {
+      border: none;
+      /* border-bottom: 1px solid #ddd; */
+  }
+
+
+  td.salary, th.salary, td.experience, th.experience, td.location, th.location td.Experience, th.Experience, td.job-id, th.job-id, td.notice, th.notice, td.date-posted, th.date-posted, td.City, th.City, th.job-status,
+  td.job-status {
+      white-space: wrap;
+      max-width: auto;
+      width: auto;
+      border-bottom: 1px solid #ddd;
+  }
+
+
+  table td:before {
+      position: absolute;
+      left: 6px;
+      padding-right: 10px;
+      white-space: nowrap;
+      text-align: left;
+  }
+
+
+  td.job-id{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 3px;
+  }
+
+  td.date-posted{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding-bottom: 3px;
+  }
+
+  th.job-status,
+  td.job-status {
+    background: none;
+    text-align: left;
+    display: flex;
+    justify-content: left;
+    border-radius: 10px;
+  }
+  
+  .status-text{
+    display: inline-block;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    min-width: 50px;
+    text-align: center;
+  }
+
+  
+/* Pagination styles */
+/* Styles for pagination and dropdown */
+.pagination-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+
+
+}
+
+.pagination-controls {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto';
+  row-gap: 20px;
+  justify-content: space-between;
+}
+
+
+.pagination-controls button {
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.jobtablerowfilter{
+margin-left: 5px;
+}
+
+.pagination-controls select{
+border: 1px solid black;
+font-family: 'Roboto';
+}
+
+
+
+.pagination-controls select:hover,
+.pagination-controls button:hover {
+  background-color: #e0e0e0;
+}
+
+#currentPage {
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+  td:nth-of-type(1):before {
+      content: "Job ID:";
+  }
+  td:nth-of-type(2):before {
+      content: "Role/Job Title:";
+      color: initial; /* Retain default color */
+  }
+  /* td:nth-of-type(7):before {
+      content: "Industry:";
+  }
+  td:nth-of-type(8):before {
+      content: "Department:";
+  } */
+  td:nth-of-type(3):before {
+      content: "S/UT:";
+  }
+  td:nth-of-type(4):before {
+      content: "City:";
+  }
+  td:nth-of-type(5):before {
+      content: "Experience:";
+  }
+  td:nth-of-type(6):before {
+      content: "Salary Offered:";
+  }
+  /* td:nth-of-type(7):before {
+      content: "Notice Period:";
+  } */
+  /* td:nth-of-type(10):before {
+      content: "Date posted:";
+  } */
+  td:nth-of-type(7):before {
+    content: "Status:";
+}
+
+th {
+  background-color: #1155cc;
+  color: white;
+  }
+}
+
+th {
+  background-color: #1155cc; 
+  color: white; /* Change text color */
+}
+
+/* Increase width of Industry column in desktop view */
+@media only screen and (min-width: 851px) {
+
+  table th {
+    background-color: #1155cc;
+    color: white;
+    }
+
+  th.Industry,
+  td.Industry {
+      width: 120px;
+      min-width: 120px;
+      max-width: 120px;
+  }
+  th.function,
+  td.function {
+    width: 120px;
+    min-width: 120px;
+    max-width: 120px;
+  }
+  th.location,
+  td.location {
+    width: 40px;
+    min-width: 40px;
+    max-width: 40px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  th.job-id,
+  td.job-id{
+      width: 33px;
+      min-width: 33px;
+    max-width: 33px;
+      padding-left: 5px;
+      padding-right: 5px;
+  }
+
+  th.job-status,
+  td.job-status{
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+  }
+
+  th.date-posted,
+  td.date-posted{
+    min-width: 55px;
+      max-width: 55px;
+  }
+  th.salary,
+  td.salary{
+      width: 110px;
+      min-width: 110px;
+      max-width: 110px;
+  }
+  th.experience,
+  td.experience{
+      width: 100px;
+      min-width: 100px;
+      max-width: 100px;
+  }
+  th.City,
+  td.City {
+      width: 110px;
+      min-width: 110px;
+      max-width: 110px;
+      padding-left: 5px;
+      padding-right: 5px;
+  }
+  th.notice,
+  td.notice {
+      width: 50px;
+      min-width: 50px;
+      max-width: 50px;
+      padding: 0;
+      margin: 0;
+  }
+  th.job-title,
+  td.job-title {
+    width: 220px;
+    min-width: 220px;
+    max-width: 220px;
+    padding-left: 10px;
+    padding-right: 5px;
+  }
+
+  
+  th.job-status,
+  td.job-status{
+    min-width: 80px;
+    max-width: 80px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+
+  td.job-title{
+      font-size: 17px;
+      font-weight: 500;
+  }
+
+  th{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+
+  td{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+
+.pagination-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+
+
+}
+
+.pagination-controls {
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto';
+  row-gap: 20px;
+  justify-content: space-between;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+
+.pagination-controls button {
+  padding: 8px 12px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+
+}
+
+
+.pagination-controls select{
+border: 1px solid black;
+font-family: 'Roboto';
+}
+
+
+
+.pagination-controls select:hover,
+.pagination-controls button:hover {
+  background-color: #e0e0e0;
+}
+
+#currentPage {
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+  
+  .status-text {
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+  }
+
+}
+
+
+  @media print {
+    /* Hide navigation bar, header, filter, and footer */
+    header, nav, footer, .filterc, .pagination-controls, .abbrevation {
+      display: none !important;
+    }
+    /* Set table width to 1400px */
+    table {
+      width: 98%;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+    }
+
+      /* Hide the Date posted column */
+    table tr th:nth-child(10),
+    table tr td:nth-child(10) {
+      display: none;
+    }
+
+    table tr th:nth-child(7),
+    table tr td:nth-child(7) {
+      display: none;
+    }
+
+    tr, th, td{
+      font-size: 18px;
+    }
+
+  th{
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  td{
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+    
+    th {
+    background-color: #1155cc;
+    color: white;
+    }
+
+    /* Show message after the table */
+    .print-message {
+      display: block !important;
+      /* font-style: italic; */
+      font-size: 28px; /* Adjust the font size here */
+      font-family: 'inter';
+      justify-content: left;
+      text-align: left;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      margin-left: 17px;
+      margin-right: 17px;
+      padding: 0;
+      text-decoration: none;
+      line-height: 1.3;
+    }
+
+    h1 {
+      font-size: 39px !important; /* Adjust the font size here */
+      margin: 0;
+      padding: 0;
+      margin-top: 20px;
+      text-align: left;
+      font-style: normal;
+      font-weight: normal;
+      margin-left: 10px;
+      font-family: Montserrat;
+    }
+
+    .print-message a{
+      color: black;
+      text-decoration: none;
+    }
+
+    th.location,
+    td.location {
+        width: 50px;
+        min-width: 50px;
+        max-width: 50px;
+        padding: 0;
+        margin: 0;
+    }
+  
+  
+    th.job-id,
+    td.job-id{
+        width: 50px;
+        min-width: 50px;
+        padding-left: 2px;
+        padding-right: 2px;
+        margin: 0;
+    }
+  
+    th.job-status,
+    td.job-status{
+      width: 220px;
+      min-width: 220px;
+      max-width: 220px;
+    }
+  
+    th.date-posted,
+    td.date-posted{
+      min-width: 55px;
+        max-width: 55px;
+    }
+    th.salary,
+    td.salary{
+      width: 130px;
+      min-width: 130px;
+      max-width: 130px;
+      padding: 5px;
+      margin: 5px;
+    }
+    th.experience,
+    td.experience{
+      width: 140px;
+      min-width: 140px;
+      max-width: 140px;
+      padding: 5px;
+      margin: 5px;
+    }
+    th.City,
+    td.City {
+        width: 150px;
+        min-width: 150px;
+        max-width: 150px;
+        padding: 5px;
+        margin: 5px;
+    }
+    th.notice,
+    td.notice {
+        width: 60px;
+        min-width: 60px;
+        max-width: 60px;
+    }
+
+
+    table th.job-title,
+    table td.job-title {
+      width: 250px;
+      min-width: 250px;
+      max-width: 250px;
+      margin-left: 25px;
+    }
+
+    table th.job-title,
+    table td.job-title{
+        font-size: 20px;
+        font-weight: 500;
+        padding-left: 15px;
+    }
+  
+    th, tr, td {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  
+  
+    td{
+      padding-top: 5px;
+      padding-bottom: 5px;
+    }
+
+    th {
+      background-color: #1155cc; 
+      color: white; /* Change text color */
+    }
+  
+  }
+
+
+.print-message {
+  display: none; /* Initially hide the message */
+  font-family: 'Arial';
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+  background-color: #f8f8f8; /* Set background color for even rows */
+}
+tr:nth-child(odd) {
+  background-color: white; /* Set background color for odd rows */
+}
+
+  th {
+    background-color: #1155cc; 
+    color: white; /* Change text color */
+  }
+
+
+.hidden {
+  display: none;
+}
+
+tr:hover {background-color: #f4f4f4;}
+
+/* Define different styles for different statuses */
+.status-text.active {
+  color: black;
+  background-color: lightgreen;
+}
+
+.status-text.on-hold {
+  color: black;
+  background-color: yellow;
+}
+
+.status-text.closed {
+  color: black;
+  background-color: lightcoral;
+}
+
+
+
+
+@media screen and (max-width: 850px) {
+    .pagination-controls {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        text-align: center;
+        row-gap: 10px;
+        padding: 2px;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        width: 85%;
+        margin-left: 7%;
+        margin-right: 7%;
+        margin-top: -10px;
+      }
+}
+
+@media only screen and (max-width: 340px) {
+  h1{
+    font-size: 25px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    justify-content: center;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-family: Montserrat;
+  }
+}
+
+@media only screen and (min-width: 341px) and (max-width: 424px) {
+  h1{
+    font-size: 25px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    justify-content: center;
+    text-align: center;
+    font-family: Montserrat;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 768px) {
+  h1{
+    font-size: 30px;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    justify-content: center;
+    text-align: center;
+    font-family: Montserrat;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 848px) {
+  h1{
+    font-size: 30px;
+    margin-top: 70px;
+    margin-bottom: -5px;
+    justify-content: center;
+    text-align: center;
+    font-family: Montserrat;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media only screen and (min-width: 849px) and (max-width: 920px) {
+  h1{
+    font-size: 30px;
+    margin-top: 70px;
+    margin-bottom: -5px;
+    justify-content: center;
+    text-align: center;
+    font-family: Montserrat;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media only screen and (min-width: 921px) and (max-width: 1200px) {
+  h1{
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: -5px;
+    justify-content: center;
+    text-align: center;
+    font-family: Montserrat;
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media only screen and (min-width: 1201px) and (max-width: 2800px)  {
+  h1{
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: -5px;
+    justify-content: center;
+    text-align: center;
+    font-family: Montserrat;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
