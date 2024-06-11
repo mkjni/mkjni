@@ -13,24 +13,31 @@
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
 
         // Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyAY8V41ljl49giypJPu3mCYI_HGLS7vPTY",
-  authDomain: "notepad-78a55.firebaseapp.com",
-  projectId: "notepad-78a55",
-  storageBucket: "notepad-78a55.appspot.com",
-  messagingSenderId: "1040846932668",
-  appId: "1:1040846932668:web:03eb48e48e7b7e3ade5eb9",
-  measurementId: "G-FX89GV616E"
-};
+        const firebaseConfig = {
+            apiKey: "AIzaSyAY8V41ljl49giypJPu3mCYI_HGLS7vPTY",
+            authDomain: "notepad-78a55.firebaseapp.com",
+            projectId: "notepad-78a55",
+            storageBucket: "notepad-78a55.appspot.com",
+            messagingSenderId: "1040846932668",
+            appId: "1:1040846932668:web:03eb48e48e7b7e3ade5eb9",
+            measurementId: "G-FX89GV616E"
+        };
 
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-        const auth = getAuth();
+        const auth = getAuth(app);
         const db = getFirestore(app);
 
         document.addEventListener('DOMContentLoaded', (event) => {
-            loadNotes();
+            onAuthStateChanged(auth, (user) => {
+                if (user) {
+                    loadNotes();
+                    document.getElementById('googleSignIn').style.display = 'none';
+                } else {
+                    document.getElementById('googleSignIn').style.display = 'block';
+                }
+            });
         });
 
         document.getElementById('googleSignIn').onclick = () => {
@@ -42,6 +49,7 @@ const firebaseConfig = {
                 })
                 .catch((error) => {
                     console.error('Error during sign-in:', error);
+                    alert(`Error during sign-in: ${error.message}`);
                 });
         };
 
@@ -62,6 +70,7 @@ const firebaseConfig = {
                     loadNotes();
                 } catch (error) {
                     console.error("Error adding document:", error);
+                    alert(`Error adding document: ${error.message}`);
                 }
             } else {
                 alert("Please sign in first.");
@@ -71,20 +80,25 @@ const firebaseConfig = {
         async function loadNotes() {
             const user = auth.currentUser;
             if (user) {
-                const q = query(collection(db, 'notes'), where('uid', '==', user.uid), orderBy('timestamp', 'desc'));
-                const querySnapshot = await getDocs(q);
-                const notesList = document.getElementById('notesList');
-                notesList.innerHTML = '';
-                querySnapshot.forEach((doc) => {
-                    const note = doc.data().content;
-                    const noteDiv = document.createElement('div');
-                    noteDiv.className = 'saved-note';
-                    noteDiv.innerHTML = `
-                        <div class="note-content">${note}</div>
-                        <button onclick="deleteNote('${doc.id}')">Delete</button>
-                    `;
-                    notesList.appendChild(noteDiv);
-                });
+                try {
+                    const q = query(collection(db, 'notes'), where('uid', '==', user.uid), orderBy('timestamp', 'desc'));
+                    const querySnapshot = await getDocs(q);
+                    const notesList = document.getElementById('notesList');
+                    notesList.innerHTML = '';
+                    querySnapshot.forEach((doc) => {
+                        const note = doc.data().content;
+                        const noteDiv = document.createElement('div');
+                        noteDiv.className = 'saved-note';
+                        noteDiv.innerHTML = `
+                            <div class="note-content">${note}</div>
+                            <button onclick="deleteNote('${doc.id}')">Delete</button>
+                        `;
+                        notesList.appendChild(noteDiv);
+                    });
+                } catch (error) {
+                    console.error("Error loading documents:", error);
+                    alert(`Error loading documents: ${error.message}`);
+                }
             }
         }
 
@@ -94,6 +108,7 @@ const firebaseConfig = {
                 loadNotes();
             } catch (error) {
                 console.error("Error removing document:", error);
+                alert(`Error removing document: ${error.message}`);
             }
         }
 
@@ -106,7 +121,6 @@ const firebaseConfig = {
             }
         });
     </script>
-    
 </head>
 <body>
     <div id="app">
