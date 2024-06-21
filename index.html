@@ -1,141 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Note Taking App</title>
-    <link rel="stylesheet" href="styles.css">
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-        import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
-        import { getFirestore, collection, addDoc, query, where, orderBy, getDocs, deleteDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
-
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyAY8V41ljl49giypJPu3mCYI_HGLS7vPTY",
-            authDomain: "mkjni.github.io",
-            projectId: "notepad-78a55",
-            storageBucket: "notepad-78a55.appspot.com",
-            messagingSenderId: "1040846932668",
-            appId: "1:1040846932668:web:03eb48e48e7b7e3ade5eb9",
-            measurementId: "G-FX89GV616E"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        const analytics = getAnalytics(app);
-        const auth = getAuth(app);
-        const db = getFirestore(app);
-
-        document.addEventListener('DOMContentLoaded', (event) => {
-            onAuthStateChanged(auth, (user) => {
-                if (user) {
-                    loadNotes();
-                    document.getElementById('googleSignIn').style.display = 'none';
-                } else {
-                    document.getElementById('googleSignIn').style.display = 'block';
-                }
-            });
-        });
-
-        document.getElementById('googleSignIn').onclick = () => {
-            const provider = new GoogleAuthProvider();
-            signInWithPopup(auth, provider)
-                .then((result) => {
-                    console.log('User signed in:', result.user);
-                    loadNotes();
-                })
-                .catch((error) => {
-                    console.error('Error during sign-in:', error);
-                    alert(`Error during sign-in: ${error.message}`);
-                });
-        };
-
-        function format(command) {
-            document.execCommand(command, false, null);
-        }
-
-        async function saveNote() {
-            const noteContent = document.getElementById('note').innerHTML;
-            const user = auth.currentUser;
-            if (user) {
-                try {
-                    await addDoc(collection(db, 'notes'), {
-                        uid: user.uid,
-                        content: noteContent,
-                        timestamp: serverTimestamp()
-                    });
-                    loadNotes();
-                } catch (error) {
-                    console.error("Error adding document:", error);
-                    alert(`Error adding document: ${error.message}`);
-                }
-            } else {
-                alert("Please sign in first.");
-            }
-        }
-
-        async function loadNotes() {
-            const user = auth.currentUser;
-            if (user) {
-                try {
-                    const q = query(collection(db, 'notes'), where('uid', '==', user.uid), orderBy('timestamp', 'desc'));
-                    const querySnapshot = await getDocs(q);
-                    const notesList = document.getElementById('notesList');
-                    notesList.innerHTML = '';
-                    querySnapshot.forEach((doc) => {
-                        const note = doc.data().content;
-                        const noteDiv = document.createElement('div');
-                        noteDiv.className = 'saved-note';
-                        noteDiv.innerHTML = `
-                            <div class="note-content">${note}</div>
-                            <button onclick="deleteNote('${doc.id}')">Delete</button>
-                        `;
-                        notesList.appendChild(noteDiv);
-                    });
-                } catch (error) {
-                    console.error("Error loading documents:", error);
-                    alert(`Error loading documents: ${error.message}`);
-                }
-            }
-        }
-
-        async function deleteNote(id) {
-            try {
-                await deleteDoc(doc(db, 'notes', id));
-                loadNotes();
-            } catch (error) {
-                console.error("Error removing document:", error);
-                alert(`Error removing document: ${error.message}`);
-            }
-        }
-
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                loadNotes();
-                document.getElementById('googleSignIn').style.display = 'none';
-            } else {
-                document.getElementById('googleSignIn').style.display = 'block';
-            }
-        });
-    </script>
-</head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/png" href="https://www.jobnexusindia.com/Job-Nexus-India-Logo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link href='https://fonts.googleapis.com/css?family=Arima Madurai' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+  <title>Full Stack Software Engineer (Java, React) | 3 - 5 Years | Remote, India</title></head>
 <body>
-    <div id="app">
-        <h1>Note Taking App</h1>
-        <button id="googleSignIn">Sign in with Google</button>
-        <div id="editor">
-            <div>
-                <button onclick="format('bold')">Bold</button>
-                <button onclick="format('insertUnorderedList')">UL</button>
-                <button onclick="format('insertOrderedList')">OL</button>
-            </div>
-            <div contenteditable="true" id="note" class="note"></div>
-            <button onclick="saveNote()">Save Note</button>
+
+    <nav>
+        <a class="logo" href="https://www.jobnexusindia.com/"><div class="logo">Job Nexus India</div></a>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li><a  href="https://www.jobnexusindia.com/">Current Openings</a></li>
+          <li><a  href="/about-us.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="blog-post">
+        <h1>Crafting the Perfect Resume: A Step-by-Step Guide</h1>
+        <p>Creating a resume that stands out is crucial for landing your dream job. Here’s a comprehensive guide to help you structure your resume effectively, ensuring you include all necessary details while highlighting your strengths and experiences.</p>
+
+        <h2>1. Personal Information</h2>
+        <p><oL>
+            <li><strong>Name</strong>: Clearly state your full name at the top.<br></li>
+            <li><strong>Contact Number</strong>: Provide a valid phone number where you can be easily reached.<br></li>
+            <li><strong>Email Address</strong>: Use an email address you actively use.<br></li>
+            <li><strong>Location</strong>: City and State/Union Territory name where you are residing currently.<br></li>
+            <li><strong>Links (Optional but Preferred)</strong>:<br></li>
+            <ul>
+          <li>  LinkedIn Profile</li> 
+          <li> Personal Portfolio</li> 
+            <li> GitHub</li> 
+            </ul>
+        </p>
+        </oL>
+
+        <h2>2. Professional Experience</h2>
+        <p>For each job you've held, include the following:</p>
+        <p><oL>
+            <li><strong>Job Title</strong>: Your position in the company.<br></li>
+            <li><strong>Company Name</strong>: Name of the organization.<br></li>
+            <li><strong>From - To (In DD/MM/YYYY or MM/YYYY format)</strong>: The duration of your employment.<br></li>
+            <li><strong>Company Website (Optional)</strong>: Link to the company’s website.<br></li>
+            <li><strong>Company Location (Optional)</strong>: City and state where the company is located.<br></li>
+            <li><strong>Role and Responsibilities:</strong></p></li>
+        <p><ul><li> Write 3-4 points showcasing the relevant experience you have as per the job description, using the exact keywords mentioned in the job description.</li>
+           <li>Include additional relevant experiences related to the role.</li></p></ul></oL>
+
+        <h2>3. Education Qualification</h2>
+        <p>Include your educational background with the following details:</p>
+        <p><ol>
+            <li><strong>Name of the Qualification</strong>: Your degree or certification.<br></li>
+            <li><strong>From - To (In DD/MM/YYYY or MM/YYYY format)</strong>: Duration of the course.<br></li>
+            <li><strong>Name of the School/College/Institution</strong>: The name of the institution where you studied.<br></li>
+            <li><strong>Grade/Percentage</strong>: Your academic performance.<br></li>
+        </p></ol>
+
+        <h2>4. Certifications</h2>
+        <p>List any certifications you have acquired:</p>
+        <p>- <strong>Name of the Certification - Issued by</strong>: Include the name and issuing organization.</p>
+
+        <h2>5. Skills</h2>
+        <p>Highlight the skills relevant to the job description and the role</p>
+
+        <h2>6. Technical Skills</h2>
+        <p>Detail the software and tools you have used in your job</p>
+
+        <h2>7. Languages Known (Mandatory for BPO roles)</h2>
+        <p>State the languages you know and your proficiency</p>
+
+        <h2>Final Tips</h2>
+        <p><ol>
+            <li><strong>Tailor Your Resume</strong>: Customize your resume for each job application by aligning your experiences and skills with the job description.<br></li>
+            <li><strong>Be Concise and Relevant</strong>: Keep your resume clear and to the point, focusing on the most relevant experiences and achievements.<br></li>
+        </p></ol>
+        <p>By following this guide, you can create a compelling resume that showcases your qualifications and experiences, increasing your chances of landing an interview. Happy job hunting!</p>
+        
+        <h2>Sample Resume Template</h2>
+        <p>Below is a sample resume template you can use:</p>
+        <div class="resume">
+            <section class="personal-info">
+                <h1>John Doe</h1>
+                <p>Phone: 123-456-7890</p>
+                <p>Email: john.doe@example.com</p>
+                <p>LinkedIn: <a href="https://linkedin.com/in/johndoe">linkedin.com/in/johndoe</a></p>
+                <p>GitHub: <a href="https://github.com/johndoe">github.com/johndoe</a></p>
+            </section>
+
+            <section class="experience">
+                <h2>Professional Experience</h2>
+                <div class="job">
+                    <h3>Software Developer</h3>
+                    <p>Tech Solutions Inc. | 01/2020 - 12/2023</p>
+                    <p>Website: <a href="https://www.techsolutions.com">www.techsolutions.com</a></p>
+                    <p>Location: New York, NY</p>
+                    <ul>
+                        <li>Developed and maintained web applications using JavaScript, HTML, and CSS.</li>
+                        <li>Implemented responsive design to enhance user experience across devices.</li>
+                        <li>Collaborated with cross-functional teams to define and achieve project objectives.</li>
+                        <li>Optimized code for improved performance and scalability.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="education">
+                <h2>Education Qualification</h2>
+                <p>Bachelor of Science in Computer Science</p>
+                <p>09/2016 - 05/2020</p>
+                <p>State University</p>
+                <p>GPA: 3.8/4.0</p>
+            </section>
+
+            <section class="certifications">
+                <h2>Certifications</h2>
+                <p>Certified Java Developer - Oracle</p>
+            </section>
+
+            <section class="skills">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Proficient in Java, Python, and SQL</li>
+                    <li>Strong problem-solving and analytical skills</li>
+                    <li>Excellent communication and teamwork abilities</li>
+                </ul>
+            </section>
+
+            <section class="technical-skills">
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li>CRM: Salesforce</li>
+                    <li>ERP: SAP</li>
+                    <li>Microsoft Office: MS Excel, MS Word, MS PowerPoint</li>
+                </ul>
+            </section>
+
+            <section class="languages">
+                <h2>Languages Known</h2>
+                    <strong><p>English:</strong> Read, Write, and Speak<br></p>
+                    <strong><p>Spanish:</strong> Read, Write, and Speak<br></p>
+                    <strong><p>French:</strong> Read and Speak<br></p>
+            </section>
         </div>
-        <div id="notesList"></div>
     </div>
 </body>
 </html>
