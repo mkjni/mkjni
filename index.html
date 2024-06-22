@@ -39,6 +39,7 @@
             font-size: 2.5rem;
             text-align: center;
             margin-top: 30px;
+            color: black;
         }
 
         .content-section {
@@ -136,6 +137,32 @@
             list-style: square;
         }
 
+@media print {
+    .nav, footer {
+    display: none;
+    }
+
+    .content-section {
+        max-width: 100%;
+        box-shadow: none;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+    .resume {
+        border: 1px solid #000;
+    }
+    .final-notes {
+        border: 1px solid #000;
+    }
+
+    h1{
+        margin-top: 10px;
+        margin-bottom: 25px;
+        color: black;
+    }
+}
+
         @media (max-width: 768px) {
             body {
                 padding: 0;
@@ -183,7 +210,7 @@
             }
 
             .content-section p, ul, ol {
-                font-size: 0.9em;
+                font-size: 0.rem;
                 color: black;
             }
 
@@ -223,31 +250,10 @@
                 margin: 1rem 0;
                 border: 2px solid #007bff;
             }
+            
         }
 
-        @media print {
-            body {
-                background-color: #fff;
-                color: #000;
-            }
 
-            nav, .footer {
-            display: none;
-            }
-            .content-section {
-                max-width: 100%;
-                box-shadow: none;
-                border: none;
-                margin: 0;
-                padding: 0;
-            }
-            .resume {
-                border: 1px solid #000;
-            }
-            .final-notes {
-                border: 1px solid #000;
-            }
-        }
 
         * {
             margin: 0;
@@ -637,23 +643,20 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a class="logo" href="https://www.jobnexusindia.com/"><div class="logo">Job Nexus India</div></a>
-        <input type="checkbox" id="click">
-        <label for="click" class="menu-btn">
-          <i class="fas fa-bars"></i>
-        </label>
-        <ul>
-          <li><a  href="https://www.jobnexusindia.com/">Current Openings</a></li>
-          <li><a  href="/about-us.html">About Us</a></li>
-        </ul>
-    </nav>
+<nav class="nav">
+    <a class="logo" href="https://www.jobnexusindia.com/"><div class="logo">Job Nexus India</div></a>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+        <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+        <li><a  href="https://www.jobnexusindia.com/">Current Openings</a></li>
+        <li><a  href="/about-us.html">About Us</a></li>
+    </ul>
+</nav>
 
 
         <h1>Resume Guide for Non-IT and IT Candidates</h1>
-
-<div>
-
 
         <section class="content-section">
         <h2>Introduction</h2>
@@ -714,7 +717,7 @@
             <li><strong>Keep it clean and short:</strong> Try to limit it to 1-3 pages. This makes you look professional, and it becomes easy for employers to go through your resume.</li>
             <li><strong>Proofread:</strong> Spelling or grammatical errors are a turn-off to employers. Therefore, once you have finished making your resume, do read it once, or get it read by someone else.</li>
         </ul>
-    <h3>Sample Job Description</h3>
+        <h3>Sample Job Description</h3>
     
         <div class="resume">    
         <p><strong>Job Title:</strong> Retail Store Manager</p>
@@ -723,31 +726,31 @@
         <p>XYZ Retail Solutions is a leading retailer specializing in clothing and accessories. We are seeking a motivated and experienced Retail Store Manager to lead our team and enhance customer satisfaction at our Vile Parle, Mumbai location.</p>
         <br>
         <p><strong>Responsibilities:</strong> </p>
-<ul>
-<li>Team Leadership: Manage a team of 20+ employees, ensuring high levels of customer service and operational efficiency.</li>
-<li>Sales Strategies: Implement effective sales strategies to increase monthly sales and achieve store targets.</li>
-<li>Inventory Management: Handle inventory management, resolve discrepancies, and ensure stock levels are maintained.</li>
-<li>Customer Service: Enhance customer satisfaction by providing excellent service and addressing customer needs promptly.</li>
-<li>Staff Training: Train new staff members to improve their customer service skills and overall performance.</li>
-<li>Operational Efficiency: Oversee daily store operations to ensure smooth and efficient functioning.</li>
-</ul><br>
-<p><strong>Requirements:</strong> </p>
-<ul>
-<li>Proven experience as a Retail Store Manager or similar role.</li>
-<li>Strong leadership and team management skills.</li>
-<li>Excellent customer service and communication skills.</li>
-<li>Ability to implement sales strategies and achieve targets.</li>
-<li>Proficient in inventory management and problem-solving.</li>
-<li>Familiarity with CRM systems and MS Excel.</li>
-<li>Bachelor's degree in Business Administration or related field.</li>
-</ul><br>
-<p><strong>Preferred Qualifications:</strong> </p>
-<ul>
-<li>Certified Retail Manager or similar certification.</li>
-<li>Experience in the clothing and accessories retail sector.</li>
-<li>Strong organizational and multitasking abilities.</li>
-</ul>
-    </div>
+        <ul>
+        <li>Team Leadership: Manage a team of 20+ employees, ensuring high levels of customer service and operational efficiency.</li>
+        <li>Sales Strategies: Implement effective sales strategies to increase monthly sales and achieve store targets.</li>
+        <li>Inventory Management: Handle inventory management, resolve discrepancies, and ensure stock levels are maintained.</li>
+        <li>Customer Service: Enhance customer satisfaction by providing excellent service and addressing customer needs promptly.</li>
+        <li>Staff Training: Train new staff members to improve their customer service skills and overall performance.</li>
+        <li>Operational Efficiency: Oversee daily store operations to ensure smooth and efficient functioning.</li>
+        </ul><br>
+        <p><strong>Requirements:</strong> </p>
+        <ul>
+        <li>Proven experience as a Retail Store Manager or similar role.</li>
+        <li>Strong leadership and team management skills.</li>
+        <li>Excellent customer service and communication skills.</li>
+        <li>Ability to implement sales strategies and achieve targets.</li>
+        <li>Proficient in inventory management and problem-solving.</li>
+        <li>Familiarity with CRM systems and MS Excel.</li>
+        <li>Bachelor's degree in Business Administration or related field.</li>
+        </ul><br>
+        <p><strong>Preferred Qualifications:</strong> </p>
+        <ul>
+        <li>Certified Retail Manager or similar certification.</li>
+        <li>Experience in the clothing and accessories retail sector.</li>
+        <li>Strong organizational and multitasking abilities.</li>
+        </ul>
+        </div>
         <h3>Sample Resume</h3>
         <div class="resume">
             <h2 style="border: none; margin-bottom: 0; padding-bottom: 0;">John Due</h2>
@@ -787,9 +790,9 @@
             <p>English: Read, Write, and Speak</p>
         </div>
 
-    </section>
+        </section>
 
-    <section class="content-section">
+        <section class="content-section">
         <h2>For IT Candidates</h2>
         <h3>1. Personal Details</h3>
         <ol>
@@ -874,7 +877,7 @@
         </ul>
     
         <h3>Sample Job Description</h3>
-    <div class="resume">
+        <div class="resume">
 
         <p><strong>Job Title:</strong> Senior Software Engineer</p>
         <br>
@@ -909,7 +912,7 @@
         <li>Knowledge of DevOps practices and CI/CD pipelines.</li>
         <li>Strong understanding of software architecture and design patterns.</li>
         </ul>
-    </div>
+        </div>
         <h3>Sample Resume:</h3>
         
         <div class="resume">
@@ -973,8 +976,8 @@
             <p>English: Read, Write, and Speak</p>
             <p>Spanish: Read, Write, and Speak</p>
         </div>
-    </section>
-</div>
+        </section>
+
 
 <footer>
     <div class="footer" >
