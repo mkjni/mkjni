@@ -1,77 +1,127 @@
-const auth = firebase.auth();
-const db = firebase.firestore();
 
-document.addEventListener('DOMContentLoaded', (event) => {
-    loadNotes();
-});
+const jobDescriptionCache = {};
 
-document.getElementById('googleSignIn').onclick = () => {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    auth.signInWithPopup(provider)
-        .then((result) => {
-            console.log(result.user);
-            loadNotes();
-        })
-        .catch((error) => {
-            console.error(error);
-        });
-};
+async function fetchJobDescription(url) {
+    if (jobDescriptionCache[url]) {
+        return jobDescriptionCache[url];
+    }
 
-function format(command) {
-    document.execCommand(command, false, null);
-}
-
-function saveNote() {
-    const noteContent = document.getElementById('note').innerHTML;
-    const user = auth.currentUser;
-    if (user) {
-        db.collection('notes').add({
-            uid: user.uid,
-            content: noteContent,
-            timestamp: firebase.firestore.FieldValue.serverTimestamp()
-        })
-        .then(() => {
-            loadNotes();
-        })
-        .catch((error) => {
-            console.error("Error adding document: ", error);
-        });
-    } else {
-        alert("Please sign in first.");
+    try {
+        let response = await fetch(url);
+        let text = await response.text();
+        let parser = new DOMParser();
+        let doc = parser.parseFromString(text, 'text/html');
+        let bodyContainer = doc.querySelector('.bodycontainer');
+        let description = bodyContainer ? bodyContainer.textContent.toLowerCase() : '';
+        jobDescriptionCache[url] = description;
+        return description;
+    } catch (error) {
+        console.error('Error fetching job description:', error);
+        return '';
     }
 }
 
-function loadNotes() {
-    const user = auth.currentUser;
-    if (user) {
-        db.collection('notes').where('uid', '==', user.uid).orderBy('timestamp', 'desc').get()
-        .then((querySnapshot) => {
-            const notesList = document.getElementById('notesList');
-            notesList.innerHTML = '';
-            querySnapshot.forEach((doc) => {
-                const note = doc.data().content;
-                const noteDiv = document.createElement('div');
-                noteDiv.className = 'saved-note';
-                noteDiv.innerHTML = `
-                    <div class="note-content">${note}</div>
-                    <button onclick="deleteNote('${doc.id}')">Delete</button>
-                `;
-                notesList.appendChild(noteDiv);
-            });
-        });
+async function prefetchAllJobDescriptions() {
+    let tableRows = document.querySelectorAll("#jobTable tbody tr");
+    let jobs = [];
+
+    for (let row of tableRows) {
+        let jobDescriptionUrl = row.getAttribute("data-description-url");
+        let description = await fetchJobDescription(jobDescriptionUrl);
+        let job = {
+            id: row.querySelector(".job-id").textContent.trim(),
+            title: row.querySelector(".job-title").textContent.trim(),
+            description: description,
+            element: row
+        };
+        jobs.push(job);
     }
+    return jobs;
 }
 
-function deleteNote(id) {
-    db.collection('notes').doc(id).delete().then(() => {
-        loadNotes();
-    }).catch((error) => {
-        console.error("Error removing document: ", error);
+async function filterJobs() {
+    let keywordFilter = document.getElementById("keywordFilter").value.toLowerCase();
+    let locationFilter = document.getElementById("locationFilter").value.toLowerCase();
+    
+    let tableRows = document.querySelectorAll("#jobTable tbody tr");
+
+    for (let row of tableRows) {
+        let jobDescriptionUrl = row.getAttribute("data-description-url");
+        let description = await fetchJobDescription(jobDescriptionUrl);
+        let rowText = row.textContent.toLowerCase();
+        let jobId = row.querySelector(".job-id").textContent.toLowerCase();
+        let location = row.querySelector(".location").textContent.toLowerCase();
+
+
+        let matchesKeyword = keywordFilter === '' || rowText.includes(keywordFilter) || description.includes(keywordFilter);
+        let matchesLocation = locationFilter === 'all' || location.includes(locationFilter);
+
+
+        if (matchesKeyword && matchesLocation) {
+            row.classList.remove('hidden');
+        } else {
+            row.classList.add('hidden');
+        }
+    }
+
+    updatePagination();
+}
+
+function updatePagination() {
+    let jobsPerPage = document.getElementById("jobsPerPage").value === 'all' ? 'all' : parseInt(document.getElementById("jobsPerPage").value);
+    let tableRows = document.querySelectorAll("#jobTable tbody tr:not(.hidden)");
+    let currentPage = parseInt(document.getElementById("currentPage").textContent.split(" ")[1]);
+    let totalJobs = tableRows.length;
+    let totalPages = jobsPerPage === 'all' ? 1 : Math.ceil(totalJobs / jobsPerPage);
+
+    document.getElementById("currentPage").textContent = `Page ${currentPage} of ${totalPages}`;
+    document.getElementById("prevPage").disabled = currentPage === 1;
+    document.getElementById("nextPage").disabled = currentPage === totalPages;
+
+    tableRows.forEach((row, index) => {
+        if (jobsPerPage === 'all' || (index >= (currentPage - 1) * jobsPerPage && index < currentPage * jobsPerPage)) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
     });
 }
 
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        loadNotes();
+document.getElementById("prevPage").addEventListener("click", () => {
+    let currentPage = parseInt(document.getElementById("currentPage").textContent.split(" ")[1]);
+    if (currentPage > 1) {
+        currentPage--;
+        document.getElementById("currentPage").textContent = `Page ${currentPage}`;
+        updatePagination();
     }
+});
+
+document.getElementById("nextPage").addEventListener("click", () => {
+    let currentPage = parseInt(document.getElementById("currentPage").textContent.split(" ")[1]);
+    let totalPages = parseInt(document.getElementById("currentPage").textContent.split(" ")[3]);
+    if (currentPage < totalPages) {
+        currentPage++;
+        document.getElementById("currentPage").textContent = `Page ${currentPage}`;
+        updatePagination();
+    }
+});
+
+document.getElementById("jobsPerPage").addEventListener("change", () => {
+    document.getElementById("currentPage").textContent = "Page 1";
+    updatePagination();
+});
+
+document.getElementById("keywordFilter").addEventListener("input", filterJobs);
+document.getElementById("locationFilter").addEventListener("change", filterJobs);
+
+document.addEventListener("DOMContentLoaded", async function() {
+    await prefetchAllJobDescriptions();
+    filterJobs();
+});
+
+document.querySelectorAll("#jobTable tbody tr").forEach(row => {
+    row.addEventListener("click", function() {
+        let externalUrl = this.getAttribute("data-external-url");
+        window.open(externalUrl, '_blank');
+    });
 });
