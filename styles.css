@@ -240,29 +240,34 @@ body {
   width: 100%;
   color: #000;
   text-align: left;
-  padding-top: 20px;
+  padding-top: 40px;
 /*   padding-bottom: 20px; */
   display: flex;
   background-color: white;
   flex-wrap: wrap;
   border-top: 1px solid black;
   column-gap: 50px;
+  background: #f8f8f8;
 }
 
 .copyright {
   text-align: center;
-  background-color: white;
+  background-color: #f8f8f8;
   color: #333;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  padding-top: 30px;
   padding-bottom: 20px;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  width: 86%;
+  margin-top: 10px;
 }
 
 @media (max-width: 600px) {
   .copyright {
       font-size: 12px;
-      padding: 0;
+      padding-top: 10px;
+      padding-bottom: 10px;
   }
 }
 
