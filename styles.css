@@ -976,7 +976,7 @@ font-family: 'Roboto';
       content: "S/UT:";
   }
   td:nth-of-type(4):before {
-      content: "City:";
+      content: "Work Location:";
   }
   td:nth-of-type(3):before {
       content: "Experience:";
