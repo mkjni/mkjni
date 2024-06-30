@@ -270,6 +270,8 @@ body {
   }
 }
 
+
+
 .box1, .box2, .box3{
   margin-bottom: 15px;
 }
@@ -969,31 +971,26 @@ font-family: 'Roboto';
       content: "Role/Job Title:";
       color: initial; /* Retain default color */
   }
-  /* td:nth-of-type(7):before {
-      content: "Industry:";
-  }
-  td:nth-of-type(8):before {
-      content: "Department:";
-  } */
-  td:nth-of-type(3):before {
+
+  td:nth-of-type(4):before {
       content: "S/UT:";
   }
-  td:nth-of-type(4):before {
+  td:nth-of-type(5):before {
       content: "City:";
   }
-  td:nth-of-type(5):before {
+  td:nth-of-type(3):before {
       content: "Experience:";
   }
-  td:nth-of-type(6):before {
+  /*td:nth-of-type(6):before {
       content: "Salary Offered:";
-  }
+  }*/
   /* td:nth-of-type(7):before {
       content: "Notice Period:";
   } */
   /* td:nth-of-type(10):before {
       content: "Date posted:";
   } */
-  td:nth-of-type(7):before {
+  td:nth-of-type(6):before {
     content: "Status:";
 }
 
@@ -1535,4 +1532,3 @@ tr:hover {background-color: #f4f4f4;}
     padding-bottom: 20px;
   }
 }
-
