@@ -749,6 +749,11 @@ tbody{
   background: white;
 }
 
+th {
+  background-color: #1155cc;
+  color: white;
+}
+
 /* Mobile Styles */
 @media only screen and (max-width: 850px) {
   table,
@@ -972,11 +977,8 @@ font-family: 'Roboto';
       color: initial; /* Retain default color */
   }
 
-  td:nth-of-type(5):before {
-      content: "S/UT:";
-  }
   td:nth-of-type(4):before {
-      content: "Work Location:";
+      content: "City:";
   }
   td:nth-of-type(3):before {
       content: "Experience:";
@@ -990,7 +992,7 @@ font-family: 'Roboto';
   /* td:nth-of-type(10):before {
       content: "Date posted:";
   } */
-  td:nth-of-type(6):before {
+  td:nth-of-type(5):before {
     content: "Status:";
 }
 
@@ -998,11 +1000,6 @@ th {
   background-color: #1155cc;
   color: white;
   }
-}
-
-th {
-  background-color: #1155cc; 
-  color: white; /* Change text color */
 }
 
 /* Increase width of Industry column in desktop view */
@@ -1027,9 +1024,9 @@ th {
   }
   th.location,
   td.location {
-    width: 40px;
-    min-width: 40px;
-    max-width: 40px;
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
     padding-left: 5px;
     padding-right: 5px;
   }
@@ -1179,12 +1176,17 @@ font-family: 'Roboto';
     border: none;
   }
 
+  th {
+    background-color: #1155cc;
+    color: white;
+  }
+
 }
 
 
   @media print {
     /* Hide navigation bar, header, filter, and footer */
-    header, nav, footer, .filterc, .pagination-controls, .abbrevation {
+    header, nav, footer, .filterc, .pagination-controls, .abbrevation, .job-status {
       display: none !important;
     }
     /* Set table width to 1400px */
@@ -1222,10 +1224,7 @@ font-family: 'Roboto';
   }
 
     
-  th {
-    background-color: #1155cc;
-    color: white;
-  }
+
 
     /* Show message after the table */
   .print-message {
@@ -1263,11 +1262,11 @@ font-family: 'Roboto';
 
   th.location,
   td.location {
-      width: 50px;
-      min-width: 50px;
-      max-width: 50px;
-      padding: 0;
-      margin: 0;
+    width: 170px;
+    min-width: 170px;
+    max-width: 170px;
+    padding: 5px;
+    margin: 5px;
   }
 
   table th.job-status,
@@ -1288,7 +1287,10 @@ font-family: 'Roboto';
       margin: 0;
   }
 
-
+  table th{
+    background-color: #1155cc;
+    color: white;
+  }
 
   th.job-id,
   td.job-id{
@@ -1371,11 +1373,6 @@ font-family: 'Roboto';
   }
 }
 
-th {
-  background-color: #1155cc;
-  color: white;
-  }
-
 
 .print-message {
   display: none; /* Initially hide the message */
@@ -1389,12 +1386,6 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
   background-color: white; /* Set background color for odd rows */
 }
-
-  th {
-    background-color: #1155cc; 
-    color: white; /* Change text color */
-  }
-
 
 .hidden {
   display: none;
